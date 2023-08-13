@@ -4,57 +4,49 @@ University of Pretoria Multimedia 320 Students Assistance Website Project.
 
 # OUR TEAM
 
-* **Tinashe Austin**
-
-  Student Number: u21564176
-* **Risenga Son**
-
-  Student Number: u19228882
-* **Thabo Letsoalo**
-
-  Student Number: u20520222
-* **Mduduzi Sibiya**
-
-  Student Number: u19262452
-* **Netshifhefhe Unarine**
-
-  **Student Number: u20505656**
-
-  [Our Repo Link : Click here](https://github.com/ThaboLetsoalo/IMY320_BOTTLE_OF_BREAD)
+* **Tinashe Austin.**
+* **Risenga Sono.**
+* **Thabo Letsoalo.**
+* **Mduduzi Sibiya.**
+* **Netshifhefhe Unarine.**
 
 # INTRODUCTION
 
-**In today's dynamic educational landscape, the demand for a comprehensive and user-friendly platform that empowers students has never been more critical. This proposal outlines the creation of a student assistance website that goes beyond traditional study materials.**
+In today's dynamic educational landscape, the demand for a comprehensive and user-friendly platform that empowers students has never been more critical. This proposal outlines the creation of a student assistance website that goes beyond traditional study materials.
 
 ### **OUR VISION**
 
-**Our vision is to establish a vibrant online community that connects students, fosters collaboration, offers personalized tutoring, facilitates virtual study sessions, and assists in effective study schedule management. The core theme of the website, "Learning Network Nexus," underlines our commitment to student success through collective support and accessible resources.**
+Our vision is to establish a vibrant online community that connects students, fosters collaboration, offers personalized tutoring, facilitates virtual study sessions, and assists in effective study schedule management. The core theme of the website, "Learning Network Nexus," underlines our commitment to student success through collective support and accessible resources.
 
 # **MARKET RESEARCH OVERVIEW**
 
-**In guidance for this initiative, sizable marketplaceresearch was conducted. This evaluation involved careful evaluation of current educational structures and scholar support web sites, including Khan Academy, Coursera, and StudyBlue. By figuring out user alternatives,layout trends, and important functions, we've got distilled valuable insights that guide our challenge's direction. Additionally, a survey was administered to University of Pretoria students, soliciting insights into their support requirements, 20 random students doing various courses filled our survey.The data gathered from this survey played a pivotal role in shaping the project's approach and identifying the 5 functional requirements.**
+In guidance for this initiative, sizable marketplaceresearch was conducted. This evaluation involved careful evaluation of current educational structures and scholar support web sites, including Khan Academy, Coursera, and StudyBlue. By figuring out user alternatives,layout trends, and important functions, we've got distilled valuable insights that guide our challenge's direction. Additionally, a survey was administered to University of Pretoria students, soliciting insights into their support requirements, 20 random students doing various courses filled our survey.The data gathered from this survey played a pivotal role in shaping the project's approach and identifying the 5 functional requirements.
 
 # **FUNCTIONAL REQUIREMENTS AND JUSTIFICATION**
 
-1. **Availability of online video tutorials and study resources**
-2. **Academic support by means of study groups and peer collaborations**
-3. **Assistance from alumni**on a specific**module student is struggling on**
-4. **Collaboration amongst students whereby they can form study groups**
-5. **Collaboration amongst students whereby they can form study groups**
+1. Availability of online video tutorials and study resources
+2. Academic support by means of study groups and peer collaborations
+3. Assistance from alumnion a specificmodule student is struggling on
+4. Collaboration amongst students whereby they can form study groups
+5. Collaboration amongst students whereby they can form study groups
 
-# **1st FUNCTIONAL REQUIREMENT**
+# **1st & 2nd FUNCTIONAL REQUIREMENT**
+
+![1691954077876](image/README/1691954077876.png)
 
 Our First functional requirement is The availability of online video tutorials and study resources, These received 70% and 65% in terms of how students prefer to seek academic help and support, thus this will be a feature supported on our Website.
-
-# 2nd FUNCTIONAL REQUIREMENT
 
 Our second functional requirement is based on the fact that 65% of students seek academic support by means of study groups and peer collaborations hence we included it as a requirement.
 
 # **3rd FUNCTIONAL REQUIREMENT**
 
+![1691954098736](image/README/1691954098736.png)            ![1691954213125](image/README/1691954213125.png)
+
 Our third functional requirement is based on 75% of the students responding yes to receiving help from alumni students who have excelled in the modules they require help with and 25% said maybe, due to no student responding No and a higher percentage of Yes, access to online tutors with reputable results in the modules they wish to tutor would be a functional requirement.
 
 # **4th FUNCTIONAL REQUIREMENT**
+
+![1691954247233](image/README/1691954247233.png)
 
 Because 70% of students want to participate in stude group, we have incoorperated a dashboard as part of the functional requirements to track progress, schedule meetings and view progress on quizes.
 
@@ -89,6 +81,10 @@ These three main points, based on the research from Khan Academy, underscore the
 
 # KHAN ACADEMY(PICTURES)
 
+![1691954317737](image/README/1691954317737.png)
+
+![1691954332754](image/README/1691954332754.png)
+
 # COURSERA
 
 1. **Diverse Course Offerings:**
@@ -107,7 +103,13 @@ These three main points, based on the research from Khan Academy, underscore the
 
    Importance : Providing structured learning paths can help guide students through their academic journey. By organizing resources in a logical sequence or offering specialized tracks, your website can help students navigate their learning more effectively, leading to better understanding and skill development.
 
-# Coursera(pictures)
+# COURSER (PICTURES)
+
+![1691954378448](image/README/1691954378448.png)
+
+![1691954392105](image/README/1691954392105.png)
+
+![1691954403896](image/README/1691954403896.png)
 
 # CHEGG/STUDYBLUE
 
@@ -129,6 +131,10 @@ These three main points, based on the research from Khan Academy, underscore the
 
 # CHEGG(PICTURES)
 
+![1691954440313](image/README/1691954440313.png)
+
+![1691954452905](image/README/1691954452905.png)
+
 # COLOUR CHOICES
 
 The blue and green color combination is often used in a complementary manner, creating a sense of openness and informality while maintaining a level of seriousness. This blend of colors brings a peaceful harmony that adds a subtle dynamic quality, working together effectively.
@@ -149,7 +155,6 @@ Research shows humans process visuals 60,000 times faster than text, retaining 8
 To minimize user frustration and improve engagement, we will prioritize important information upfront. This reduces the risk of users leaving due to difficulty finding desired information.(Marc Avila  2020).
 
 To ensure readability for all users, we will use neat fonts and avoid using light font colors on light backgrounds or pale fonts on dark backgrounds.﻿(Mike St. Jean 2020).
-
 
 #### Layout for specific pages
 
@@ -185,7 +190,7 @@ The structure of the website emphasizes clarity and logic. A user-friendly navig
 
 # WIREFRAME
 
-#### figma link to wireframe HERE
+#### [figma link to wireframe HERE](https://www.figma.com/proto/7h4kzVZITacGqXVJksqce3/Untitled?page-id=0%3A1&type=design&node-id=75-3&viewport=-492%2C-288%2C0.21&t=ak7vSt8gYciMJvev-1&scaling=scale-down&starting-point-node-id=75%3A3&mode=design)
 
 1. Home Page:
 
