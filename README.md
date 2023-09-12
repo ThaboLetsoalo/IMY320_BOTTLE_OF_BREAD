@@ -28,7 +28,7 @@ In guidance for this initiative, sizable marketplaceresearch was conducted. This
 2. Academic support by means of study groups and peer collaborations
 3. Assistance from alumnion a specificmodule student is struggling on
 4. Collaboration amongst students whereby they can form study groups
-5. Collaboration amongst students whereby they can form study groups
+5. Collaboration amongst students whereby they can form study groups.
 
 # **1st & 2nd FUNCTIONAL REQUIREMENT**
 
