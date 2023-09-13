@@ -117,3 +117,8 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+.active {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}
