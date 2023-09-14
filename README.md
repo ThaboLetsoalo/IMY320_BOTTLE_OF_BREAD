@@ -61,7 +61,7 @@ To generate pages and components, use the following commands:
 - **.ts:** This file holds the Angular logic, including component classes, variables, and functions.
 
 <details>
-  <summary>Click to expand</summary>
+  <summary> <h1>Proposal<h1></summary>
   <div class="content">
     <!-- Your content goes here -->
     # OUR TEAM
