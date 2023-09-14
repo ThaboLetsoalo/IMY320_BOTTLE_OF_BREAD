@@ -1,7 +1,9 @@
 <h1>Students Assistance Websites for IMY320</h1>
+
+
 ### **INTRODUCTION**
 
-  In today's dynamic educational landscape, the demand for a comprehensive and user-friendly platform that empowers students has never been more critical. This proposal outlines the creation of a student assistance website that goes beyond traditional study materials.
+In today's dynamic educational landscape, the demand for a comprehensive and user-friendly platform that empowers students has never been more critical. This proposal outlines the creation of a student assistance website that goes beyond traditional study materials.
 
 ### **OUR VISION**
 
@@ -39,7 +41,6 @@
 
 
 
-
 <details>
 <summary><h1>Running the Project</h1></summary>
   <div class="content">
@@ -69,7 +70,6 @@ After a successful build, open your web browser and enter the following URL:
   <div class="content">
    To generate pages and components, use the following commands:
 
-
 - **Generate Pages:** Create a new page by running the command:
 
   ```shell
@@ -91,11 +91,10 @@ After a successful build, open your web browser and enter the following URL:
 
 </details>
 
-
 <details>
   <summary> <h1>Proposal<h1></summary>
   <div class="content">
- 
+
 **#OUR TEAM**
 
 * **Tinashe Austin.**
