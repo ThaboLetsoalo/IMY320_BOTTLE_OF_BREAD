@@ -32,11 +32,10 @@
 
 
 
-<details>
-  <summary><h1>Running the Project</h1></summary>
+`<details>`
+
+<summary><h1>Running the Project</h1></summary>
   <div class="content">
-    <!-- Your content goes here -->
-    **Running the Project:**
 
 1. **Install Dependencies:** In your project's root directory(BOB), install project dependencies using Yarn:
 
@@ -61,8 +60,8 @@ After a successful build, open your web browser and enter the following URL:
 <details>
   <summary><h1>Generating Pages and Components:</h1></summary>
   <div class="content">
-    <!-- Your content goes here -->
    To generate pages and components, use the following commands:
+
 
 - **Generate Pages:** Create a new page by running the command:
 
