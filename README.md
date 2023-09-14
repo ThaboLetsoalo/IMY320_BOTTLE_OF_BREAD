@@ -32,8 +32,7 @@
 
 
 
-`<details>`
-
+<details>
 <summary><h1>Running the Project</h1></summary>
   <div class="content">
 
@@ -53,7 +52,7 @@ After a successful build, open your web browser and enter the following URL:
    [http://localhost:4200](http://localhost:4200)
 
 </div>
-</details
+</details>
 
 
 
