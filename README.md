@@ -1,6 +1,68 @@
-# IMY320_BOTTLE_OF_BREAD
 
-University of Pretoria Multimedia 320 Students Assistance Website Project.
+
+Instructions for setting up and running the project:
+
+**Prerequisites:**
+
+1. **Download Git:** Get Git from [https://git-scm.com/downloads](https://git-scm.com/downloads).
+2. **Clone the Repository:** Clone the project repository using the following URL: [https://github.com/ThaboLetsoalo/IMY320_BOTTLE_OF_BREAD](https://github.com/ThaboLetsoalo/IMY320_BOTTLE_OF_BREAD).
+3. **Install Node.js:** Download and install Node.js from [https://nodejs.org/en/download](https://nodejs.org/en/download).
+4. **Install Angular:** Open your command prompt and run the following command to install Angular CLI globally:
+
+   ```shell
+   npm install -g @angular/cli
+   ```
+5. **Install Ionic:** Install the Ionic CLI globally with the following command:
+
+   ```shell
+   npm install -g @ionic/cli
+   ```
+6. **Install Yarn:** Install Yarn globally by running:
+
+   ```shell
+   npm install -g yarn
+   ```
+
+**Running the Project:**
+
+1. **Install Dependencies:** In your project's root directory(BOB), install project dependencies using Yarn:
+
+   ```shell
+   yarn
+   ```
+2. **Run the Project:** Navigate to the project's root directory(BOB) and execute the following command:
+
+   ```shell
+   ng serve
+   ```
+
+
+After a successful build, open your web browser and enter the following URL:
+
+   [http://localhost:4200](http://localhost:4200)
+
+**Generating Pages and Components:**
+
+To generate pages and components, use the following commands:
+
+- **Generate Pages:** Create a new page by running the command:
+
+  ```shell
+  ionic generate page <page_directory & name>
+  ```
+- **Generate Components:** Generate a new component with the command:
+
+  ```shell
+  ionic generate component <component_directory & name>
+  ```
+
+**File Names and Their Purposes:**
+
+- **.module.ts:** This file serves as a module file, allowing the grouping of similar components. It handles importing and exporting of modules.
+- **.html:** This file contains your markup, where you define the presentation logic of your application.
+- **.scss:** Use this file for styling your components and pages.
+- **.ts:** This file holds the Angular logic, including component classes, variables, and functions.
+
 
 # OUR TEAM
 
@@ -12,53 +74,53 @@ University of Pretoria Multimedia 320 Students Assistance Website Project.
 
 # INTRODUCTION
 
-In today's dynamic educational landscape, the demand for a comprehensive and user-friendly platform that empowers students has never been more critical. This proposal outlines the creation of a student assistance website that goes beyond traditional study materials.
+  In today's dynamic educational landscape, the demand for a comprehensive and user-friendly platform that empowers students has never been more critical. This proposal outlines the creation of a student assistance website that goes beyond traditional study materials.
 
 ### **OUR VISION**
 
-Our vision is to establish a vibrant online community that connects students, fosters collaboration, offers personalized tutoring, facilitates virtual study sessions, and assists in effective study schedule management. The core theme of the website, "Learning Network Nexus," underlines our commitment to student success through collective support and accessible resources.
+  Our vision is to establish a vibrant online community that connects students, fosters collaboration, offers personalized tutoring, facilitates virtual study sessions, and assists in effective study schedule management. The core theme of the website, "Learning Network Nexus," underlines our commitment to student success through collective support and accessible resources.
 
-# **MARKET RESEARCH OVERVIEW**
+# MARKET RESEARCH OVERVIEW
 
-In guidance for this initiative, sizable marketplaceresearch was conducted. This evaluation involved careful evaluation of current educational structures and scholar support web sites, including Khan Academy, Coursera, and StudyBlue. By figuring out user alternatives,layout trends, and important functions, we've got distilled valuable insights that guide our challenge's direction. Additionally, a survey was administered to University of Pretoria students, soliciting insights into their support requirements, 20 random students doing various courses filled our survey.The data gathered from this survey played a pivotal role in shaping the project's approach and identifying the 5 functional requirements.
+  In guidance for this initiative, sizable marketplace research was conducted. This evaluation involved careful evaluation of current educational structures and scholar support web sites, including Khan Academy, Coursera, and StudyBlue. By figuring out user alternatives, layout trends, and important functions, we've got distilled valuable insights that guide our challenge's direction. Additionally, a survey was administered to University of Pretoria students, soliciting insights into their support requirements, 20 random students doing various courses filled our survey. The data gathered from this survey played a pivotal role in shaping the project's approach and identifying the 5 functional requirements.
 
-# **FUNCTIONAL REQUIREMENTS AND JUSTIFICATION**
+# FUNCTIONAL REQUIREMENTS AND JUSTIFICATION
 
 1. Availability of online video tutorials and study resources
 2. Academic support by means of study groups and peer collaborations
-3. Assistance from alumnion a specificmodule student is struggling on
+3. Assistance from alumni on a specific module student is struggling on
 4. Collaboration amongst students whereby they can form study groups
 5. Collaboration amongst students whereby they can form study groups.
 
-# **1st & 2nd FUNCTIONAL REQUIREMENT**
+# 1st & 2nd FUNCTIONAL REQUIREMENT
 
-![1691954077876](image/README/1691954077876.png)
+  ![1691954077876](image/README/1691954077876.png)
 
-Our First functional requirement is The availability of online video tutorials and study resources, These received 70% and 65% in terms of how students prefer to seek academic help and support, thus this will be a feature supported on our Website.
+  Our First functional requirement is The availability of online video tutorials and study resources, These received 70% and 65% in terms of how students prefer to seek academic help and support, thus this will be a feature supported on our Website.
 
-Our second functional requirement is based on the fact that 65% of students seek academic support by means of study groups and peer collaborations hence we included it as a requirement.
+  Our second functional requirement is based on the fact that 65% of students seek academic support by means of study groups and peer collaborations hence we included it as a requirement.
 
-# **3rd FUNCTIONAL REQUIREMENT**
+# 3rd FUNCTIONAL REQUIREMENT
 
-![1691954098736](image/README/1691954098736.png)            ![1691954213125](image/README/1691954213125.png)
+  ![1691954098736](image/README/1691954098736.png)            ![1691954213125](image/README/1691954213125.png)
 
-Our third functional requirement is based on 75% of the students responding yes to receiving help from alumni students who have excelled in the modules they require help with and 25% said maybe, due to no student responding No and a higher percentage of Yes, access to online tutors with reputable results in the modules they wish to tutor would be a functional requirement.
+  Our third functional requirement is based on 75% of the students responding yes to receiving help from alumni students who have excelled in the modules they require help with and 25% said maybe, due to no student responding No and a higher percentage of Yes, access to online tutors with reputable results in the modules they wish to tutor would be a functional requirement.
 
-# **4th FUNCTIONAL REQUIREMENT**
+# 4th FUNCTIONAL REQUIREMENT
 
-![1691954247233](image/README/1691954247233.png)
+  ![1691954247233](image/README/1691954247233.png)
 
-Because 70% of students want to participate in stude group, we have incoorperated a dashboard as part of the functional requirements to track progress, schedule meetings and view progress on quizes.
+  Because 70% of students want to participate in study groups, we have incorporated a dashboard as part of the functional requirements to track progress, schedule meetings, and view progress on quizzes.
 
-# **5th FUNCTIONAL REQUIREMENT**
+# 5th FUNCTIONAL REQUIREMENT
 
-Our fifth functional requirement is based on 85% of students responding that they would want problem solving practice exercises so our website will support this as well by providing access to practice material and exercises.
+  Our fifth functional requirement is based on 85% of students responding that they would want problem-solving practice exercises so our website will support this as well by providing access to practice material and exercises.
 
-# **EXISTING PRODUCTS**
+# EXISTING PRODUCTS
 
-To Guide the ideation process we looked at a few existing websites with similar themes and ideas, we also looked at other websites that contain elements we thought would be great to incorporate in the design
+  To Guide the ideation process we looked at a few existing websites with similar themes and ideas, we also looked at other websites that contain elements we thought would be great to incorporate in the design.
 
-# **KHAN ACADEMY**
+# KHAN ACADEMY
 
 1. **Engaging and Comprehensive Content.**
    Engaging content captures and maintains the attention of students, making the learning experience enjoyable and effective. Comprehensive content covers a wide range of topics, ensuring that students can find the help they need.
@@ -66,7 +128,7 @@ To Guide the ideation process we looked at a few existing websites with similar 
    Importance : if the content is dull or incomplete, students will lose interest quickly, leading to limited learning outcomes. By offering a wide variety of engaging and comprehensive materials, students are more likely to stay motivated and achieve better results.
 2. **Adaptive Learning Technology.**
 
-   RAdaptive learning tailors the educational experience to the individual student's level, pace, and learning style. This personalization improves comprehension and retention.
+   Adaptive learning tailors the educational experience to the individual student's level, pace, and learning style. This personalization improves comprehension and retention.
 
    Importance : Not all students learn at the same pace or in the same way. Adaptive learning ensures that each student gets a customized learning path, making the experience more effective and efficient. It addresses the diverse needs of learners, enhancing overall satisfaction.
 3. **User-Friendly Interface.**
@@ -75,15 +137,11 @@ To Guide the ideation process we looked at a few existing websites with similar 
 
    Importance : A confusing or complex interface can discourage students from using the website. A simple, intuitive design with clear navigation ensures that students can quickly find the resources they need. A responsive layout makes the website accessible on different devices, catering to the preferences and convenience of the users.
 
-**Conclusion**
-
-These three main points, based on the research from Khan Academy, underscore the significance of engaging content, adaptive learning, and a user-friendly interface. Implementing these principles in the creation of a student help website can lead to higher engagement, better learning outcomes, and a more satisfying user experience, all of which contribute to the success and effectiveness of the platform.
-
 # KHAN ACADEMY(PICTURES)
 
-![1691954317737](image/README/1691954317737.png)
+  ![1691954317737](image/README/1691954317737.png)
 
-![1691954332754](image/README/1691954332754.png)
+  ![1691954332754](image/README/1691954332754.png)
 
 # COURSERA
 
@@ -105,11 +163,11 @@ These three main points, based on the research from Khan Academy, underscore the
 
 # COURSER (PICTURES)
 
-![1691954378448](image/README/1691954378448.png)
+  ![1691954378448](image/README/1691954378448.png)
 
-![1691954392105](image/README/1691954392105.png)
+  ![1691954392105](image/README/1691954392105.png)
 
-![1691954403896](image/README/1691954403896.png)
+  ![1691954403896](image/README/1691954403896.png)
 
 # CHEGG/STUDYBLUE
 
@@ -131,62 +189,59 @@ These three main points, based on the research from Khan Academy, underscore the
 
 # CHEGG(PICTURES)
 
-![1691954440313](image/README/1691954440313.png)
+  ![1691954440313](image/README/1691954440313.png)
 
-![1691954452905](image/README/1691954452905.png)
+  ![1691954452905](image/README/1691954452905.png)
 
 # COLOUR CHOICES
 
-The blue and green color combination is often used in a complementary manner, creating a sense of openness and informality while maintaining a level of seriousness. This blend of colors brings a peaceful harmony that adds a subtle dynamic quality, working together effectively.
-When aiming to capture learners' attention, this color pairing is useful because it presents serious educational content or services in a more fun and inviting manner, making the overall visual experience less monotonous.
-To optimize this color scheme on an educational website, it's important to ensure sufficient contrast between the blue and green hues.
-Source Reference: Verpex Blog, "Best Color Combinations for Educational Websites" (URL: https://verpex.com/blog/website-tips/best-color-combinations-for-educational-websites)
+  The blue and green color combination is often used in a complementary manner, creating a sense of openness and informality while maintaining a level of seriousness. This blend of colors brings a peaceful harmony that adds a subtle dynamic quality, working together effectively. When aiming to capture learners' attention, this color pairing is useful because it presents serious educational content or services in a more fun and inviting manner, making the overall visual experience less monotonous. To optimize this color scheme on an educational website, it's important to ensure sufficient contrast between the blue and green hues. Source Reference: Verpex Blog, "Best Color Combinations for Educational Websites" (URL: https://verpex.com/blog/website-tips/best-color-combinations-for-educational-websites)
 
 1. Backgrounds: We Opted for a softer, light shade for the background, allowing content to stand out against the soothing backdrop. A pale blue or mint green (#B0E0E6) provides a gentle and inviting canvas.
 2. Buttons & Text Links: Utilize a slightly darker or more vibrant shade for buttons and text links, creating a visually appealing contrast that draws learners' attention. A deeper blue or forest green (#006699) can add a touch of seriousness and ensure essential elements are noticed.
-3. Lively Green: A shade that conveys energy and freshness while harmonizing with the serene blue background for accents .
+3. Lively Green: A shade that conveys energy and freshness while harmonizing with the serene blue background for accents.
 
 # LAYOUT OF THE PAGES
 
 #### General Layout of Pages
 
-Research shows humans process visuals 60,000 times faster than text, retaining 80% of what they see. Hence, balancing visual and written content is crucial for our website.(﻿Marc Avila  2020).
+  Research shows humans process visuals 60,000 times faster than text, retaining 80% of what they see. Hence, balancing visual and written content is crucial for our website. (﻿Marc Avila 2020).
 
-To minimize user frustration and improve engagement, we will prioritize important information upfront. This reduces the risk of users leaving due to difficulty finding desired information.(Marc Avila  2020).
+  To minimize user frustration and improve engagement, we will prioritize important information upfront. This reduces the risk of users leaving due to difficulty finding desired information. (Marc Avila 2020).
 
-To ensure readability for all users, we will use neat fonts and avoid using light font colors on light backgrounds or pale fonts on dark backgrounds.﻿(Mike St. Jean 2020).
+  To ensure readability for all users, we will use neat fonts and avoid using light font colors on light backgrounds or pale fonts on dark backgrounds. ﻿(Mike St. Jean 2020).
 
 #### Layout for specific pages
 
 ##### Home Page
 
-Provides a comprehensive overview of its features, including captivating images and engaging elements that highlight study materials, collaboration, tutors, group/course management, and practice resources.
+  Provides a comprehensive overview of its features, including captivating images and engaging elements that highlight study materials, collaboration, tutors, group/course management, and practice resources.
 
 ##### Study Materials Page
 
-Offers access to resources like notes, and  organize them effectively, and implement a search bar for easy navigation and finding materials for students.
+  Offers access to resources like notes and organizes them effectively, and implements a search bar for easy navigation and finding materials for students.
 
 ##### Study groups Page
 
-Has tools for group management, enabling users to create and manage study groups, as well as search for available groups. Will also have discussion tab for the group members.
+  Has tools for group management, enabling users to create and manage study groups, as well as search for available groups. Will also have a discussion tab for the group members.
 
 ##### Alumni/Tutor Page
 
-This page will list reputable tutors, will include profiles of the tutors including their qualifications, expertise, and reviews from students. It should also provide an easy way for students to contact or book sessions with the tutors.
+  This page will list reputable tutors, will include profiles of the tutors including their qualifications, expertise, and reviews from students. It should also provide an easy way for students to contact or book sessions with the tutors.
 
 ##### Support & Help Page
 
-Assists the user with common problems and also has a form which the user can submit to tell us their issue.
+  Assists the user with common problems and also has a form that the user can submit to tell us their issue.
 
 # NAVIGATION
 
 #### Navigation Between Pages
 
-We intend to incorporate a sticky navigation bar on all pages of our website. This feature will ensure that users can effortlessly navigate to different pages, regardless of their scrolling depth on the current page.(﻿Anadia  2019).
+  We intend to incorporate a sticky navigation bar on all pages of our website. This feature will ensure that users can effortlessly navigate to different pages, regardless of their scrolling depth on the current page. (﻿Anadia 2019).
 
-# **SITE STRUCTURE AND INTEGRATION**
+# SITE STRUCTURE AND INTEGRATION
 
-The structure of the website emphasizes clarity and logic. A user-friendly navigation menu guides visitors seamlessly through different sections, ensuring intuitive navigation. Moreover, integration with popular video conferencing and scheduling tools amplifies the effectiveness of virtual study sessions and scheduling features.
+  The structure of the website emphasizes clarity and logic. A user-friendly navigation menu guides visitors seamlessly through different sections, ensuring intuitive navigation. Moreover, integration with popular video conferencing and scheduling tools amplifies the effectiveness of virtual study sessions and scheduling features.
 
 # WIREFRAME
 
@@ -235,12 +290,87 @@ The structure of the website emphasizes clarity and logic. A user-friendly navig
 
 # PERSONA AND USER JOURNEY
 
-At the heart of our project is "Naledi," an embodiment of a college students' aspirations. As Naledi navigates through the homepage, she discovers various sections, including study materials, tutor profiles, and virtual study sessions. She engages with resources and tutors, attends virtual study sessions, and manages their study schedule efficiently with calendar features. If challenges arise, Naledi promptly accesses the "Support and Help" page. The personalized dashboard ensures a seamless overview of upcoming events and essential features.
+  At the heart of our project is "Naledi," an embodiment of a college student's aspirations. As Naledi navigates through the homepage, she discovers various sections, including study materials, tutor profiles, and virtual study sessions. She engages with resources and tutors, attends virtual study sessions, and manages her study schedule efficiently with calendar features. If challenges arise, Naledi promptly accesses the "Support and Help" page. The personalized dashboard ensures a seamless overview of upcoming events and essential features.
 
 # REFERENCE
 
-Avila, M. (2020, JANUARY, 05). Designing a Successful Education Website. https://www.3mediaweb.com/blog/designing-a-successful-education-website/..).
+  Avila, M. (2020, JANUARY, 05). Designing a Successful Education Website. https://www.3mediaweb.com/blog/designing-a-successful-education-website/..).
 
-Jean, M. S. ((2020, MAY, 05). How to Design an ADA Compliant Website [FREE Checklist]. https://www.3mediaweb.com/blog/7-steps-to-make-sure-your-website-is-ada-compliant/.
+  Jean, M. S. ((2020, MAY, 05). How to Design an ADA Compliant Website [FREE Checklist]. https://www.3mediaweb.com/blog/7-steps-to-make-sure-your-website-is-ada-compliant/.
 
-Anadea. (2019, April 4). Sticky Navigation: Is it Worth It? https://anadea.info/blog/sticky-navigation-is-it-worth-it
+  Anadea. (2019, April 4). Sticky Navigation: Is it Worth It? https://anadea.info/blog/sticky-navigation-is-i
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Segment</title>
+    <style>
+        /* Style for the dropdown segment */
+        .dropdown-segment {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Style for the button that triggers the dropdown */
+        .dropdown-button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Style for the dropdown content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Style for dropdown options */
+        .dropdown-option {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            color: #333;
+        }
+
+        /* Hover effect for dropdown options */
+        .dropdown-option:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown-segment">
+        <button class="dropdown-button">Dropdown</button>
+        <div class="dropdown-content">
+            <a class="dropdown-option" href="#">Option 1</a>
+            <a class="dropdown-option" href="#">Option 2</a>
+            <a class="dropdown-option" href="#">Option 3</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to show/hide the dropdown content
+        const dropdownButton = document.querySelector(".dropdown-button");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        dropdownButton.addEventListener("click", function() {
+            dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+        });
+
+        // Close the dropdown when clicking outside of it
+        window.addEventListener("click", function(event) {
+            if (!event.target.matches(".dropdown-button")) {
+                dropdownContent.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
