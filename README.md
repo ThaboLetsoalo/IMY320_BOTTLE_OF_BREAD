@@ -1,4 +1,9 @@
-Instructions for setting up and running the project:
+
+<details>
+  <summary><h1>Prerequisites</h1></summary>
+  <div class="content">
+    <!-- Your content goes here -->
+    Instructions for setting up and running the project:
 
 **Prerequisites:**
 
@@ -21,7 +26,17 @@ Instructions for setting up and running the project:
    npm install -g yarn
    ```
 
-**Running the Project:**
+</div>
+</details>
+
+
+
+
+<details>
+  <summary><h1>Running the Project</h1></summary>
+  <div class="content">
+    <!-- Your content goes here -->
+    **Running the Project:**
 
 1. **Install Dependencies:** In your project's root directory(BOB), install project dependencies using Yarn:
 
@@ -38,9 +53,16 @@ After a successful build, open your web browser and enter the following URL:
 
    [http://localhost:4200](http://localhost:4200)
 
-**Generating Pages and Components:**
+</div>
+</details
 
-To generate pages and components, use the following commands:
+
+
+<details>
+  <summary><h1>Generating Pages and Components:</h1></summary>
+  <div class="content">
+    <!-- Your content goes here -->
+   To generate pages and components, use the following commands:
 
 - **Generate Pages:** Create a new page by running the command:
 
@@ -59,12 +81,16 @@ To generate pages and components, use the following commands:
 - **.html:** This file contains your markup, where you define the presentation logic of your application.
 - **.scss:** Use this file for styling your components and pages.
 - **.ts:** This file holds the Angular logic, including component classes, variables, and functions.
+  </div>
+
+</details>
+
 
 <details>
   <summary> <h1>Proposal<h1></summary>
   <div class="content">
-    <!-- Your content goes here -->
-    # OUR TEAM
+ 
+    #OUR TEAM
 
 * **Tinashe Austin.**
 * **Risenga Sono.**
