@@ -1,8 +1,4 @@
 <h1>Students Assistance Websites for IMY320</h1>
-### **INTRODUCTION**
-
-  In today's dynamic educational landscape, the demand for a comprehensive and user-friendly platform that empowers students has never been more critical. This proposal outlines the creation of a student assistance website that goes beyond traditional study materials.
-
 ### **OUR VISION**
 
   Our vision is to establish a vibrant online community that connects students, fosters collaboration, offers personalized tutoring, facilitates virtual study sessions, and assists in effective study schedule management. The core theme of the website, "Learning Network Nexus," underlines our commitment to student success through collective support and accessible resources.
