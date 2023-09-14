@@ -1,5 +1,5 @@
 <h1>Students Assistance Websites for IMY320</h1>
-# INTRODUCTION
+### **INTRODUCTION**
 
   In today's dynamic educational landscape, the demand for a comprehensive and user-friendly platform that empowers students has never been more critical. This proposal outlines the creation of a student assistance website that goes beyond traditional study materials.
 
