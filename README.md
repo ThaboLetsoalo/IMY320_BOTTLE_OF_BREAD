@@ -88,7 +88,7 @@ After a successful build, open your web browser and enter the following URL:
   <summary> <h1>Proposal<h1></summary>
   <div class="content">
  
-    #OUR TEAM
+**#OUR TEAM**
 
 * **Tinashe Austin.**
 * **Risenga Sono.**
