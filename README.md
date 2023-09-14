@@ -1,5 +1,3 @@
-
-
 Instructions for setting up and running the project:
 
 **Prerequisites:**
@@ -36,7 +34,6 @@ Instructions for setting up and running the project:
    ng serve
    ```
 
-
 After a successful build, open your web browser and enter the following URL:
 
    [http://localhost:4200](http://localhost:4200)
@@ -63,8 +60,11 @@ To generate pages and components, use the following commands:
 - **.scss:** Use this file for styling your components and pages.
 - **.ts:** This file holds the Angular logic, including component classes, variables, and functions.
 
-
-# OUR TEAM
+<details>
+  <summary>Click to expand</summary>
+  <div class="content">
+    <!-- Your content goes here -->
+    # OUR TEAM
 
 * **Tinashe Austin.**
 * **Risenga Sono.**
@@ -298,4 +298,7 @@ To generate pages and components, use the following commands:
 
   Jean, M. S. ((2020, MAY, 05). How to Design an ADA Compliant Website [FREE Checklist]. https://www.3mediaweb.com/blog/7-steps-to-make-sure-your-website-is-ada-compliant/.
 
-  Anadea. (2019, April 4). Sticky Navigation: Is it Worth It? https://anadea.info/blog/sticky-navigation-is-i
+  Anadea. (2019, April 4). Sticky Navigation: Is it Worth It? https://anadea.info/blog/sticky-navigation-is-i.
+
+</div>
+</details>
