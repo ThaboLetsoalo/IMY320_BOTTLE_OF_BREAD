@@ -5,27 +5,64 @@
     </ion-toolbar>
   </ion-header>
 
-  <!-- Category List -->
-  <ion-list>
-    <ion-item button *ngFor="let category of categories" (click)="openCategory(category.id)">
-      {{ category.name }}
-    </ion-item>
-  </ion-list>
+  <div class="center_content">
+    <ion-row>
+      <!-- Card 1: NOTES -->
+      <ion-col size="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>NOTES</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let noteModule of noteModules">
+                <ion-card-header>
+                  <h2>{{ noteModule.name }}</h2>
+                  <p>{{ noteModule.description }}</p> <!-- Display description below name -->
+                </ion-card-header>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
 
-  <!-- Study Material List -->
-  <ion-list *ngIf="selectedCategory">
-    <ion-item-divider>
-      {{ selectedCategory.name }} Study Materials
-    </ion-item-divider>
-    <ion-item *ngFor="let material of studyMaterials">
-      <ion-thumbnail slot="start">
-        <img [src]="material.thumbnailUrl" alt="{{ material.name }}" />
-      </ion-thumbnail>
-      <ion-label>
-        <h2>{{ material.name }}</h2>
-        <p>{{ material.description }}</p>
-        <a [href]="material.link" target="_blank">Download</a>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+      <!-- Card 2: EXAM PAPERS -->
+      <ion-col size="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>EXAM PAPERS</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let examModule of examModules">
+                <ion-card-header>
+                  <h2>{{ examModule.name }}</h2>
+                  <p>{{ examModule.description }}</p> <!-- Display description below name -->
+                </ion-card-header>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Card 3: BOOKS -->
+      <ion-col size="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>BOOKS</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let bookModule of bookModules">
+                <ion-card-header>
+                  <h2>{{ bookModule.name }}</h2>
+                  <p>{{ bookModule.description }}</p> <!-- Display description below name -->
+                </ion-card-header>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>

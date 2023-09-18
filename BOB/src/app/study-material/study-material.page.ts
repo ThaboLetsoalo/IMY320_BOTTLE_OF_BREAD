@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudyMaterialService } from './study-material.service';
+import { NavController } from '@ionic/angular'; // Import NavController
 
 @Component({
   selector: 'app-study-material',
@@ -9,11 +10,38 @@ import { StudyMaterialService } from './study-material.service';
 
 })
 export class StudyMaterialPage implements OnInit {
+    // Define properties for noteModules, examModules, and bookModules
+    noteModules: any[] = [
+      { name: 'COS 301', description: 'Description for Note Module 1' },
+      { name: 'COS 333', description: 'Description for Note Module 2' },
+      { name: 'IMY 320', description: 'Description for Note Module 3' },
+    ];
+    
+    examModules: any[] = [
+      { name: 'Exam Module 1', description: 'Description for Exam Module 1' },
+      { name: 'Exam Module 2', description: 'Description for Exam Module 2' },
+      { name: 'Exam Module 3', description: 'Description for Exam Module 3' },
+    ];
+    
+    bookModules: any[] = [
+      { name: 'Book Module 1', description: 'Description for Book Module 1' },
+      { name: 'Book Module 2', description: 'Description for Book Module 2' },
+      { name: 'Book Module 3', description: 'Description for Book Module 3' },
+    ];
+    
   categories: any[] = [];
   selectedCategory: any;
   studyMaterials: any[] = [];
 
-  constructor(private studyMaterialService: StudyMaterialService) {}
+  name: string | undefined;
+  description: string | undefined;
+  // Add any other properties as needed
+
+  
+
+  constructor(private studyMaterialService: StudyMaterialService,
+              private navCtrl: NavController // Inject NavController
+    ) {}
 
   ngOnInit() {
     this.fetchCategories();
@@ -32,5 +60,7 @@ export class StudyMaterialPage implements OnInit {
       this.studyMaterials = data;
     });
   }
-  
+  openSearch(){
+    this.navCtrl.navigateForward('/search');
+  }
 }
