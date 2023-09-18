@@ -18,15 +18,15 @@ export class StudyMaterialPage implements OnInit {
     ];
     
     examModules: any[] = [
-      { name: 'Exam Module 1', description: 'Description for Exam Module 1' },
-      { name: 'Exam Module 2', description: 'Description for Exam Module 2' },
-      { name: 'Exam Module 3', description: 'Description for Exam Module 3' },
+      { name: 'COS 301', description: 'Description for Note Module 1' },
+      { name: 'COS 333', description: 'Description for Note Module 2' },
+      { name: 'IMY 320', description: 'Description for Note Module 3' },
     ];
     
     bookModules: any[] = [
-      { name: 'Book Module 1', description: 'Description for Book Module 1' },
-      { name: 'Book Module 2', description: 'Description for Book Module 2' },
-      { name: 'Book Module 3', description: 'Description for Book Module 3' },
+      { name: 'COS 301', description: 'Description for Note Module 1' },
+      { name: 'COS 333', description: 'Description for Note Module 2' },
+      { name: 'IMY 320', description: 'Description for Note Module 3' },
     ];
     
   categories: any[] = [];

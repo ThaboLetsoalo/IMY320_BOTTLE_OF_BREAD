@@ -8,17 +8,18 @@
   <div class="center_content">
     <ion-row>
       <!-- Card 1: NOTES -->
-      <ion-col size="4">
+      <ion-col size-xs="12" size-md="4">
         <ion-card>
           <ion-card-header>
             <ion-card-title>NOTES</ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <ion-list>
+
               <ion-item *ngFor="let noteModule of noteModules">
                 <ion-card-header>
                   <h2>{{ noteModule.name }}</h2>
-                  <p>{{ noteModule.description }}</p> <!-- Display description below name -->
+                  <p>{{ noteModule.description }}</p>
                 </ion-card-header>
               </ion-item>
             </ion-list>
@@ -27,7 +28,7 @@
       </ion-col>
 
       <!-- Card 2: EXAM PAPERS -->
-      <ion-col size="4">
+      <ion-col size-xs="12" size-md="4">
         <ion-card>
           <ion-card-header>
             <ion-card-title>EXAM PAPERS</ion-card-title>
@@ -35,10 +36,10 @@
           <ion-card-content>
             <ion-list>
               <ion-item *ngFor="let examModule of examModules">
-                <ion-card-header>
-                  <h2>{{ examModule.name }}</h2>
-                  <p>{{ examModule.description }}</p> <!-- Display description below name -->
-                </ion-card-header>
+              <ion-card-header>
+                <h2>{{ examModule.name }}</h2>
+                <p>{{ examModule.description }}</p>
+              </ion-card-header>
               </ion-item>
             </ion-list>
           </ion-card-content>
@@ -46,7 +47,7 @@
       </ion-col>
 
       <!-- Card 3: BOOKS -->
-      <ion-col size="4">
+      <ion-col size-xs="12" size-md="4">
         <ion-card>
           <ion-card-header>
             <ion-card-title>BOOKS</ion-card-title>
@@ -56,7 +57,7 @@
               <ion-item *ngFor="let bookModule of bookModules">
                 <ion-card-header>
                   <h2>{{ bookModule.name }}</h2>
-                  <p>{{ bookModule.description }}</p> <!-- Display description below name -->
+                  <p>{{ bookModule.description }}</p>
                 </ion-card-header>
               </ion-item>
             </ion-list>

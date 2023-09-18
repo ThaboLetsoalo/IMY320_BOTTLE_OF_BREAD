@@ -62,3 +62,20 @@ ion-content {
   ion-col{
    width: 100px;
   }
+
+  /* study-material.page.scss */
+
+/* Adjust column size for smaller screens (e.g., mobile) */
+@media (max-width: 767px) {
+    ion-col {
+      size-md: 12; /* Full width for mobile screens */
+    }
+  }
+  
+  /* Add styles specific to larger screens (e.g., tablet/desktop) */
+  @media (min-width: 768px) {
+    ion-card {
+      /* Add your card styling for larger screens here */
+    }
+  }
+  
