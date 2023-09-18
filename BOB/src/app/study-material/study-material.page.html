@@ -1,7 +1,31 @@
 <ion-content [fullscreen]="true">
   <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Study_Material</ion-title>
+      <ion-title size="large">Study Materials</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <!-- Category List -->
+  <ion-list>
+    <ion-item button *ngFor="let category of categories" (click)="openCategory(category.id)">
+      {{ category.name }}
+    </ion-item>
+  </ion-list>
+
+  <!-- Study Material List -->
+  <ion-list *ngIf="selectedCategory">
+    <ion-item-divider>
+      {{ selectedCategory.name }} Study Materials
+    </ion-item-divider>
+    <ion-item *ngFor="let material of studyMaterials">
+      <ion-thumbnail slot="start">
+        <img [src]="material.thumbnailUrl" alt="{{ material.name }}" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ material.name }}</h2>
+        <p>{{ material.description }}</p>
+        <a [href]="material.link" target="_blank">Download</a>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
