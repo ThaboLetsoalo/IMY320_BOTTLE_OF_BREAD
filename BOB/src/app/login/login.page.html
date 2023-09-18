@@ -1,7 +1,37 @@
-<ion-content [fullscreen]="true">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="login-page">
+  <div class="login-container">
+    <div class="login-form">
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input type="text" [(ngModel)]="username" name="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" color="secondary" (click)="login()">Login</ion-button>
+      <ion-button expand="full" color="secondary" (click)="login()">Signup</ion-button>
+    </div>
+
+    <div class="social-login">
+      <ion-button expand="full" color="google">
+        <ion-icon slot="start" name="logo-google"></ion-icon> Login with Google
+      </ion-button>
+
+      <ion-button expand="full" color="facebook">
+        <ion-icon slot="start" name="logo-facebook"></ion-icon> Login with Facebook
+      </ion-button>
+
+      <ion-button expand="full" color="linkedin">
+        <ion-icon slot="start" name="logo-linkedin"></ion-icon> Login with LinkedIn
+      </ion-button>
+    </div>
+  </div>
+
+  <div class="background-image">
+    <!-- Background Image -->
+    <img src="assets/BG_1.jpg" alt="Background Image">
+  </div>
 </ion-content>

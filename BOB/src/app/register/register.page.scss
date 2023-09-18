@@ -1,0 +1,43 @@
+.register-page {
+    --ion-background-color: transparent;
+  }
+  
+  .register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100vh;
+    padding-left: 800px;
+    padding-right: 20px;
+  }
+  
+  .register-form {
+    max-width: 300px;
+    width: 100%;
+  
+    ion-item {
+      --ion-background-color: #fff;
+      --ion-color: #fff;
+    }
+  
+    ion-button {
+      margin-top: 10px;
+    }
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
