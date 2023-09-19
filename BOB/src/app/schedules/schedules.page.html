@@ -1,7 +1,74 @@
-<ion-content [fullscreen]="true">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title size="large">Schedules</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <!-- <full-calendar
+    [options]="calendarOptions"
+  ></full-calendar> -->
+  <div class="schedule-outer-wrapper">
+    <div class="schedule-header">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <ion-item lines="none" class="transparent-item">
+              <ion-avatar slot="start">
+                <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" ></ion-img>
+              </ion-avatar>
+              <ion-text>USERNAME</ion-text>
+            </ion-item>
+          </ion-col>
+          <ion-col size="4">
+            <ion-item lines="none" class="transparent-item">
+              <span class="header-item date-item">
+                <ion-text>{{"SEPT 2023"}}</ion-text>
+                <ion-buttons>
+                  <ion-button (click)="handleCustomButton('prev')">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                  </ion-button>
+                  <ion-button (click)="handleCustomButton('next')">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </span>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <ion-item lines="none" class="transparent-item">
+              <span class="header-item align-end-item">
+                <ion-text>Week</ion-text>
+                <ion-buttons>
+                  <ion-button>
+                    <ion-icon name="caret-down-outline"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </span>
+            </ion-item> -->
+            <ion-item lines="none" class="transparent-item">
+              <span class="header-item align-end-item">
+                <ion-select [(ngModel)]="selectedView">
+                  <ion-select-option value="dayGridMonth">Month</ion-select-option>
+                  <ion-select-option value="timeGridDay">Day</ion-select-option>
+                </ion-select>
+              </span>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2">
+            <ion-item lines="none" class="transparent-item">
+              <span class="header-item">
+                <ion-fab class="transparent-item">
+                  <ion-fab-button (click)="openEventCreationModal()">
+                    <ion-icon name="add-outline"></ion-icon>
+                  </ion-fab-button>
+                </ion-fab>
+              </span>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="schedule-content">
+      <full-calendar
+        #calendar
+        [options]="calendarOptions"
+      ></full-calendar>
+    </div>
+  </div>
 </ion-content>

@@ -1,0 +1,49 @@
+.schedule-header {
+  margin-top: 50px;
+  background-color: gray;
+}
+
+ion-col {
+  // background-color: aqua;
+  box-sizing: border-box;
+  // border: 2px solid yellowgreen;
+}
+
+ion-grid{
+  padding: 0px;
+}
+
+.header-item {
+  display: flex;
+  align-items: center;
+}
+
+.date-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.align-end-item {
+  width: 100%;
+  display: flex;
+  justify-content:end;
+}
+
+ion-fab-button {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+schedule-content div {
+  float: left;
+}
+
+.calendar-container{
+ width: 20%;
+ height: var(width);
+}
+
+.schedule-container {
+  width: 80%;
+}
