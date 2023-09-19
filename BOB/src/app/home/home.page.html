@@ -1,0 +1,30 @@
+<ion-content [fullscreen]="true">
+  <div class="outer-wrapper">
+    <div class="top">
+      <ion-img src="assets/education_picture.jpg"></ion-img>
+    </div>
+    <div class="bottom">
+      <swiper-container [slidesPerView]="3" [loop]="false"  centered-slides="true"  pagination="{hideOnClick: true}">
+        <swiper-slide *ngFor="let arr of [1,2,3,4,5]">
+          <ion-card>
+            <ion-card-content>
+              {{"Slide Here " + arr}}
+            </ion-card-content>
+          </ion-card>
+        </swiper-slide>
+       </swiper-container>
+
+       <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let a of [1,2,3,4,5,6]" size="4">
+            <ion-card>
+              <ion-card-content>
+                content here...
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+       </ion-grid>
+    </div>
+  </div>
+</ion-content>

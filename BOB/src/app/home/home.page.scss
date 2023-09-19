@@ -6,4 +6,43 @@ ion-item {
     margin-bottom: 0;
     --highlight-background-focused: transparent; /* Optional: Remove the highlight color */
 }
-  
+
+ion-content {
+    --background: #FFB703;
+}
+
+.outer-wrapper {
+    height: max-content;
+    box-sizing: border-box;
+}
+
+.bottom {
+    min-height: 60vh;
+}
+
+.top {
+    height: 40vh;
+    background-color: #8ECAE6;
+    ion-img {
+        // height: 100%;
+        width: 100%;
+    }
+}
+
+h1{
+    margin: 0px;
+}
+
+ion-card {
+    height: 100px;
+}
+
+swiper-slide {
+    max-width: 300px;
+}
+
+// swiper-container::part(bullet, bullet-active) {
+//     // background-color:#E63946; // #A8DADC;
+//     position: relative;
+//     bottom: -10px;
+// }

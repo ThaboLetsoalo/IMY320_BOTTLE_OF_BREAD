@@ -15,6 +15,7 @@ import { DashboardPage } from './dashboard.page';
     IonicModule,
     DashboardPageRoutingModule
   ],
-  declarations: [DashboardPage]
+  declarations: [DashboardPage],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DashboardPageModule {}
