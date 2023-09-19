@@ -15,15 +15,16 @@ import { ModalController } from '@ionic/angular';
 })
 export class SchedulesPage implements OnInit {
 
-  selectedView: string = 'dayGridMonth';
+  selectedView: string = 'dayGridMonth'; //'timeGridDay';dayGridMonth, dayGridWeek, timeGridDay)
   calendarOptions: CalendarOptions = {};
   @ViewChild('calendar') calendarComponent!: FullCalendarComponent;
-  selectedDateText: string = '';
+  selectedDateText: string = Date.now().toLocaleString();
 
-  constructor(private modalController: ModalController) {}
+  constructor(private modalController: ModalController) {
+    this.ngOnInit();
+  }
 
   async openEventCreationModal() {
-    // Open the "event-creation" modal and pass the FullCalendar component
     const modal = await this.modalController.create({
       component: EventCreationPage,
       componentProps: {
@@ -35,6 +36,8 @@ export class SchedulesPage implements OnInit {
   }
 
   ngOnInit() {
+
+    this.selectedDateText = this.getCurrentFormattedDate();
     this.calendarOptions = {
       plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin],
       initialView: this.selectedView,
@@ -83,12 +86,27 @@ export class SchedulesPage implements OnInit {
     } else if (action === 'prev') {
       this.calendarComponent.getApi().prev();
     } else if (action === 'today') {
-      
+      this.calendarComponent.getApi().today();
     }
+
+    const currentView = this.calendarComponent.getApi().view;
+    const selectedDate = currentView.activeStart;
+    const formattedDate = selectedDate.toLocaleString('default', { month: 'long', year: 'numeric' });
+  
+    this.selectedDateText = formattedDate;
   }
 
   handleDateClick(info: any) {
     this.selectedDateText = info.date.toLocaleDateString();
   }
-    
+
+  changeCalendarView() {
+    this.calendarOptions.initialView = this.selectedView;
+    console.log("calendar changed "+ this.selectedView);
+  }
+
+  getCurrentFormattedDate(): string {
+    const currentDate = new Date();
+    return currentDate.toLocaleString('default', { month: 'long', year: 'numeric' });
+  }
 }

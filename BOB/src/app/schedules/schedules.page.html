@@ -1,7 +1,4 @@
 <ion-content>
-  <!-- <full-calendar
-    [options]="calendarOptions"
-  ></full-calendar> -->
   <div class="schedule-outer-wrapper">
     <div class="schedule-header">
       <ion-grid>
@@ -17,7 +14,7 @@
           <ion-col size="4">
             <ion-item lines="none" class="transparent-item">
               <span class="header-item date-item">
-                <ion-text>{{"SEPT 2023"}}</ion-text>
+                <ion-text>{{selectedDateText}}</ion-text>
                 <ion-buttons>
                   <ion-button (click)="handleCustomButton('prev')">
                     <ion-icon name="chevron-back-outline"></ion-icon>
@@ -30,22 +27,12 @@
             </ion-item>
           </ion-col>
           <ion-col size="2">
-            <!-- <ion-item lines="none" class="transparent-item">
-              <span class="header-item align-end-item">
-                <ion-text>Week</ion-text>
-                <ion-buttons>
-                  <ion-button>
-                    <ion-icon name="caret-down-outline"></ion-icon>
-                  </ion-button>
-                </ion-buttons>
-              </span>
-            </ion-item> -->
             <ion-item lines="none" class="transparent-item">
               <span class="header-item align-end-item">
-                <ion-select [(ngModel)]="selectedView">
-                  <ion-select-option value="dayGridMonth">Month</ion-select-option>
-                  <ion-select-option value="timeGridDay">Day</ion-select-option>
-                </ion-select>
+                <select [(ngModel)]="selectedView" (change)="changeCalendarView()">
+                  <option value="dayGridMonth">Month</option>
+                  <option value="timeGridDay">Day</option>
+                </select>
               </span>
             </ion-item>
           </ion-col>
