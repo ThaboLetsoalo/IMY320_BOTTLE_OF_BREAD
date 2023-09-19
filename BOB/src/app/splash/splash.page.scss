@@ -1,0 +1,29 @@
+.outer-wrapper {
+    height: 100%;
+    background: #FFB703;
+
+    .top-wrapper {
+        background-color: #8ECAE6;
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .top-inner {
+            text-align: center;
+        }
+    }
+
+    .bottom-wrapper {
+        height: 40%;
+        
+        ion-card {
+            height: 100px;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+ion-col {
+    min-width: 150px;
+    padding: 0px;
+}
