@@ -14,6 +14,9 @@ export class StudyMaterialPage implements OnInit {
     noteModules: any[] = [
       { name: 'COS 301', description: 'Description for Note Module 1' },
       { name: 'COS 333', description: 'Description for Note Module 2' },
+      { name: 'IMY 320', description: 'Description for Note Module 3' },  
+      { name: 'COS 301', description: 'Description for Note Module 1' },
+      { name: 'COS 333', description: 'Description for Note Module 2' },
       { name: 'IMY 320', description: 'Description for Note Module 3' },
     ];
     
@@ -21,9 +24,15 @@ export class StudyMaterialPage implements OnInit {
       { name: 'COS 301', description: 'Description for Note Module 1' },
       { name: 'COS 333', description: 'Description for Note Module 2' },
       { name: 'IMY 320', description: 'Description for Note Module 3' },
+      { name: 'COS 301', description: 'Description for Note Module 1' },
+      { name: 'COS 333', description: 'Description for Note Module 2' },
+      { name: 'IMY 320', description: 'Description for Note Module 3' },
     ];
     
     bookModules: any[] = [
+      { name: 'COS 301', description: 'Description for Note Module 1' },
+      { name: 'COS 333', description: 'Description for Note Module 2' },
+      { name: 'IMY 320', description: 'Description for Note Module 3' },
       { name: 'COS 301', description: 'Description for Note Module 1' },
       { name: 'COS 333', description: 'Description for Note Module 2' },
       { name: 'IMY 320', description: 'Description for Note Module 3' },

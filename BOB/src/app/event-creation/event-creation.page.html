@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create Event</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Title</ion-label>
+    <ion-input [(ngModel)]="eventTitle" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Start Date</ion-label>
+    <ion-datetime displayFormat="YYYY-MM-DDTHH:mm:ssZ" [(ngModel)]="eventStartDate"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">End Date</ion-label>
+    <ion-datetime displayFormat="YYYY-MM-DDTHH:mm:ssZ" [(ngModel)]="eventEndDate"></ion-datetime>
+  </ion-item>
+
+  <ion-button expand="full" (click)="createEvent()">Create Event</ion-button>
+</ion-content>

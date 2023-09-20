@@ -1,81 +1,49 @@
-/* study-material.page.scss */
+/* Style for the cards */
+.clickup-card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  margin: 10px;
+  padding: 16px;
+  background-color: #3498db; /* Blue background color */
+  color: #ffffff; /* White text color */
+  transition: transform 0.2s; /* Smooth hover transition */
+}
 
-ion-content {
-    --background: #f5f5f5; /* Background color for the content area */
-  }
-  
-  ion-header {
-    --background: #1976D2; /* Background color for the header */
-    --ion-color-primary: #fff; /* Text color for the header title */
-  }
-  
-  ion-title {
-    font-size: 24px; /* Font size for the header title */
-  }
-  
-  ion-item {
-    /* Add padding to the item */
-    padding: 16px;
-    /* Set a border to separate items */
-    border-bottom: 1px solid #ccc;
-  }
-  
-  /* Style the h2 element (module code) */
-  ion-item h2 {
-    font-size: 12px; /* Font size for the h2 element (module code) */
-    font-weight: bold; /* Make it bold */
-    margin-bottom: 8px; /* Add spacing below the h2 element */
-  }
-  
-  /* Style the p element (module description) */
-  ion-item p {
-    font-size: 16px; /* Font size for the p element (module description) */
-    color: #555; /* Text color for the p element (module description) */
-    margin-top: 8px; /* Add spacing above the p element */
-  }
-  
-  /* Style the ion-card for each module */
-  ion-card {
-    /* Add a shadow to the cards */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    /* Set card background color */
-    background-color: #fff;
-    /* Add spacing between cards */
-    margin-bottom: 16px;
-    //size of the card
-    width: 100%;
-  }
-  
-  /* Center the card content */
-  ion-card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .center_content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // width: 100%;
-  }
+/* Hover effect */
+.clickup-card:hover {
+  transform: translateY(-4px);
+}
 
-  ion-col{
-   width: 100px;
-  }
+/* Style for the card title */
+.clickup-card ion-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
 
-  /* study-material.page.scss */
+/* Style for the card description */
+.clickup-card ion-card-content p {
+  font-size: 14px;
+}
 
-/* Adjust column size for smaller screens (e.g., mobile) */
-@media (max-width: 767px) {
-    ion-col {
-      size-md: 12; /* Full width for mobile screens */
-    }
+/* Add spacing between cards on larger screens */
+@media (min-width: 768px) {
+  .clickup-card {
+    margin: 10px 10px 0;
   }
-  
-  /* Add styles specific to larger screens (e.g., tablet/desktop) */
-  @media (min-width: 768px) {
-    ion-card {
-      /* Add your card styling for larger screens here */
-    }
-  }
-  
+}
+
+/* Optional: Add a subtle border on hover for better feedback */
+.clickup-card:hover {
+  border-color: #3498db; /* Blue border color on hover */
+}
+ion-item{
+  --background: #798b97;
+  --color: #ffffff;
+}
+ion-list{
+  --background: #798b97;
+  --color: #ffffff;
+  background-color: #3498db; /* Blue background color */
+}

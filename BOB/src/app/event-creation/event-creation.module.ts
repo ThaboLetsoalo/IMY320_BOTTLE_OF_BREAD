@@ -4,18 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DashboardPageRoutingModule } from './dashboard-routing.module';
+import { EventCreationPageRoutingModule } from './event-creation-routing.module';
 
-import { DashboardPage } from './dashboard.page';
+import { EventCreationPage } from './event-creation.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DashboardPageRoutingModule
+    EventCreationPageRoutingModule
   ],
-  declarations: [DashboardPage],
-  // schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  declarations: [EventCreationPage]
 })
-export class DashboardPageModule {}
+export class EventCreationPageModule {}

@@ -4,18 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DashboardPageRoutingModule } from './dashboard-routing.module';
+import { SplashPageRoutingModule } from './splash-routing.module';
 
-import { DashboardPage } from './dashboard.page';
+import { SplashPage } from './splash.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DashboardPageRoutingModule
+    SplashPageRoutingModule
   ],
-  declarations: [DashboardPage],
-  // schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  declarations: [SplashPage]
 })
-export class DashboardPageModule {}
+export class SplashPageModule {}
