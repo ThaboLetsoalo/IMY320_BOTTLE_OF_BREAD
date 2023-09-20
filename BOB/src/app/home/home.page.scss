@@ -1,9 +1,42 @@
-ion-item {
-    --inner-border-width: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    --highlight-background-focused: transparent; /* Optional: Remove the highlight color */
+/* Base styles for the hero */
+.hero {
+    background-image: url('../../assets/hero.jpg'); /* Update the path to your hero image */
+background-size: cover;
+background-position: center;
+color: #fff;
+text-align: center;
+padding: 100px 0;
 }
-  
+
+.hero-content {
+    padding: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/* Media query for larger screens (e.g., tablets and desktops) */
+@media (min-width: 768px) {
+    .hero {
+        padding: 200px 0;
+    }
+
+    .hero-content {
+        padding: 40px;
+    }
+}
+
+ion-card-subtitle {
+    font-size: 1 rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+ion-card-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
