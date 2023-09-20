@@ -1,30 +1,90 @@
 <ion-content [fullscreen]="true">
   <div class="outer-wrapper">
-    <div class="top">
-      <ion-img src="assets/education_picture.jpg"></ion-img>
-    </div>
-    <div class="bottom">
-      <swiper-container [slidesPerView]="3" [loop]="false"  centered-slides="true"  pagination="{hideOnClick: true}">
-        <swiper-slide *ngFor="let arr of [1,2,3,4,5]">
-          <ion-card>
-            <ion-card-content>
-              {{"Slide Here " + arr}}
-            </ion-card-content>
-          </ion-card>
-        </swiper-slide>
-       </swiper-container>
-
-       <ion-grid>
+    <div class="left-side">
+      <ion-grid>
         <ion-row>
-          <ion-col *ngFor="let a of [1,2,3,4,5,6]" size="4">
-            <ion-card>
+          <ion-col>
+            <div class="img-container">
+              <ion-card>
+                <ion-img src="assets/education_picture.jpg"></ion-img>
+              </ion-card>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-card class="quick-access-card">
+              <ion-card-header>
+                Quick Access
+              </ion-card-header>
+              <ion-card-content>
+                
+                <swiper-container [slidesPerView]="3" [loop]="false"  centered-slides="true"  pagination="{hideOnClick: true}">
+                  <swiper-slide *ngFor="let item of quickAccess">
+                    <ion-card>
+                      <ion-card-header>
+                        Header here
+                      </ion-card-header>
+                      <ion-card-content>
+                        {{item}}
+                      </ion-card-content>
+                    </ion-card>
+                  </swiper-slide>
+                </swiper-container>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-card class="notifications-card">
+              <ion-card-header>
+                Notifications
+              </ion-card-header>
               <ion-card-content>
                 content here...
               </ion-card-content>
             </ion-card>
           </ion-col>
         </ion-row>
-       </ion-grid>
+      </ion-grid>
+    </div>
+    <div class="right-side">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="calendar-container">
+              <ion-datetime display-format="HH:mm:ss" readonly></ion-datetime>
+            </div>            
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="events-container">
+              <ion-card class="events-card">
+                <ion-card-header>
+                  Upcoming Events
+                </ion-card-header>
+                <ion-card-content>
+                  Events here...
+                </ion-card-content>
+              </ion-card>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col><div class="task-container">
+            <ion-card class="events-card">
+              <ion-card-header>
+                Tasks
+              </ion-card-header>
+              <ion-card-content>
+               tasks here...
+              </ion-card-content>
+            </ion-card>
+          </div></ion-col>
+        </ion-row>
+      </ion-grid>
     </div>
   </div>
 </ion-content>

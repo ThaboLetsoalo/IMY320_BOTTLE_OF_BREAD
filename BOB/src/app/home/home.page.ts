@@ -11,6 +11,7 @@ register();
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  quickAccess: string[] = ["Study Materials","Tutorials","Study Groups"]
 
   constructor(private menuController: MenuController) {}
 
