@@ -1,90 +1,93 @@
-<ion-content [fullscreen]="true">
-  <div class="outer-wrapper">
-    <div class="left-side">
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <div class="img-container">
-              <ion-card>
-                <ion-img src="assets/education_picture.jpg"></ion-img>
-              </ion-card>
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-card class="quick-access-card">
-              <ion-card-header>
-                Quick Access
-              </ion-card-header>
-              <ion-card-content>
-                
-                <swiper-container [slidesPerView]="3" [loop]="false"  centered-slides="true"  pagination="{hideOnClick: true}">
-                  <swiper-slide *ngFor="let item of quickAccess">
-                    <ion-card>
-                      <ion-card-header>
-                        Header here
-                      </ion-card-header>
-                      <ion-card-content>
-                        {{item}}
-                      </ion-card-content>
-                    </ion-card>
-                  </swiper-slide>
-                </swiper-container>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-card class="notifications-card">
-              <ion-card-header>
-                Notifications
-              </ion-card-header>
-              <ion-card-content>
-                content here...
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
-    <div class="right-side">
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <div class="calendar-container">
-              <ion-datetime display-format="HH:mm:ss" readonly></ion-datetime>
-            </div>            
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <div class="events-container">
-              <ion-card class="events-card" routerLink="/schedules">
-                <ion-card-header>
-                  Upcoming Events
-                </ion-card-header>
-                <ion-card-content>
-                  Events here...
-                </ion-card-content>
-              </ion-card>
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col><div class="task-container">
-            <ion-card class="events-card">
-              <ion-card-header>
-                Tasks
-              </ion-card-header>
-              <ion-card-content>
-               tasks here...
-              </ion-card-content>
-            </ion-card>
-          </div></ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
-  </div>
-</ion-content>
+<ion-header class="ion-hide-lg-down">
+    <ion-toolbar>
+      <ion-title slot="start">BOB</ion-title>
+  
+      <ion-buttons slot="start" class="center-items">
+        <ion-button routerLink="/home/dashboard" routerLinkActive="active">Home</ion-button>
+        <ion-button routerLink="/home/study-material" routerLinkActive="active">Study material</ion-button>
+        <ion-button routerLink="/home/schedules" routerLinkActive="active">Schedules</ion-button>
+        <ion-button routerLink="/home/tutor-alumni" routerLinkActive="active">Tutors/Alumni</ion-button>
+        <ion-button routerLink="/home/study-groups" routerLinkActive="active">Study groups</ion-button>
+        <ion-button routerLink="/home/support-and-help" routerLinkActive="active">Support and help</ion-button>
+        <ion-button routerLink="/home/about" routerLinkActive="active">About</ion-button>
+      </ion-buttons>
+  
+      <ion-buttons slot="end">
+        <ion-button routerLink="/register" routerLinkActive="active">Register</ion-button>
+        <ion-button routerLink="/login" routerLinkActive="active">Login</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  
+  <!-- small screen view -->
+  
+  <ion-header class="ion-hide-lg-up">
+    <ion-toolbar>
+      <ion-title class="ion-text-center">BOB</ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+  
+      <ion-buttons slot="end">
+        <ion-button routerLink="/register" routerLinkActive="active">Register</ion-button>
+        <ion-button routerLink="/login" routerLinkActive="active">Login</ion-button>
+      </ion-buttons>    
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  <ion-menu contentId="main-content" [swipeGesture]="true" class="ion-hide-lg-up" #menu>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title class="ion-text-center">Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-list>
+          <ion-item routerLink="/home/dashboard" routerLinkActive="active">
+            <ion-icon slot="start" name="home"></ion-icon>
+            <ion-label>Home</ion-label>
+            <ion-icon slot="end" name="chevron-forward"></ion-icon>
+          </ion-item>
+          <ion-item routerLink="/home/study-material" routerLinkActive="active">
+            <ion-icon slot="start" name="book"></ion-icon>
+            <ion-label>Study material</ion-label>
+            <ion-icon slot="end" name="chevron-forward"></ion-icon>
+          </ion-item>
+          <ion-item routerLink="/home/schedules" routerLinkActive="active">
+            <ion-icon slot="start" name="calendar"></ion-icon>
+            <ion-label>Schedules</ion-label>
+            <ion-icon slot="end" name="chevron-forward"></ion-icon>
+          </ion-item>
+          <ion-item routerLink="/home/tutor-alumni" routerLinkActive="active">
+            <ion-icon slot="start" name="people"></ion-icon>
+            <ion-label>Tutors/Alumni</ion-label>
+            <ion-icon slot="end" name="chevron-forward"></ion-icon>
+          </ion-item>
+          <ion-item routerLink="/home/study-groups" routerLinkActive="active">
+            <ion-icon slot="start" name="people"></ion-icon>
+            <ion-label>Study groups</ion-label>
+            <ion-icon slot="end" name="chevron-forward"></ion-icon>
+          </ion-item>
+          <ion-item routerLink="/home/support-and-help" routerLinkActive="active">
+            <ion-icon slot="start" name="help"></ion-icon>
+            <ion-label>Support and help</ion-label>
+            <ion-icon slot="end" name="chevron-forward"></ion-icon>
+          </ion-item>
+          <ion-item routerLink="/home/about" routerLinkActive="active">
+            <ion-icon slot="start" name="information-circle"></ion-icon>
+            <ion-label>About</ion-label>
+            <ion-icon slot="end" name="chevron-forward"></ion-icon>
+          </ion-item>
+        </ion-list>
+        
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  
+  <ion-content [fullscreen]="true" id="home-content">
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-content>

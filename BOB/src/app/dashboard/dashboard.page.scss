@@ -1,0 +1,104 @@
+.inner-wrapper {
+   width: 80%;
+   margin: auto;
+}
+
+.quick-access-card {
+  height: fit-content;
+}
+
+.right-side {
+  float: left;
+  width: 30%;
+  height: 100%;
+}
+
+.calendar-container {
+  width: fit-content;
+  margin: auto;
+}
+
+.events-container {
+  height: 100%;
+}
+
+ion-card:hover {
+  transform: translateY(-4px);
+}
+
+.quick-access-card {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.time-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.date-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-label{
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+ion-card {
+  min-width: 100px;
+  min-height: 100px;
+}
+
+.date-time-container {
+  position: relative;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  opacity: 0.6;
+}
+
+.background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ion-row {
+  margin: 10px 0;
+}
+
+ion-card {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+ion-card-header {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+ion-icon {
+  margin-right: 8px;
+  font-size:  3rem;
+}
+
+.swiper-container {
+  margin: 10px 0;
+}
+
+.swiper-card {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}

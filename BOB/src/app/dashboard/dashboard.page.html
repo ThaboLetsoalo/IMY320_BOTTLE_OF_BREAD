@@ -1,13 +1,87 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>dashboard</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">dashboard</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="outer-wrapper">
+    <div class="inner-wrapper">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="img-container">
+              <ion-card class="date-time-container">
+                <ion-card-content>
+                  <div class="background-image">
+                    <img src="assets/education_picture.jpg" alt="Education Background" />
+                  </div>
+                  <div class="time-container">
+                    <ion-label class="time-label">{{ currentTime }}</ion-label>
+                  </div>
+                  <div class="date-container">
+                    <ion-label class="date-label">{{ currentDate }}</ion-label>
+                  </div>
+                </ion-card-content>
+              </ion-card>
+              
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-card class="quick-access-card">
+              <ion-card-title>
+                Quick Access
+              </ion-card-title>
+              <ion-card-content>
+                
+                <swiper-container [slidesPerView]="3" [loop]="false" centered-slides="true" pagination="{hideOnClick: true}">
+                  <swiper-slide>
+                    <ion-card class="swiper-card">
+                      <ion-card-header>
+                        <ion-icon name="book-outline"></ion-icon> Study Material
+                      </ion-card-header>
+                    </ion-card>
+                  </swiper-slide>
+                  <swiper-slide>
+                    <ion-card class="swiper-card">
+                      <ion-card-header>
+                        <ion-icon name="videocam-outline"></ion-icon> Tutorials
+                      </ion-card-header>
+                    </ion-card>
+                  </swiper-slide>
+                  <swiper-slide>
+                    <ion-card class="swiper-card">
+                      <ion-card-header>
+                        <ion-icon name="barbell-outline"></ion-icon> Exercises
+                      </ion-card-header>
+                    </ion-card>
+                  </swiper-slide>
+                </swiper-container>                
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-align-items-stretch">
+          <ion-col size="12" size-md="4">
+            <ion-card class="events-card" routerLink="/schedules">
+              <ion-card-header>
+                <ion-icon name="calendar-outline"></ion-icon> Upcoming Events
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" size-md="4">
+            <ion-card class="events-card">
+              <ion-card-header>
+                <ion-icon name="list-outline"></ion-icon> Tasks
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" size-md="4">
+            <ion-card class="notifications-card">
+              <ion-card-header>
+                <ion-icon name="people-outline"></ion-icon> Study Groups
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
 </ion-content>

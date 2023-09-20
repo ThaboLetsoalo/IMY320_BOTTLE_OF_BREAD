@@ -30,9 +30,15 @@
 
 
 
-ion-content {
+ion-content:not(not-padding) {
     --padding-top: 50px;
 }
+
+.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+  
 
 
 .transparent-item {

@@ -1,10 +1,21 @@
-<ion-content [fullscreen]="true">
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="start">BOB</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/register" routerLinkActive="active">Register</ion-button>
+      <ion-button routerLink="/login" routerLinkActive="active">Login</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="no-padding">
   <div class="outer-wrapper">
     <div class="top-wrapper">
       <div class="top-inner">
         <h2>SLOGAN or MOTTO</h2>
         <p>content here...............</p>
-        <ion-button>JOIN NOW!</ion-button>
+        <ion-button routerLink="/home">JOIN NOW!</ion-button>
       </div>
     </div>
     <div class="bottom-wrapper">
