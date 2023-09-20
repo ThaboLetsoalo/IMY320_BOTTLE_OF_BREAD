@@ -9,7 +9,7 @@
     <ion-row>
       <!-- Card 1: NOTES -->
       <ion-col size-xs="12" size-md="4">
-        <ion-card>
+        <ion-card class="clickup-card">
           <ion-card-header>
             <ion-card-title>NOTES</ion-card-title>
           </ion-card-header>
@@ -29,17 +29,17 @@
 
       <!-- Card 2: EXAM PAPERS -->
       <ion-col size-xs="12" size-md="4">
-        <ion-card>
+        <ion-card class="clickup-card">
           <ion-card-header>
             <ion-card-title>EXAM PAPERS</ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <ion-list>
               <ion-item *ngFor="let examModule of examModules">
-              <ion-card-header>
-                <h2>{{ examModule.name }}</h2>
-                <p>{{ examModule.description }}</p>
-              </ion-card-header>
+                <ion-card-header>
+                  <h2>{{ examModule.name }}</h2>
+                  <p>{{ examModule.description }}</p>
+                </ion-card-header>
               </ion-item>
             </ion-list>
           </ion-card-content>
@@ -48,7 +48,7 @@
 
       <!-- Card 3: BOOKS -->
       <ion-col size-xs="12" size-md="4">
-        <ion-card>
+        <ion-card class="clickup-card">
           <ion-card-header>
             <ion-card-title>BOOKS</ion-card-title>
           </ion-card-header>
