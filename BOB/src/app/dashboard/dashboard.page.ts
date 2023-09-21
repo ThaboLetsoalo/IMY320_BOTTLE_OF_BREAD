@@ -18,14 +18,12 @@ export class DashboardPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // Start a timer that updates the current time and date every second
     this.timerSubscription = interval(1000).subscribe(() => {
       this.updateTimeAndDate();
     });
   }
 
   ngOnDestroy() {
-    // Unsubscribe from the timer to avoid memory leaks
     this.timerSubscription.unsubscribe();
   }
 

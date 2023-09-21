@@ -8,9 +8,6 @@
     width: 100%;
   }
 }
-.quick-access-card {
-  height: fit-content;
-}
 
 .right-side {
   float: left;
@@ -32,6 +29,7 @@ ion-card:hover {
 }
 
 .quick-access-card {
+  height: fit-content;
   background-color: transparent;
   box-shadow: none;
   width: 100%;

@@ -1,60 +1,53 @@
-<ion-content [fullscreen]="true" class="login-page">
-  <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Login Page in HTML with CSS Code Example</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
-
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="login.page.scss">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<div class="box-form">
-	<div class="left">
-		<div class="overlay">
-		<h1>Hello!</h1>
-		<p>Welcome back to our student help website! We're thrilled to see you again,Login to start right where you left off.</p>
-		<span>
-			<p>login with social media</p>
-			<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-			<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-			<a href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
-		</span>
+<ion-content [fullscreen]="true" class="not-padding login-page">
+	<div class="box-form">
+		<div class="left">
+			<div class="overlay">
+				<h1>Hello!</h1>
+				<p>Welcome back to our student help website! We're thrilled to see you again,Login to start right where you left off.</p>
+				<div class="social-buttons-container">
+					<p class="social-buttons-header">Login with social media</p>
+					<ion-buttons class="ion-padding">
+					  <ion-button expand="full" fill="clear" class="social-button">
+						<ion-icon name="logo-facebook"></ion-icon>
+						<ion-label>Facebook</ion-label>
+					  </ion-button>
+					  <ion-button expand="full" fill="clear" class="social-button">
+						<ion-icon name="logo-twitter"></ion-icon>
+						<ion-label>Twitter</ion-label>
+					  </ion-button>
+					  <ion-button expand="full" fill="clear" class="social-button">
+						<ion-icon name="logo-google"></ion-icon>
+						<ion-label>Google</ion-label>
+					  </ion-button>
+					</ion-buttons>
+				</div>
+			</div>
 		</div>
-	</div>
-	
-	
+		
 		<div class="right">
-		<h5>Login</h5>
-		<p>Don't have an account? <a href="signup.html">Creat Your Account</a> it takes less than a minute</p>
-		<div class="inputs">
-			<input type="text" placeholder="user name">
-			<br>
-			<input type="password" placeholder="password">
-		</div>
-			
-			<br><br>
-			
-		<div class="remember-me--forget-password">
-				<!-- Angular -->
-	<label>
-		<input type="checkbox" name="item" checked/>
-		<span class="text-checkbox">Remember me</span>
-	</label>
-			<p>forget password?</p>
-		</div>
-			
-			<br>
-			<button>Login</button>
-	</div>
-	
-</div>
-<!-- partial -->
-  
-</body>
-</html>
+			<h5 class="right-header">Login</h5>
+			<p>
+				Don't have an account? 
+				<span class="login-router" routerLink="/register">Create Your Account</span>
+			</p>
 
+			<div class="inputs">
+				<ion-item class="ion-margin-top">
+					<ion-label position="floating">Email</ion-label>
+					<ion-input type="text"></ion-input>
+				</ion-item>
+				<ion-item class="ion-margin-top">
+					<ion-label position="floating">Password</ion-label>
+					<ion-input type="password"></ion-input>
+				</ion-item>
+			
+				<ion-item class="ion-margin-top" lines="none">
+					<ion-label class="ion-text-wrap">Remember me</ion-label>
+					<ion-checkbox slot="start" class="custom-checkbox"></ion-checkbox>
+					
+				</ion-item>
+			</div>
+			<ion-button class="ion-margin-top custom-button">Sign In</ion-button>
+		</div>
+	</div>
 </ion-content>
