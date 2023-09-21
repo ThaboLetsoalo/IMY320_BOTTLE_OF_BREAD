@@ -1,27 +1,70 @@
 <ion-content [fullscreen]="true" class="register-page">
-  <div class="register-container">
-    <div class="register-form">
-      <ion-item>
-        <ion-label position="floating">Full Name</ion-label>
-        <ion-input type="text" [(ngModel)]="fullName" name="fullName"></ion-input>
-      </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
-      </ion-item>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
 
-      <ion-item>
-        <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
-      </ion-item>
+    <head>
+      <meta charset="UTF-8">
+      <title>Login Page in HTML with CSS Code Example</title>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-      <ion-button expand="full" color="secondary" (click)="register()">Register</ion-button>
-    </div>
-  </div>
 
-  <div class="background-image">
-    <!-- Background Image for Registration -->
-    <img src="assets/BG_2.jpg" alt="Background Image">
-  </div>
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      <link rel="stylesheet" href="\register.page.scss">
+
+    </head>
+
+    <body>
+      <!-- partial:index.partial.html -->
+      <div class="box-form">
+        <div class="left">
+          <div class="overlay">
+            <h1>Hello!</h1>
+            <p>Your academic journey is important to us, we're here to provide you with the support and resources you
+              need.</p>
+            <span>
+              <p>login with social media</p>
+              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
+            </span>
+          </div>
+        </div>
+
+
+        <div class="right">
+          <h5>Signup</h5>
+          <p>have an account? <a href="BOB\src\app\login\login.page.html">Login to Your Account</a> </p>
+          <div class="inputs">
+            <input type="text" placeholder="email">
+            <br>
+            <input type="text" placeholder="user name">
+            <br>
+            <input type="password" placeholder="password">
+          </div>
+
+          <br><br>
+
+          <div class="remember-me--forget-password">
+            <!-- Angular -->
+            <label>
+              <input type="checkbox" name="item" checked />
+              <span class="text-checkbox">Remember me</span>
+            </label>
+            <p></p>
+          </div>
+
+          <br>
+          <button>SignUp</button>
+        </div>
+
+      </div>
+      <!-- partial -->
+
+    </body>
+
+    </html>
+  </body>
 </ion-content>

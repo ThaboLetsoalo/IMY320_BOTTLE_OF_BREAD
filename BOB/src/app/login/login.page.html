@@ -1,37 +1,60 @@
 <ion-content [fullscreen]="true" class="login-page">
-  <div class="login-container">
-    <div class="login-form">
-      <ion-item>
-        <ion-label position="floating">Username</ion-label>
-        <ion-input type="text" [(ngModel)]="username" name="username"></ion-input>
-      </ion-item>
+  <!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page in HTML with CSS Code Example</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-      <ion-item>
-        <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
-      </ion-item>
 
-      <ion-button expand="full" color="secondary" (click)="login()">Login</ion-button>
-      <ion-button expand="full" color="secondary" (click)="login()">Signup</ion-button>
-    </div>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="login.page.scss">
 
-    <div class="social-login">
-      <ion-button expand="full" color="google">
-        <ion-icon slot="start" name="logo-google"></ion-icon> Login with Google
-      </ion-button>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1>Hello!</h1>
+		<p>Welcome back to our student help website! We're thrilled to see you again,Login to start right where you left off.</p>
+		<span>
+			<p>login with social media</p>
+			<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+			<a href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
+		</span>
+		</div>
+	</div>
+	
+	
+		<div class="right">
+		<h5>Login</h5>
+		<p>Don't have an account? <a href="signup.html">Creat Your Account</a> it takes less than a minute</p>
+		<div class="inputs">
+			<input type="text" placeholder="user name">
+			<br>
+			<input type="password" placeholder="password">
+		</div>
+			
+			<br><br>
+			
+		<div class="remember-me--forget-password">
+				<!-- Angular -->
+	<label>
+		<input type="checkbox" name="item" checked/>
+		<span class="text-checkbox">Remember me</span>
+	</label>
+			<p>forget password?</p>
+		</div>
+			
+			<br>
+			<button>Login</button>
+	</div>
+	
+</div>
+<!-- partial -->
+  
+</body>
+</html>
 
-      <ion-button expand="full" color="facebook">
-        <ion-icon slot="start" name="logo-facebook"></ion-icon> Login with Facebook
-      </ion-button>
-
-      <ion-button expand="full" color="linkedin">
-        <ion-icon slot="start" name="logo-linkedin"></ion-icon> Login with LinkedIn
-      </ion-button>
-    </div>
-  </div>
-
-  <div class="background-image">
-    <!-- Background Image -->
-    <img src="assets/BG_1.jpg" alt="Background Image">
-  </div>
 </ion-content>
