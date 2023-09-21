@@ -18,7 +18,6 @@
                   </div>
                 </ion-card-content>
               </ion-card>
-              
             </div>
           </ion-col>
         </ion-row>
@@ -59,21 +58,21 @@
         </ion-row>
 
         <ion-row class="ion-align-items-stretch">
-          <ion-col size="12" size-md="4">
-            <ion-card class="events-card" routerLink="/schedules">
+          <ion-col size="12" size-sm="4" size-xs="6">
+            <ion-card class="events-card" routerLink="/home/schedules">
               <ion-card-header>
                 <ion-icon name="calendar-outline"></ion-icon> Upcoming Events
               </ion-card-header>
             </ion-card>
           </ion-col>
-          <ion-col size="12" size-md="4">
+          <ion-col size="12" size-sm="4" size-xs="6">
             <ion-card class="events-card">
               <ion-card-header>
                 <ion-icon name="list-outline"></ion-icon> Tasks
               </ion-card-header>
             </ion-card>
           </ion-col>
-          <ion-col size="12" size-md="4">
+          <ion-col size="12" size-sm="4" size-xs="6">
             <ion-card class="notifications-card">
               <ion-card-header>
                 <ion-icon name="people-outline"></ion-icon> Study Groups
@@ -81,7 +80,62 @@
             </ion-card>
           </ion-col>
         </ion-row>
+
+        <ion-title>Preferences Settings</ion-title>
+        <ion-row class="ion-align-items-stretch">
+          <ion-col size="12" size-sm="4" size-xs="6">
+            <ion-card class="quick-setting-card">
+              <ion-card-header>
+                <ion-icon name="color-palette-outline"></ion-icon> Theme
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" size-sm="4" size-xs="6">
+            <ion-card class="quick-setting-card">
+              <ion-card-header>
+                <ion-icon name="notifications-outline"></ion-icon> Notifications
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" size-sm="4" size-xs="6">
+            <ion-card class="quick-setting-card">
+              <ion-card-header>
+                <ion-icon name="cog-outline"></ion-icon> Preferences
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        
+        <ion-title>Profile Settings</ion-title>
+        <ion-row class="ion-align-items-stretch">
+          <ion-col size="12" size-sm="4" size-xs="6">
+            <ion-card class="profile-setting-card">
+              <ion-card-header>
+                <ion-icon name="person-outline"></ion-icon> Personal Info
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" size-sm="4" size-xs="6">
+            <ion-card class="profile-setting-card">
+              <ion-card-header>
+                <ion-icon name="lock-closed-outline"></ion-icon> Security
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" size-sm="4" size-xs="6" >
+            <ion-card class="profile-setting-card">
+              <ion-card-header>
+                <ion-icon name="notifications-outline"></ion-icon> Notifications
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+        </ion-row>        
+
       </ion-grid>
     </div>
   </div>
 </ion-content>
+
+<ion-footer>
+  <h6 style="padding: 10px; margin: 0px;">copyright @ BOB</h6>
+</ion-footer>

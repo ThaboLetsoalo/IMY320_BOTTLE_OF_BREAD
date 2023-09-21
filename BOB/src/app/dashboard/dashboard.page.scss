@@ -3,6 +3,11 @@
    margin: auto;
 }
 
+@media screen and (max-width: 800px) {
+  .inner-wrapper {
+    width: 100%;
+  }
+}
 .quick-access-card {
   height: fit-content;
 }
@@ -29,6 +34,7 @@ ion-card:hover {
 .quick-access-card {
   background-color: transparent;
   box-shadow: none;
+  width: 100%;
 }
 
 .time-container {

@@ -4,9 +4,7 @@
 }
 
 ion-col {
-  // background-color: aqua;
   box-sizing: border-box;
-  // border: 2px solid yellowgreen;
 }
 
 ion-grid{
@@ -27,7 +25,7 @@ ion-grid{
 .align-end-item {
   width: 100%;
   display: flex;
-  justify-content:end;
+  justify-content: flex-end;
 }
 
 ion-fab-button {
