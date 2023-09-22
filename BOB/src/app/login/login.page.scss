@@ -1,16 +1,24 @@
 .box-form {
-  margin: 0 auto;
-  width: 100%;
+  width: 100vw;
   height: 100%;
-  background: #FFFFFF;
-  overflow: auto;
   display: flex;
-  flex: 1 1 100%;
-  align-items: stretch;
-  justify-content: space-between;
+  align-items:flex-start;
 }
 
-@media (max-width: 800px) {
+.right, .left {
+  height: 100vh;
+  float: left;
+}
+
+.left {
+  width: 70%;
+}
+
+.right {
+  width: 30%;
+}
+
+@media (max-width: 980px) {
   .box-form {
     flex-flow: wrap;
     text-align: center;
@@ -19,31 +27,38 @@
     height: auto;
   }
   
+  .left {
+    width: 100%;
+    color: #FFFFFF;
+    height: 50%;
+  }
+
   .right{
     width: 80%;
     margin: auto;
+    height: 50%;
   }
 }
 
 @media (max-width: 500px) {
   .right, .left {
     width: 100%;
-    margin: auto;
   }
 }
 
 .box-form .left {
   color: #FFFFFF;
-  background-size: cover;
+  background-size:cover;
   background-repeat: no-repeat;
   background-image: url("/assets/BG5.jpg");
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .box-form .left .overlay {
   padding: 30px;
-  width: 100%;
-  height: 100%;
+  width: fit-content;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -76,6 +91,9 @@
 .box-form .right {
   padding: 40px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .right-header {
@@ -113,4 +131,12 @@
 
 label input[type="checkbox"] {
   display: none;
+}
+
+ion-card {
+  margin: 0px;
+}
+
+ion-icon {
+  color: #006699;
 }
