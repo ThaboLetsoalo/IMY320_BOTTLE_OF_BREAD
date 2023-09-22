@@ -3,30 +3,30 @@
     background-image: url('../../assets/header.png');
     background-size: cover;
     background-position: center;
-    height: 100vh; /* Adjust the height as needed */
+    height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff; /* Text color */
+    color: #fff; 
   }
   
   /* Style for the hero content */
   .hero-content {
-    background-color: rgba(0, 0, 0, 0.5); /* Background color for text container */
+    background-color: rgba(0, 0, 0, 0.5); 
     padding: 20px;
-    border-radius: 10px; /* Rounded corners for the text container */
+    border-radius: 10px; 
   }
   
-  /* Style for the text elements */
+  
   h1, p, .btn {
     margin: 10px 0;
-    color: #fff; /* Text color */
+    color: #fff; 
   }
   
   .btn {
-    background-color: #007bff; /* Button background color */
+    background-color: #007bff; 
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -34,6 +34,24 @@
   }
   
   .btn:hover {
-    background-color: #0056b3; /* Button background color on hover */
+    background-color: #0056b3;
+  }
+  
+  /* Style for the text in the .info div */
+.info {
+    text-align: center; /* Center-align text */
+    font-family: "Lucida Sans", sans-serif; /* Use "Lucida Sans" font */
+  }
+  
+  /* Style for the headings (<h2>) */
+  .info h2 {
+    font-size: 24px; /* Adjust font size as needed */
+    margin-bottom: 10px; /* Add spacing below headings */
+  }
+  
+  /* Style for the paragraphs (<p>) */
+  .info p {
+    font-size: 18px; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Add spacing below paragraphs */
   }
   
