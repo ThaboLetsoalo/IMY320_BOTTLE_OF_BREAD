@@ -1,29 +1,39 @@
-.outer-wrapper {
-    height: 100%;
-    background: #FFB703;
-
-    .top-wrapper {
-        background-color: #8ECAE6;
-        height: 60%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .top-inner {
-            text-align: center;
-        }
-    }
-
-    .bottom-wrapper {
-        height: 40%;
-        
-        ion-card {
-            height: 100px;
-            margin-bottom: 0px;
-        }
-    }
-}
-
-ion-col {
-    min-width: 150px;
-    padding: 0px;
-}
+/* Style for the hero section */
+.hero {
+    background-image: url('../../assets/header.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Adjust the height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff; /* Text color */
+  }
+  
+  /* Style for the hero content */
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Background color for text container */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for the text container */
+  }
+  
+  /* Style for the text elements */
+  h1, p, .btn {
+    margin: 10px 0;
+    color: #fff; /* Text color */
+  }
+  
+  .btn {
+    background-color: #007bff; /* Button background color */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3; /* Button background color on hover */
+  }
+  

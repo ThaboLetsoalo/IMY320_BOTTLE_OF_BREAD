@@ -1,7 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title slot="start">BOB</ion-title>
-
+    <ion-title>BOB</ion-title>
     <ion-buttons slot="end">
       <ion-button routerLink="/register" routerLinkActive="active">Register</ion-button>
       <ion-button routerLink="/login" routerLinkActive="active">Login</ion-button>
@@ -9,31 +8,36 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="not-padding">
-  <div class="outer-wrapper">
-    <div class="top-wrapper">
-      <div class="top-inner">
-        <h2>SLOGAN or MOTTO</h2>
-        <p>content here...............</p>
-        <ion-button routerLink="/home">JOIN NOW!</ion-button>
-      </div>
+<ion-content>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Welcome to BOB</h1>
+      <p>Access interactive support, empower your learning journey, and stand out!</p>
+      <a href="#learn-more" class="btn">Join Now</a>
     </div>
-    <div class="bottom-wrapper">
-      <ion-grid>
-        <ion-row>
-          <ion-col *ngFor="let arr of [1,2,3,4]">
-            <ion-card>
-              <ion-card-content>
-                content here....
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+  </div>
+
+  <!-- Other Content -->
+  <div class="other-content">
+    <!-- Add additional information about your website here -->
+    <div class="info" id="learn-more">
+      <h2>What is BOB?</h2>
+      <p>BOB is a platform that allows users to seek help in their respective field. Users can post their queries and
+        other users can answer them. Users can also post their own answers to other users' queries. Users can also
+        upvote/downvote answers and queries.</p>
+      
+      <h2>How to use BOB?</h2>
+      <p>Users can register themselves on the platform and then login to their account. After logging in, users can
+        post their queries and answer other users' queries. Users can also upvote/downvote answers and queries.</p>
+
+      <h2>How to contact us?</h2>
+      <p>For any queries, contact us at <a href="mailto:info@bob.com"></a></p>
+
+      <h2>How to report a bug?</h2>
+      <p>For any bugs, report us at faacebook.com</p>
+      
+      <h2>How to contribute?</h2>
     </div>
   </div>
 </ion-content>
-
-<ion-footer>
-  <h6>copyright @ BOB</h6>
-</ion-footer>
