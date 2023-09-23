@@ -33,15 +33,54 @@ ion-fab-button {
   max-height: 30px;
 }
 
-schedule-content div {
-  float: left;
-}
-
 .calendar-container{
- width: 20%;
- height: var(width);
+ width: 70%;
+//  height: var(width);
+ float: left;
 }
 
-.schedule-container {
-  width: 80%;
+// ion-content {
+//   background-image: url('/assets/education_icon.png');
+//   background-size:auto;
+//   background-repeat: no-repeat;
+//   background-position: center; 
+//   background-color: #f0f0f0;
+//   --background: red;
+// }
+
+.events-wrapper {
+  position: relative;
+  padding: 10px;
+  width: 30%;
+  height: 100%;
+  float: left;
+  .inner-events-wrapper {
+    width: fit-content;
+    margin: auto;
+    .event-cards {
+      display: inline-block;
+      min-width: 100px;
+      margin: 0px;
+      margin-right: 10px;
+
+    }
+  }
+
+  .event-view {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .hide-event-view {
+    display: none;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .calendar-container, .events-wrapper {
+    width: 100%;
+  }
 }

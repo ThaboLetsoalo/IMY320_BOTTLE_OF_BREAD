@@ -15,10 +15,13 @@ import { ModalController } from '@ionic/angular';
 })
 export class SchedulesPage implements OnInit {
 
-  selectedView: string = 'dayGridMonth'; //'timeGridDay';dayGridMonth, dayGridWeek, timeGridDay)
+  selectedView: string = 'timeGridWeek'; //'timeGridDay';dayGridMonth, dayGridWeek, timeGridDay)
   calendarOptions: CalendarOptions = {};
   @ViewChild('calendar') calendarComponent!: FullCalendarComponent;
   selectedDateText: string = Date.now().toLocaleString();
+  showEventSlide: boolean = false;
+  selectedEvent = { title: '', start: '', end: '' };
+  events: any = [];
 
   constructor(private modalController: ModalController) {
     this.ngOnInit();
@@ -36,11 +39,14 @@ export class SchedulesPage implements OnInit {
   }
 
   ngOnInit() {
+    this.loadFullCalendar();
+  }
 
+  loadFullCalendar() {
     this.selectedDateText = this.getCurrentFormattedDate();
     this.calendarOptions = {
       plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin],
-      initialView: this.selectedView,
+      initialView: 'timeGridWeek',
       events: [
         {
           title: 'Event 1',
@@ -73,7 +79,8 @@ export class SchedulesPage implements OnInit {
   }
 
   handleEventClick(info: any) {
-    alert('Event clicked: ' + info.event.title);
+    this.selectedEvent = info.event;
+    this.showEventSlide = true;
   }
 
   ngAfterViewInit() {
@@ -81,32 +88,54 @@ export class SchedulesPage implements OnInit {
   }
 
   handleCustomButton(action: string) {
-    if (action === 'next') {
-      this.calendarComponent.getApi().next();
-    } else if (action === 'prev') {
-      this.calendarComponent.getApi().prev();
-    } else if (action === 'today') {
-      this.calendarComponent.getApi().today();
-    }
+    if (this.selectedView === "timeGridWeek") {
+      if (action === 'next') {
+        this.calendarComponent.getApi().next();
+      } else if (action === 'prev') {
+        this.calendarComponent.getApi().prev();
+      } else if (action === 'today') {
+        this.calendarComponent.getApi().today();
+      }
+    } else {
+      const calendarApi = this.calendarComponent.getApi();
+      const currentView = calendarApi.view;
+      const currentDate = currentView.currentStart;
 
+      let newDate: Date;
+      if (action === 'next') {
+        newDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
+      } else if (action === 'prev') {
+        newDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
+      } else {
+        newDate = new Date();
+      }
+      console.log(newDate);
+      this.calendarComponent.getApi().gotoDate(newDate);
+    }
+  
     const currentView = this.calendarComponent.getApi().view;
     const selectedDate = currentView.activeStart;
     const formattedDate = selectedDate.toLocaleString('default', { month: 'long', year: 'numeric' });
   
     this.selectedDateText = formattedDate;
   }
+  
 
   handleDateClick(info: any) {
-    this.selectedDateText = info.date.toLocaleDateString();
-  }
-
-  changeCalendarView() {
-    this.calendarOptions.initialView = this.selectedView;
-    console.log("calendar changed "+ this.selectedView);
+    this.selectedDateText = info.date.toLocaleString('default', {month: 'short', year: 'numeric', day: '2-digit'});
   }
 
   getCurrentFormattedDate(): string {
     const currentDate = new Date();
     return currentDate.toLocaleString('default', { month: 'long', year: 'numeric' });
+  }
+
+  changeView () {
+    this.calendarComponent.getApi().changeView(this.selectedView);
+    console.log("change");
+  }
+
+  closeEventSlide() {
+    this.showEventSlide = false;
   }
 }

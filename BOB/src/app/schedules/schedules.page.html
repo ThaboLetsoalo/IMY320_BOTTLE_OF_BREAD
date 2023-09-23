@@ -23,18 +23,19 @@
                     <ion-icon name="chevron-forward-outline"></ion-icon>
                   </ion-button>
                 </ion-buttons>
+                <ion-button (click)="handleCustomButton('today')">Today </ion-button>
               </span>
             </ion-item>
           </ion-col>
           <ion-col size="2">
-            <ion-item lines="none" class="transparent-item">
+            <ion-item lines="none" class="transparent-item" style="width: fit-content;">
               <span class="header-item align-end-item">
-                <select [(ngModel)]="selectedView" (change)="changeCalendarView()">
-                  <option value="dayGridMonth">Month</option>
-                  <option value="timeGridDay">Day</option>
-                </select>
+                <ion-select [(ngModel)]="selectedView" interface="popover">
+                  <ion-select-option value="dayGridMonth">Month</ion-select-option>
+                  <ion-select-option value="timeGridWeek">Week</ion-select-option>
+                </ion-select>
               </span>
-            </ion-item>
+            </ion-item>                   
           </ion-col>
           <ion-col size="2">
             <ion-item lines="none" class="transparent-item">
@@ -52,10 +53,47 @@
     </div>
 
     <div class="schedule-content">
-      <full-calendar
-        #calendar
-        [options]="calendarOptions"
-      ></full-calendar>
+      <div class="calendar-container">
+        <full-calendar
+          #calendar
+          [options]="calendarOptions"
+        ></full-calendar>
+      </div>
+      <div class="events-wrapper">
+        <h2>Upcoming Events</h2>
+        <div *ngIf="!showEventSlide" class="inner-events-wrapper">
+          <ion-card *ngFor="let event of events" class="event-cards">
+            <ion-card-content>
+              {{"Event "+event}}
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="events.length === 0" style="width: 100%;">
+            <ion-card-content>
+              No Upcoming Events.
+            </ion-card-content>
+          </ion-card>
+        </div>
+
+        <div [ngClass]="{'event-view': showEventSlide, 'hide-event-view': !showEventSlide}">
+          <ion-card>
+            <ion-toolbar>
+              <ion-item lines="none">
+                <ion-card-title>{{ selectedEvent.title }}</ion-card-title>
+              </ion-item>
+              <ion-buttons slot="end">
+                <ion-button (click)="closeEventSlide()">
+                  <ion-icon name="close"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+            <ion-card-content>
+              <p>Start Time: {{ selectedEvent.start | date: 'MMM d, y, h:mm a' }}</p>
+              <p>End Time: {{ selectedEvent.end | date: 'MMM d, y, h:mm a' }}</p>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
     </div>
   </div>
 </ion-content>
