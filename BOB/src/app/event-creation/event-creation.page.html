@@ -10,20 +10,40 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label position="stacked">Title</ion-label>
-    <ion-input [(ngModel)]="eventTitle" required></ion-input>
-  </ion-item>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-lg="8">
+        <ion-label>Title</ion-label>
+        <ion-input type="text" placeholder="Enter event title" [(ngModel)]="eventTitle" required></ion-input>
+      </ion-col>
+    </ion-row>
 
-  <ion-item>
-    <ion-label position="stacked">Start Date</ion-label>
-    <ion-datetime displayFormat="YYYY-MM-DDTHH:mm:ssZ" [(ngModel)]="eventStartDate"></ion-datetime>
-  </ion-item>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="6" size-lg="4">
+        <ion-label>Start Date</ion-label>
+        <ion-input type="date" [(ngModel)]="eventStartDate" required></ion-input>
+      </ion-col>
+      <ion-col size="6" size-lg="4">
+        <ion-label>Time</ion-label>
+        <ion-input type="time" [(ngModel)]="eventStartTime" required></ion-input>
+      </ion-col>
+    </ion-row>
 
-  <ion-item>
-    <ion-label position="stacked">End Date</ion-label>
-    <ion-datetime displayFormat="YYYY-MM-DDTHH:mm:ssZ" [(ngModel)]="eventEndDate"></ion-datetime>
-  </ion-item>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="6" size-lg="4">
+        <ion-label>End Date</ion-label>
+        <ion-input type="date" [(ngModel)]="eventEndDate" required></ion-input>
+      </ion-col>
+      <ion-col size="6" size-lg="4">
+        <ion-label>Time</ion-label>
+        <ion-input type="time" [(ngModel)]="eventEndTime" required></ion-input>
+      </ion-col>
+    </ion-row>
 
-  <ion-button expand="full" (click)="createEvent()">Create Event</ion-button>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-lg="8">
+        <ion-button expand="block" [disabled]="!ifFullyFilled()" (click)="createEvent()">Create Event</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
