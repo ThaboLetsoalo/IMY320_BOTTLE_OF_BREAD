@@ -21,6 +21,9 @@ jobs:
       - name: Install Yarn
         run: npm install -g yarn
 
+      - name: Change to 'bob' Directory
+        run: cd bob
+
       - name: Install dependencies with Yarn
         run: yarn
 
