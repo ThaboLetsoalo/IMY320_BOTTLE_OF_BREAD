@@ -21,17 +21,15 @@ jobs:
       - name: Install Yarn
         run: npm install -g yarn
 
-      - name: Change to 'bob' Directory
-        run: cd BOB
-
-      - name: Install dependencies with Yarn
-        run: yarn
-
-      - name: Fix Interface Errors
-        run: yarn fix:node_modules
+      - name: Change to 'bob' Directory and Install dependencies
+        run: |
+          cd bob
+          yarn
+          yarn fix:node_modules
 
       - name: Create environment files
         run: |
+          cd bob
           mkdir src/environments
           echo "export const environment = {" >> src/environments/environment.ts
           echo "  production: true," >> src/environments/environment.ts
@@ -48,13 +46,16 @@ jobs:
           cp src/environments/environment.ts src/environments/environment.prod.ts
 
       - name: Build Ionic app for Production
-        run: yarn build --prod --configuration=production
+        run: |
+          cd bob
+          yarn build --prod --configuration=production
 
       - name: Install Firebase Tools
         run: npm install -g firebase-tools
 
       - name: Deploy to Firebase
         run: | 
+          cd bob
           firebase deploy --only hosting -P ${{ secrets.FIREBASE_PROJECT_ID }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
