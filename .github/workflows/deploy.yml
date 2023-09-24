@@ -1,0 +1,55 @@
+name: Deploy to Firebase
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      - name: Install dependencies with Yarn
+        run: yarn
+
+      - name: Fix Interface Errors
+        run: yarn fix:node_modules
+
+      - name: Create environment files
+        run: |
+          mkdir src/environments
+          echo "export const environment = {" >> src/environments/environment.ts
+          echo "  production: true," >> src/environments/environment.ts
+          echo "  firebaseConfig: {" >> src/environments/environment.ts
+          echo "    apiKey: '${{ secrets.FIREBASE_API_KEY }}'," >> src/environments/environment.ts
+          echo "    authDomain: '${{ secrets.FIREBASE_AUTH_DOMAIN }}'," >> src/environments/environment.ts
+          echo "    projectid: '${{ secrets.FIREBASE_PROJECT_ID }}'," >> src/environments/environment.ts
+          echo "    storageBucket: '${{ secrets.FIREBASE_STORAGE_BUCKET }}'," >> src/environments/environment.ts
+          echo "    messagingSenderId: '${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}'," >> src/environments/environment.ts
+          echo "    appId: '${{ secrets.FIREBASE_APP_ID }}'," >> src/environments/environment.ts
+          echo "    measurementId: '${{ secrets.FIREBASE_MEASUREMENT_ID }}'," >> src/environments/environment.ts
+          echo "  }," >> src/environments/environment.ts
+          echo "};" >> src/environments/environment.ts
+          cp src/environments/environment.ts src/environments/environment.prod.ts
+
+      - name: Build Ionic app for Production
+        run: yarn build --prod --configuration=production
+
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@v4
+        with:
+          args: deploy --only hosting -P '${{ secrets.FIREBASE_PROJECT_ID }}'
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
