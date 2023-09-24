@@ -9,33 +9,107 @@
 </ion-header>
 
 <ion-content class="not-padding">
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Welcome to BOB</h1>
-      <p>Access interactive support, empower your learning journey, and stand out!</p>
-      <a (click)="navigateToDashboard()" class="btn">Join Now</a>
+  <section class="hero">
+    <div class="hero-text">
+      <h4>#1 Best Educational Platform</h4>
+      <p>Join thousands of students as you do your studies <br> get great marks and become the best version of yourself</p>
+      <a (click)="navigateToDashboard()">JOIN NOW</a>
     </div>
-  </div>
+    
+    <div class="hero-img">
+      <img src="assets/reading.png" alt="Hero Image">
+    </div>
+  </section>
 
-  <div class="other-content">
-    <div class="info" id="learn-more">
-      <h2> What is BOB?</h2>
-      <p>BOB is a platform that allows users to seek help in their respective field. Users can post their queries and
-        other users can answer them. Users can also post their own answers to other users' queries. Users can also
-        upvote/downvote answers and queries.</p>
-      
-      <h2><img src="assets/header.png" alt="Image 2"> How to use BOB?</h2>
-      <p>Users can register themselves on the platform and then login to their account. After logging in, users can
-        post their queries and answer other users' queries. Users can also upvote/downvote answers and queries.</p>
   
-      <h2><img src="assets/header.png" alt="Image 3"> How to contact us?</h2>
-      <p>For any queries, contact us at <a href="mailto:info@bob.com">info@bob.com</a></p>
-  
-      <h2><img src="assets/header.png" alt="Image 4"> How to report a bug?</h2>
-      <p>For any bugs, report us at <a href="https://www.facebook.com">facebook.com</a></p>
-      
-      <h2><img src="assets/header.png" alt="Image 5"> How to contribute?</h2>
+  <ion-grid class="ion-text-center">
+    <br>
+    <div>
+      <ion-title class="ion-text-center">Our Services</ion-title>
     </div>
-  </div>
+
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="3">
+        <ion-card class="ion-padding">
+          <ion-img src="assets/svg/book.png"></ion-img>
+          <ion-card-header>
+            <ion-card-title>Study Material</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Our aim is to provide seamless access to study materials, including notes and presentations,
+         while simplifying organization. A search bar ensures easy 
+        location of materials, optimizing your learning experience for efficiency and convenience.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+  
+      <ion-col size="12" size-md="6" size-lg="3">
+        <ion-card class="ion-padding">
+          <ion-img src="assets/svg/teamwork.png"></ion-img>
+          <ion-card-header>
+            <ion-card-title>Study Groups</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Our Study Groups Page embodies our platform's collaborative spirit. You can create, manage, and 
+            tailor study groups to your needs with powerful tools. Discover and join existing groups 
+            effortlessly through the search function.  
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+  
+      <ion-col size="12" size-md="6" size-lg="3">
+        <ion-card class="ion-padding">
+          <ion-img src="assets/svg/tutor.png"></ion-img>
+          <ion-card-header>
+            <ion-card-title>Alumni/Tutor Page</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            The Alumni/Tutor Page serves as your knowledge hub, featuring reputable tutors with detailed 
+        profiles, qualifications, expertise, and student reviews. It streamlines tutor discovery and 
+        facilitates personalized sessions, 
+        enriching your learning journey.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+  
+      <ion-col size="12" size-md="6" size-lg="3">
+        <ion-card class="ion-padding">
+          <ion-img src="assets/svg/help.png"></ion-img>
+          <ion-card-header>
+            <ion-card-title>Support & Help</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            The Support & Help Page is your dependable resource for assistance and problem-solving within 
+        our platform. It offers solutions to common issues, guidance, and FAQs. You can easily submit 
+        your specific issues through a user-friendly form. 
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+
+  <footer>
+    <div class="footer-content">
+      <h3>BOB</h3>
+      <p>BOB is a platform that aims to provide a seamless learning experience for students. 
+        It is a one-stop-shop for all your learning needs, including study materials, study groups, 
+        tutors, and support. BOB is your companion in your learning journey, empowering you to 
+        achieve your goals and stand out.</p>
+      <ul class="socials">
+        <li><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>© BOB 2021 | Designed by BOB Team</p>
+    </div>
+  </footer>
   
 </ion-content>
+
+<!-- 
+  
+ -->
