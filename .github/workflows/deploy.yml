@@ -48,7 +48,7 @@ jobs:
         run: yarn build --prod --configuration=production
 
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@v3
+        uses: w9jds/firebase-action
         with:
           args: deploy --only hosting -P '${{ secrets.FIREBASE_PROJECT_ID }}'
         env:
