@@ -46,7 +46,7 @@ jobs:
       - name: Build Ionic app for Production
         run: |
           cd BOB
-          yarn build --prod --configuration=production
+          yarn build
 
       - name: Install Firebase Tools
         run: npm install -g firebase-tools
