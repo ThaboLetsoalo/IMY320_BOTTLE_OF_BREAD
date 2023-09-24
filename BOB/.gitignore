@@ -69,3 +69,12 @@ Thumbs.db
 
 #text
 *.txt
+
+#env
+.env
+
+#environments
+/src/environments/**
+/www/**
+.firebase/
+.firebaserc
