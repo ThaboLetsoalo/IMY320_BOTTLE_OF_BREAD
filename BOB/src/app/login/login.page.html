@@ -31,23 +31,24 @@
 					Don't have an account? 
 					<span class="login-router" routerLink="/register">Create Your Account</span>
 				</p>
-				<ion-item class="ion-margin-top">
+				<ion-item class="ion-margin-top input-field" lines="none">
 					<ion-label position="floating">
 					  Email
 					</ion-label>
 					<ion-input type="text"></ion-input>
 				</ion-item>
 				  
-				<ion-item class="ion-margin-top">
+				<ion-item class="ion-margin-top input-field" lines="none">
 					<ion-label position="floating">
 					  Password
 					</ion-label>
 					<ion-input type="password"></ion-input>
 				</ion-item>
 				
-				<ion-item class="ion-margin-top" lines="none">
+				<ion-item class="ion-margin-top transparent-item" lines="none">
+					<ion-checkbox class="custom-checkbox"></ion-checkbox>
 					<ion-label class="ion-text-wrap">Remember me</ion-label>
-					<ion-checkbox slot="start" class="custom-checkbox"></ion-checkbox>
+					<ion-label slot="end">Forgot password?</ion-label>
 				</ion-item>
 				<ion-button class="ion-margin-top custom-button">Sign In</ion-button>
 			</div>
