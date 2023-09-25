@@ -1,5 +1,5 @@
 .inner-wrapper {
-   width: 80%;
+   width: 100%;
    margin: auto;
 }
 
@@ -60,6 +60,9 @@ ion-card {
 
 .date-time-container {
   position: relative;
+  margin: 0px;
+  border-radius: 0px;
+  padding: 2rem;
 }
 
 .background-image {
@@ -83,7 +86,6 @@ ion-row {
 }
 
 ion-card {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
@@ -95,22 +97,37 @@ ion-card-header {
 
 ion-icon {
   margin-right: 8px;
-  font-size:  3rem;
+  font-size:  8rem;
+  color: rgba(255, 183, 3, 0.7) !important;
+}
+
+@media screen and (max-width: 300px) {
+  ion-icon {
+    font-size: 4rem;
+  }
+
+  .card-item-label {
+    font-size: 0.5rem;
+  }
 }
 
 .swiper-container {
   margin: 10px 0;
 }
 
-.swiper-card {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
 ion-card-header, ion-title {
   font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(107, 198, 190, 0.325);
+  text-shadow: 2px 2px 4px rgba(20, 31, 30, 0.325);
   background: linear-gradient(90deg);
   background-clip: text; 
   // -webkit-text-fill-color: transparent;
+}
+
+.time-label, .date-label {
+  text-shadow: 2px 2px 4px rgba(20, 31, 30, 0.325);
+  background: linear-gradient(90deg);
+}
+
+.card-item-label {
+  color: white !important;
 }
