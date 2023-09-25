@@ -1,3 +1,7 @@
+.outer-wrapper {
+  height: 100%;
+}
+
 .box-form {
   width: 100vw;
   height: 100%;
@@ -24,7 +28,7 @@
     text-align: center;
     border-radius: 0px;
     box-shadow: none;
-    height: auto;
+    height: 100%;
   }
   
   .left {
@@ -135,8 +139,4 @@ label input[type="checkbox"] {
 
 ion-card {
   margin: 0px;
-}
-
-ion-icon {
-  color: #006699;
 }
