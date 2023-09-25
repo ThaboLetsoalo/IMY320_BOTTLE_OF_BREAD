@@ -3,7 +3,7 @@ ion-content.not-padding {
 }
 
 section.hero {
-    padding: 20px;
+    padding: 70px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -14,27 +14,6 @@ section.hero {
 .hero-text {
     max-width: 100%;
     text-align: center;
-}
-
-h5 {
-    font-size: 18px;
-    color: #fff;
-}
-
-h4 {
-    font-size: 24px;
-    color: #fff;
-}
-
-h1 {
-    font-size: 36px;
-    color: #fff;
-}
-
-p {
-    font-size: 16px;
-    color: #fff;
-    margin: 10px 0;
 }
 
 a {
@@ -88,6 +67,7 @@ img {
 
         a {
             margin-top: 15px;
+            cursor: pointer;
         }
     }
 

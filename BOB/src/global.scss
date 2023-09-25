@@ -44,3 +44,26 @@ ion-content:not(.not-padding) {
 .transparent-item {
     --background: transparent;
 }
+
+.custom-button {
+    --background: linear-gradient(135deg, #B0E0E6 10%, #006699 100%);
+    --color: #fff;
+    --box-shadow: 0px 4px 20px 0px #042d4657;
+    --font: 16px;
+    --border-radius: 50px;
+  }
+
+ion-fab-button {
+    --background: linear-gradient(135deg, #B0E0E6 10%, #006699 100%);
+    --color: #fff;
+    --box-shadow: 0px 4px 20px 0px #042d4657;
+    --font: 16px;
+}
+
+ion-card {
+    background: linear-gradient(135deg, #B0E0E6 10%, #006699 100%);
+    color: #fff;
+    box-shadow: 0px 4px 20px 0px #042d4657;
+    // border-radius: 50px;
+  }
+  
