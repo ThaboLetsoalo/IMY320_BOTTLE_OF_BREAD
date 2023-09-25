@@ -30,6 +30,7 @@
     border-radius: 0px;
     box-shadow: none;
     height: 100%;
+    overflow: auto;
   }
   
   .left {
@@ -124,7 +125,6 @@
   --font: 16px;
   --border-radius: 50px;
 }
-
 
 .custom-checkbox {
   font-family: FontAwesome;

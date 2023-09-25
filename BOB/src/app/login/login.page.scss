@@ -7,6 +7,7 @@
   height: 100%;
   display: flex;
   align-items:flex-start;
+  overflow: auto;
 }
 
 .right, .left {
@@ -139,4 +140,8 @@ label input[type="checkbox"] {
 
 ion-card {
   margin: 0px;
+}
+
+.forgot-option{
+  color: white !important;
 }

@@ -80,6 +80,14 @@ ion-card {
     ion-label {
       margin: 0px;
       padding: 0px;
+      color: white !important;
+      text-shadow: 2px 2px 4px rgba(20, 31, 30, 0.325);
+    }
+}
+
+.box-form {
+    .right {
+        overflow: auto;
     }
 }
   
