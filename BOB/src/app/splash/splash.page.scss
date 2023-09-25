@@ -97,69 +97,7 @@ img {
         margin-top: 20px;
     }
 }
-
-
-footer {
-    background-color: #6096b8;
-    color: #fff;
-    padding: 40px 0;
-  }
-  
-  .footer-content {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .footer-content h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .footer-content p {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  .socials {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-  }
-  
-  .socials li {
-    display: inline-block;
-    margin-right: 15px;
-  }
-  
-  .socials a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 24px;
-    transition: color 0.3s;
-  }
-  
-  .socials a:hover {
-    color: #007bff;
-  }
-  
-  .footer-bottom {
-    // background-color: #222;
-    padding: 10px 0;
-    text-align: center;
-  }
-  
-  .footer-bottom p {
-    font-size: 14px;
-    color: #fff;
-  }
-
-  .ion-text-center {
-    text-align: center;
-    font-size: xx-large;
-    // text-underline-position: below;
-  }
-
+ 
   .card-img-top {
     height: 200px;
     width: 100%;
@@ -196,6 +134,65 @@ footer {
     background-position: center;
     background-size: cover;
   }
-  
 
+  footer {
+    background-color: #6096b8;
+    color: #fff;
+    padding: 40px 0;
+  }
   
+  .footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .footer-content h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-content p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .socials {
+    list-style: none;
+    padding: 10;
+    margin-top: 0;
+    // font-size: small;
+  }
+  
+  .socials li {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: large;
+    
+  }
+  
+  .socials a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+  }
+  
+  .socials a:hover {
+    color: #030609;
+  }
+  
+  
+  .footer-bottom {
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .ion-text-center {
+    text-align: center;
+    font-size: xx-large;
+  }
