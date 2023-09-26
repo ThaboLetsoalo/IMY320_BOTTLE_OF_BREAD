@@ -68,7 +68,7 @@ footer {
   display: inline-block;
   margin-right: 10px;
   font-size: large;
-  
+
 }
 
 .socials a {
@@ -107,14 +107,28 @@ ion-chip {
 ion-button{
   margin: 0 auto;
   display: block;
-  color: #fff; 
+  color: #fff;
 }
+
+ion-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+ion-card {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 
 // .book-butt{
 //   margin: 0 auto;
 //   display: block;
 //   // border: #fff solid 1px;
 //   // border-radius: 20px;
-//   color: #fff; 
+//   color: #fff;
 //   background-color: #fff;
 // }
