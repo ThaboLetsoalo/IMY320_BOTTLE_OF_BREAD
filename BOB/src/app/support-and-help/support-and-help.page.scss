@@ -1,42 +1,3 @@
-h2, ion-text {
-  text-align: center;
-}
-
-/* Center the search bar horizontally */
-.search-container {
-  text-align: center;
-}
-
-/* Style the input with rounded corners and thicker borders */
-input[type="text"] {
-  padding: 10px;
-  width: 35%;
-  border-radius: 10px; /* Adjust the radius as needed */
-  border: 2px solid #ccc; /* Increase border-width for thicker borders */
-  text-align: center;
-}
-
-
-.support-options {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  gap: 20px; /* Spacing between divs */
-  justify-items: center; /* Center items horizontally within each cell */
-}
-
-.support-option {
-  width: 100%;
-  border: 1px solid #ccc;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Add hover effect for better user experience */
-.support-option:hover {
-  background-color: #f0f0f0;
-}
-
-
 footer {
   background-color: #6096b8;
   color: #fff;
@@ -97,4 +58,159 @@ footer {
 .ion-text-center {
   text-align: center;
   font-size: xx-large;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+ion-content{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container{
+  margin: 0 auto;
+  // width: 100%;
+  max-width: 600px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container .h1{
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container .tab{
+  position: relative;
+  padding: 0 20px 20px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.8);
+  
+}
+
+.container .tab input{
+  appearance: none;
+}
+
+.container .tab label{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+.container .tab label:after{
+  content: '+';
+  position: absolute;
+  right: 20px;
+  font-size: 2em;
+  transition: transform 1s;
+}
+
+.container .tab:hover label::after{
+  color: #6096b8;
+}
+
+.container .tab input:checked ~ label:after{
+  transform: rotate(135deg);
+}
+
+.container .tab label h2{
+  // font-size: 20px;
+  font-weight: 600;
+  margin-right: 10px;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.container .tab label h3{
+  font-size: 24px;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  z-index: 10;
+}
+
+.container .tab .content{
+  max-height: 0;
+  padding: 0 20px;
+  overflow: hidden;
+  transition: 1s;
+}
+
+.container .tab input:checked ~ .content{
+  max-height: 100vh;
+  padding: 5px;
+}
+
+.container .tab .content p{
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  padding: 10px 0;
+}
+
+.container .tab:nth-child(2) label h2{
+  background: linear-gradient(135deg, #50d330, #6096b8);
+}
+
+.container .tab:nth-child(3) label h2{
+  background: linear-gradient(135deg, #ff8000, #126dff);
+}
+
+.container .tab:nth-child(4) label h2{
+  background: linear-gradient(135deg, #39ee15, #6096b8);
+}
+
+.container .tab:nth-child(5) label h2{
+  background: linear-gradient(135deg, #e96310, #009dff);
+}
+
+.container .tab:nth-child(6) label h2{
+  background: linear-gradient(135deg, #6ce61a, #0083f6);
+}
+
+.container .tab input:checked ~ label h2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(255,255,255,0.2);
+  font-size: 8em;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.container .tab input:checked ~ label h3{
+  background: #fff;
+  padding: 2px 10px;
+  color: #030609;
+  border-radius: 4px;
+}
+
+.container h1{
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
 }
