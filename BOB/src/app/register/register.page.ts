@@ -16,6 +16,6 @@ export class RegisterPage {
   register() {
     // Implement your registration logic here.
     // For demonstration purposes, we'll navigate to a dummy success page.
-    this.router.navigate(['//home/dashboard']);
+    this.router.navigate(['/home/dashboard']);
   }
 }

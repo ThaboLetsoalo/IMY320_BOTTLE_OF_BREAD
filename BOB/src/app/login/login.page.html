@@ -1,54 +1,40 @@
-<ion-content [fullscreen]="true" class="not-padding login-page">
-	<ion-card class="box-form">
-		<div class="left">
-			<div class="overlay">
-				<h1>Hello!</h1>
-				<p>Welcome back to our student help website! We're thrilled to see you again,Login to start right where you left off.</p>
-				<div class="social-buttons-container">
-					<p class="social-buttons-header">Login with social media</p>
-					<ion-buttons class="ion-padding">
-					  <ion-button expand="full" fill="clear" class="social-button">
-						<ion-icon name="logo-facebook"></ion-icon>
-					  </ion-button>
-					  <ion-button expand="full" fill="clear" class="social-button">
-						<ion-icon name="logo-twitter"></ion-icon>
-					  </ion-button>
-					  <ion-button expand="full" fill="clear" class="social-button">
-						<ion-icon name="logo-google"></ion-icon>
-					  </ion-button>
-					</ion-buttons>
-				</div>
+<ion-content [fullscreen]="true" class="not-padding register-page">
+  
+	<section>
+	  <div class="imgBx">
+		<ion-img src="assets/svg/register.png"></ion-img>
+	  </div>
+	  <div class="contentBx">
+		<div class="formBx">
+		  <h2>Log In</h2>
+		  <form>
+			<div class="inputBx">
+			  <span>Email Address</span>
+			  <input type="text" name="" placeholder="Email Address">
 			</div>
-		</div>
-		
-		<div class="right">
-			<div class="login-content" style="min-width: 350px;">
-				<h5 class="right-header">Login</h5>
-				<p>
-					Don't have an account? 
-					<span class="login-router" routerLink="/register">Create Your Account</span>
-				</p>
-				<ion-item class="ion-margin-top input-field" lines="none">
-					<ion-label position="floating">
-					  Email
-					</ion-label>
-					<ion-input type="text"></ion-input>
-				</ion-item>
-				  
-				<ion-item class="ion-margin-top input-field" lines="none">
-					<ion-label position="floating">
-					  Password
-					</ion-label>
-					<ion-input type="password"></ion-input>
-				</ion-item>
-				
-				<ion-item class="ion-margin-top transparent-item forgot-option" lines="none">
-					<ion-checkbox class="custom-checkbox"></ion-checkbox>
-					<ion-label class="ion-text-wrap">Remember me</ion-label>
-					<ion-label slot="end">Forgot password?</ion-label>
-				</ion-item>
-				<ion-button class="ion-margin-top custom-button">Sign In</ion-button>
+			<div class="inputBx">
+			  <span>Password</span>
+			  <input type="password" name="" placeholder="Password">
 			</div>
-		</div>
-	</ion-card>
-</ion-content>
+			<div class="remember">
+			  <label><input type="checkbox" name=""> Remember me</label>
+			  <!-- <p>Forgot password? <a href="#">Forgot password?</a></p> -->
+			</div>
+			<div class="inputBx" (click)="login()">
+			  <input type="submit" name="" placeholder="Register" value="Login">
+			</div>
+			<div class="inputBx">
+			  <p>Don't have an account? <a routerLink="/register">Sign Up</a></p>
+			</div>
+		  </form>
+		  <h3>Log In with social media</h3>
+		  <ul class="sci">
+			<li><a routerLink="/home/dashboard"><ion-img src="assets/icon/facebook.png"></ion-img></a></li>
+			<li><a routerLink="/home/dashboard"><ion-img src="assets/icon/twitter.png"></ion-img></a></li>
+			<li><a routerLink="/home/dashboard"><ion-img src="assets/icon/instagram.png"></ion-img></a></li>
+			<li><a routerLink="/home/dashboard"><ion-img src="assets/icon/google.png"></ion-img></a></li>
+		  </ul>
+		</div>    
+	  </div>
+	</section>
+  </ion-content>

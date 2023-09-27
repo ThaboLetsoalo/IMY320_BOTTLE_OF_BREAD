@@ -15,6 +15,6 @@ export class LoginPage {
   login() {
     // Here, you can implement your login logic.
     // For demonstration purposes, we'll navigate to a dummy home page.
-    this.router.navigate(['/home']);
+    this.router.navigate(['/home/dashboard']);
   }
 }
