@@ -1,5 +1,6 @@
 <ion-content [fullscreen]="true" class="not-padding register-page">
-  <div class="outer-wrapper">
+  
+  <!-- <div class="outer-wrapper">
     <ion-card class="box-form">
       <div class="left">
         <div class="overlay">
@@ -54,5 +55,47 @@
         </div>
       </div>
     </ion-card>
-  </div>
+  </div> -->
+  <!-- <br> -->
+  <section>
+    <div class="imgBx">
+      <ion-img src="assets/svg/register.png"></ion-img>
+    </div>
+    <div class="contentBx">
+      <div class="formBx">
+        <h2>Register</h2>
+        <form>
+          <div class="inputBx">
+            <span>Email Address</span>
+            <input type="text" name="" placeholder="Email Address">
+          </div>
+          <div class="inputBx">
+            <span>UserName</span>
+            <input type="text" name="" placeholder="username">
+          </div>
+          <div class="inputBx">
+            <span>Password</span>
+            <input type="password" name="" placeholder="Password">
+          </div>
+          <div class="remember">
+            <label><input type="checkbox" name=""> Remember me</label>
+            <!-- <p>Forgot password? <a href="#">Forgot password?</a></p> -->
+          </div>
+          <div class="inputBx" (click)="register()">
+            <input type="submit" name="" placeholder="Register" value="Register">
+          </div>
+          <div class="inputBx">
+            <p>Have an account? <a routerLink="/login">Log in</a></p>
+          </div>
+        </form>
+        <h3>Sign up with social media</h3>
+        <ul class="sci">
+          <li><a routerLink="/home/dashboard"><ion-img src="assets/icon/facebook.png"></ion-img></a></li>
+          <li><a routerLink="/home/dashboard"><ion-img src="assets/icon/twitter.png"></ion-img></a></li>
+          <li><a routerLink="/home/dashboard"><ion-img src="assets/icon/instagram.png"></ion-img></a></li>
+          <li><a routerLink="/home/dashboard"><ion-img src="assets/icon/google.png"></ion-img></a></li>
+        </ul>
+      </div>    
+    </div>
+  </section>
 </ion-content>
