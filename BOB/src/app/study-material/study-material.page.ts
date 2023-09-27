@@ -10,12 +10,14 @@ import { NavController } from '@ionic/angular'; // Import NavController
 
 })
 export class StudyMaterialPage implements OnInit {
-    // Define properties for noteModules, examModules, and bookModules
+
+  selectedTab: string = 'notes'; // Define selectedTab property
+    // Define properties for noteModules, examModules, and tutorialModules
     noteModules: any[] = [
-      { name: 'COS 301', description: 'Description for Note Module 1' },
+      { name: 'COS 301', description: 'All notes for Software Engineering' },
       { name: 'COS 333', description: 'Description for Note Module 2' },
       { name: 'IMY 320', description: 'Description for Note Module 3' },  
-      { name: 'COS 301', description: 'Description for Note Module 1' },
+      { name: 'Mathematics Gr 12', description: 'Notes for everything in Mathematics' },
       { name: 'COS 333', description: 'Description for Note Module 2' },
       { name: 'IMY 320', description: 'Description for Note Module 3' },
     ];
@@ -29,7 +31,7 @@ export class StudyMaterialPage implements OnInit {
       { name: 'IMY 320', description: 'Description for Note Module 3' },
     ];
     
-    bookModules: any[] = [
+    tutorialModules: any[] = [
       { name: 'COS 301', description: 'Description for Note Module 1' },
       { name: 'COS 333', description: 'Description for Note Module 2' },
       { name: 'IMY 320', description: 'Description for Note Module 3' },

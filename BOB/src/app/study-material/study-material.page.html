@@ -1,70 +1,77 @@
 <ion-content [fullscreen]="true">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Study Materials</ion-title>
+      <ion-title> Study Materials</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div class="center_content">
-    <ion-row>
-      <!-- Card 1: NOTES -->
-      <ion-col size-xs="12" size-md="4">
-        <ion-card class="clickup-card">
-          <ion-card-header>
-            <ion-card-title>NOTES</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-list>
+  <ion-segment [(ngModel)]="selectedTab">
+    <ion-segment-button value="notes">
+      <ion-label>Notes</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="exam-papers">
+      <ion-label>Exam Papers</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="tutorial">
+      <ion-label>Tutorial</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 
-              <ion-item *ngFor="let noteModule of noteModules">
-                <ion-card-header>
-                  <h2>{{ noteModule.name }}</h2>
-                  <p>{{ noteModule.description }}</p>
-                </ion-card-header>
-              </ion-item>
-            </ion-list>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
+  <!-- Tab 1 Content: Notes -->
+  <div *ngIf="selectedTab === 'notes'">
+    <br>
+    <div class="container">
+      <div class="tab" *ngFor="let noteModule of noteModules; let i = index">
+        <input type="radio" name="acc" [id]="'acc' + i">
+        <label [for]="'acc' + i">
+          <h2>0{{ i + 1 }}</h2>
+          <h3>{{ noteModule.name }}</h3>
+        </label>
+        <div class="content">
+          <p>{{ noteModule.description }}</p>
+          <p>Members: {{ noteModule.members }}</p>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
 
-      <!-- Card 2: EXAM PAPERS -->
-      <ion-col size-xs="12" size-md="4">
-        <ion-card class="clickup-card">
-          <ion-card-header>
-            <ion-card-title>EXAM PAPERS</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-list>
-              <ion-item *ngFor="let examModule of examModules">
-                <ion-card-header>
-                  <h2>{{ examModule.name }}</h2>
-                  <p>{{ examModule.description }}</p>
-                </ion-card-header>
-              </ion-item>
-            </ion-list>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
+  <!-- Tab 2 Content: Exam Papers -->
+  <div *ngIf="selectedTab === 'exam-papers'">
+    <br>
+    <div class="container">
+      <div class="tab" *ngFor="let examModule of examModules; let i = index">
+        <input type="radio" name="acc" [id]="'acc' + i">
+        <label [for]="'acc' + i">
+          <h2>0{{ i + 1 }}</h2>
+          <h3>{{ examModule.name }}</h3>
+        </label>
+        <div class="content">
+          <p>{{ examModule.description }}</p>
+          <p>Members: {{ examModule.members }}</p>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
 
-      <!-- Card 3: BOOKS -->
-      <ion-col size-xs="12" size-md="4">
-        <ion-card class="clickup-card">
-          <ion-card-header>
-            <ion-card-title>BOOKS</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-list>
-              <ion-item *ngFor="let bookModule of bookModules">
-                <ion-card-header>
-                  <h2>{{ bookModule.name }}</h2>
-                  <p>{{ bookModule.description }}</p>
-                </ion-card-header>
-              </ion-item>
-            </ion-list>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
+  <!-- Tab 3 Content: tutorial -->
+  <div *ngIf="selectedTab === 'tutorial'">
+    <br>
+    <div class="container">
+      <div class="tab" *ngFor="let tutorialModule of tutorialModules; let i = index">
+        <input type="radio" name="acc" [id]="'acc' + i">
+        <label [for]="'acc' + i">
+          <h2>0{{ i + 1 }}</h2>
+          <h3>{{ tutorialModule.name }}</h3>
+        </label>
+        <div class="content">
+          <p>{{ tutorialModule.description }}</p>
+          <p>Members: {{ tutorialModule.members }}</p>
+        </div>
+      </div>
+    </div>
+    <br>
   </div>
 
   <footer>
