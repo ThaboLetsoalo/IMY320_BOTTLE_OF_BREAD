@@ -62,7 +62,17 @@ export class AuthService {
       return true;
     } catch (error) {
       console.error('Firebase error:', error);
-      alert("Incorrect registration info.");
+      const alert = await this.alertController.create({
+      header: 'Invalid Input',
+      message: 'Incorrect registration info.',
+      buttons: [
+        {
+          text: 'Ok',
+          role: 'cancel',
+        },
+      ],
+    });
+    await alert.present();
       return false;
     }
   }
