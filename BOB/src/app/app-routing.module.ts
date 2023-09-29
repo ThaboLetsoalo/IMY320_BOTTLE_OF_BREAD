@@ -9,19 +9,19 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./ui/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./ui/register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./ui/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'splash',
-    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+    loadChildren: () => import('./ui/splash/splash.module').then( m => m.SplashPageModule)
   },
 ];
 
