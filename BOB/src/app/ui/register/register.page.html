@@ -7,29 +7,67 @@
     <div class="contentBx">
       <div class="formBx">
         <h2>Register</h2>
-        <form>
-          <div class="inputBx">
-            <span>Email Address</span>
-            <input type="text" name="" placeholder="Email Address">
-          </div>
-          <div class="inputBx">
-            <span>UserName</span>
-            <input type="text" name="" placeholder="username">
-          </div>
-          <div class="inputBx">
-            <span>Password</span>
-            <input type="password" name="" placeholder="Password">
-          </div>
-          <div class="remember">
-            <label><input type="checkbox" name=""> Remember me</label>
-            <!-- <p>Forgot password? <a href="#">Forgot password?</a></p> -->
-          </div>
-          <div class="inputBx" (click)="register()">
-            <input type="submit" name="" placeholder="Register" value="Register">
-          </div>
-          <div class="inputBx">
-            <p>Already have an account? <a routerLink="/login">Log in</a></p>
-          </div>
+        <form [formGroup]="registerForm" (ngSubmit)="register()" class="ion-padding">
+          <ion-item class="input-item">
+            <ion-label position="floating">Email</ion-label>
+            <ion-input 
+              type="email"
+              name="email"
+              formControlName="email"
+              required
+              [ngClass]="{'invalid-input': registerForm.get('email')?.invalid && registerForm.get('email')?.touched}"
+            ></ion-input>
+            <!-- <div class="error-message" *ngIf="registerForm.get('email')?.hasError('required') && registerForm.get('email')?.touched">
+              Email is required
+            </div>
+            <div class="error-message" *ngIf="registerForm.get('email')?.hasError('email') && registerForm.get('email')?.touched">
+              Invalid email format
+            </div> -->
+          </ion-item>
+      
+          <ion-item class="input-item">
+            <ion-label position="floating">Password</ion-label>
+            <ion-input 
+              type="password"
+              name="password"
+              formControlName="password"
+              required
+              [ngClass]="{'invalid-input': registerForm.get('password')?.invalid && registerForm.get('password')?.touched}"
+            ></ion-input>
+            <!-- <div class="error-message" *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched">
+              Password is required
+            </div>
+            <div class="error-message" *ngIf="registerForm.get('password')?.hasError('minlength') && registerForm.get('password')?.touched">
+              Password must be at least 8 characters long
+            </div>
+            <div class="error-message" *ngIf="registerForm.get('password')?.hasError('maxlength') && registerForm.get('password')?.touched">
+              Password must be less than 25 characters
+            </div> -->
+          </ion-item>
+      
+          <ion-item class="input-item">
+            <ion-label position="floating">Confirm Password</ion-label>
+            <ion-input 
+              type="password"
+              name="password"
+              formControlName="cpassword"
+              required
+              [ngClass]="{'invalid-input': registerForm.get('cpassword')?.invalid && registerForm.get('cpassword')?.touched}"
+            ></ion-input>
+            <!-- <div class="error-message" *ngIf="registerForm.get('cpassword')?.hasError('required') && registerForm.get('cpassword')?.touched">
+              Confirm Password is required
+            </div>
+            <div class="error-message" *ngIf="registerForm.get('cpassword')?.hasError('minlength') && registerForm.get('cpassword')?.touched">
+              Confirm Password must be at least 8 characters long
+            </div>
+            <div class="error-message" *ngIf="registerForm.get('cpassword')?.hasError('maxlength') && registerForm.get('cpassword')?.touched">
+              Confirm Password must be less than 25 characters
+            </div> -->
+          </ion-item>
+      
+          <ion-button expand="block" class="custom-button auth-button" type="submit">
+            Register
+          </ion-button>
         </form>
         <h3>Sign up with social media</h3>
         <ul class="sci">

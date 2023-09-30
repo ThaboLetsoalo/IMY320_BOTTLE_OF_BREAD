@@ -71,15 +71,13 @@ ion-card {
     --background: transparent;
 }
 
-.input-field {
-    --background: linear-gradient(135deg, #B0E0E6 10%, #c4b647 100%);
+.input-item {
+    --background: linear-gradient(130deg, #8ECAE6 10%, #219EBC 100% );
+    margin-top: 10px;
     box-shadow: 0px 4px 20px 0px #31460457;
     border-radius: 10px;
-    padding: 0px;
   
     ion-label {
-      margin: 0px;
-      padding: 0px;
       color: white !important;
       text-shadow: 2px 2px 4px rgba(20, 31, 30, 0.325);
     }

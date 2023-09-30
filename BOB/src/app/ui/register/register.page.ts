@@ -1,21 +1,33 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
+
 export class RegisterPage {
-  fullName: string = "";
-  email: string = "";
-  password: string = "";
+  registerForm: FormGroup; // Define FormGroup
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private formBuilder: FormBuilder, private auth: AuthService) {
+    this.registerForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(25)]],
+      cpassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(25)]]
+    });
+  }
 
-  register() {
-    // Implement your registration logic here.
-    // For demonstration purposes, we'll navigate to a dummy success page.
-    this.router.navigate(['/home/dashboard']);
+  async register() {
+    if (this.registerForm.valid) {
+      const email = this.registerForm?.get('email')?.value;
+      const password = this.registerForm?.get('password')?.value;
+      await this.auth.register(email, password);
+    } else {
+      console.log("missing fields")
+    }
   }
 }
+
