@@ -10,6 +10,7 @@ import {
 } from '@angular/fire/auth';
 import { signOut } from '@firebase/auth';
 import { AlertController, NavController } from '@ionic/angular';
+import { ProfileService } from './profile.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,12 +19,12 @@ export class AuthService {
   constructor(
     private readonly authObject: Auth,
     private Nav: NavController,
-    private alertController: AlertController) {}
+    private alertController: AlertController, 
+    private profileService: ProfileService) {}
 
   auth$() {
     return authState(this.authObject);
   }
-
 
   async getCurrentUserId() {
     const auth = getAuth();
@@ -36,44 +37,18 @@ export class AuthService {
       this.Nav.navigateRoot('/home'); 
     } catch (error) {
       console.error('Firebase error:', error);
-      this.IncorrectCombination();
     }
-  }
-
-  async IncorrectCombination()
-  {
-    const alert = await this.alertController.create({
-      header: 'Invalid Login Information',
-      message: 'Incorrect email password combination',
-      buttons: [
-        {
-          text: 'Ok',
-          role: 'cancel',
-        },
-      ],
-    });
-    await alert.present();
   }
 
   async register(regEmail: string, regPassword: string) {
     try {
       await createUserWithEmailAndPassword(this.authObject, regEmail, regPassword);
-      this.Nav.navigateRoot('/home');
-      return true;
+      const currentUserId = await this.getCurrentUserId();
+      if(currentUserId) {
+        this.profileService.createUserProfile(regEmail, currentUserId)
+      }
     } catch (error) {
-      console.error('Firebase error:', error);
-      const alert = await this.alertController.create({
-      header: 'Invalid Input',
-      message: 'Incorrect registration info.',
-      buttons: [
-        {
-          text: 'Ok',
-          role: 'cancel',
-        },
-      ],
-    });
-    await alert.present();
-      return false;
+      console.log(error);
     }
   }
 
