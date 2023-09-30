@@ -7,25 +7,29 @@
 	  <div class="contentBx">
 		<div class="formBx">
 		  <h2>Log In</h2>
-		  <form>
-			<div class="inputBx">
-			  <span>Email Address</span>
-			  <input type="text" name="" placeholder="Email Address">
-			</div>
-			<div class="inputBx">
-			  <span>Password</span>
-			  <input type="password" name="" placeholder="Password">
-			</div>
-			<div class="remember">
-			  <label><input type="checkbox" name=""> Remember me</label>
-			  <!-- <p>Forgot password? <a href="#">Forgot password?</a></p> -->
-			</div>
-			<div class="inputBx" (click)="login()">
-			  <input type="submit" name="" placeholder="Register" value="Login">
-			</div>
-			<div class="inputBx">
-			  <p>Don't have an account? <a routerLink="/register">Sign Up</a></p>
-			</div>
+		  <form [formGroup]="loginForm" (ngSubmit)="login()">
+			<ion-item class="input-item">
+				<ion-label position="floating">Email</ion-label>
+				<ion-input 
+					type="email"
+					name="email"
+					formControlName="email"
+					required
+				></ion-input>
+			</ion-item>
+			<ion-item class="input-item">
+				<ion-label position="floating">password?</ion-label>
+				<ion-input 
+					type="password"
+					name="password"
+					formControlName="password"
+					required
+				></ion-input>
+			</ion-item>
+
+			<ion-button expand="block" class="custom-button auth-button" type="submit">
+				Login
+			</ion-button>
 		  </form>
 		  <h3>Log In with social media</h3>
 		  <ul class="sci">

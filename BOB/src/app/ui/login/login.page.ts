@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { FormBuilder,  Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,14 +9,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  username: string = "";
-  password: string="";
 
-  constructor(private router: Router) {}
+  loginForm = this.formBuilder.group({
+    email: ['',[Validators.email]],
+    password: ['',[Validators.minLength(8), Validators.maxLength(25)]]
+  })
+
+  constructor(private router: Router, private formBuilder: FormBuilder,private auth: AuthService) {}
 
   login() {
-    // Here, you can implement your login logic.
-    // For demonstration purposes, we'll navigate to a dummy home page.
-    this.router.navigate(['/home/dashboard']);
+    const email = this.loginForm?.get('email')?.value;
+    const password = this.loginForm?.get('password')?.value;
+    if(email != null && password != null) {
+      this.auth.login(email, password);
+    } else {
+      console.log("missing fields")
+    }
   }
 }
