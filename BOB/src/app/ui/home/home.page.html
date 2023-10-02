@@ -30,10 +30,18 @@
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
   
-      <ion-buttons slot="end">
+      <ion-buttons slot="end" *ngIf="!showProfile">
         <ion-button routerLink="/register" routerLinkActive="active">Register</ion-button>
         <ion-button routerLink="/login" routerLinkActive="active">Login</ion-button>
-      </ion-buttons>    
+      </ion-buttons>
+      <ion-buttons slot="end" *ngIf="showProfile">
+        <ion-chip>
+          <ion-avatar>
+          <ion-img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"></ion-img>
+          </ion-avatar>
+          {{"John"}}
+        </ion-chip>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
   

@@ -3,7 +3,7 @@ import { getAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Timestamp } from '@angular/fire/firestore';
 import { NavController } from '@ionic/angular';
-import { last, lastValueFrom } from 'rxjs';
+import { last, lastValueFrom, tap } from 'rxjs';
 import { IProfile } from '../modals';
 import { C } from '@fullcalendar/core/internal-common';
 
@@ -33,13 +33,22 @@ export class ProfileService {
         return (auth.currentUser?.uid);
     }
 
-    async getProfile(userId?: string) {
-        if(userId)
-            return (await this.getUserProfile(userId));
-        const currentUserId = await this.getCurrentUserId();
-        if(currentUserId)
-            return (await this.getUserProfile(currentUserId));
-        return;
+    // async getProfile(userId?: string) {
+    //     if(userId)
+    //         return (await this.getUserProfile(userId));
+    //     const currentUserId = await this.getCurrentUserId();
+    //     if(currentUserId)
+    //         return (await this.getUserProfile(currentUserId));
+    //     return;
+    // }
+
+    async getProfile(userId: string) {
+        const docRef = this.firestore.doc<IProfile>(`profiles/${userId}`);
+        return docRef.get();
+        // return docRef.snapshotChanges().pipe(tap(async (doc)=>{
+        //     let profile: IProfile = doc.payload.data()!;
+        //     return profile;
+        // }))
     }
 
     async getUserProfile(userId: string) {
