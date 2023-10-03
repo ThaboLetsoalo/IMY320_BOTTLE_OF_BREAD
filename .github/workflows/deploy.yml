@@ -27,6 +27,7 @@ jobs:
           cd BOB
           yarn
           yarn fix:node_modules
+          yarn fix:node_moduless
 
       - name: Create environment files
         run: |
