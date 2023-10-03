@@ -7,6 +7,9 @@ import { FullCalendarComponent } from '@fullcalendar/angular';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import { EventCreationPage } from '../event-creation/event-creation.page';
 import { ModalController } from '@ionic/angular';
+import { SchedulesService } from 'src/app/services/schedules.service';
+import { ISchedule } from 'src/app/modals/schedule.model';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-schedules',
@@ -22,8 +25,9 @@ export class SchedulesPage implements OnInit {
   showEventSlide: boolean = false;
   selectedEvent = { title: '', start: '', end: '' };
   events: any = [];
+  schedules: ISchedule[] = [];
 
-  constructor(private modalController: ModalController) {
+  constructor(private modalController: ModalController, private scheduleServices: SchedulesService) {
     this.ngOnInit();
   }
 
@@ -47,18 +51,7 @@ export class SchedulesPage implements OnInit {
     this.calendarOptions = {
       plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin],
       initialView: 'timeGridWeek',
-      events: [
-        {
-          title: 'Event 1',
-          start: '2023-09-18T10:00:00',
-          end: '2023-09-18T11:30:00',
-        },
-        {
-          title: 'Event 2',
-          start: '2023-09-18T14:00:00',
-          end: '2023-09-18T15:30:00',
-        },
-      ],
+      events: [],
       eventClick: this.handleEventClick.bind(this),
       editable: true,
       selectable: true,
@@ -76,6 +69,41 @@ export class SchedulesPage implements OnInit {
         },
       },
     };
+    this.scheduleServices.getSchedules('WIL08nbvTXU94c8G6XQtNy1R8nt1').pipe(tap((schedules)=>{
+      this.schedules = schedules;
+      this.addEvents();
+    })).subscribe();
+  }
+
+  addEvents() {
+    this.calendarComponent.getApi().removeAllEvents();
+    this.schedules.forEach((schedule)=>{
+      const start = schedule.startDate.toDate();
+      const end = schedule.endDate.toDate()
+      const event = {
+        title: schedule.title,
+        start: this.getMinDate(start)+'T'+this.getMinTime(start),
+        end: this.getMinDate(end)+'T'+this.getMinTime(end),
+      }
+      this.calendarComponent.getApi().addEvent(event);
+    })
+  }
+
+  getMinTime(date: Date): string {
+    const currentDate = date;
+    const currentHour = currentDate.getHours().toString().padStart(2, '0');
+    const currentMinute = (currentDate.getMinutes()).toString().padStart(2, '0'); //time in ten minutes;
+
+    return `${currentHour}:${currentMinute}`;
+  }
+  
+  getMinDate(date: Date): string {
+    const currentDate = date;
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+    const currentDay = currentDate.getDate().toString().padStart(2, '0');
+
+    return `${currentYear}-${currentMonth}-${currentDay}`;
   }
 
   handleEventClick(info: any) {

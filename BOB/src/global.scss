@@ -51,7 +51,15 @@ ion-content:not(.not-padding) {
     --box-shadow: 0px 4px 20px 0px #042d4657;
     --font: 16px;
     --border-radius: 50px;
-  }
+}
+
+.auth-button {
+    --background: linear-gradient(135deg, #B0E0E6 10%, #006699 100%);
+}
+
+.other-login-options {
+    margin-top: 20px;
+}
 
 ion-fab-button {
     --background: linear-gradient(135deg, #B0E0E6 10%, #006699 100%);
@@ -72,13 +80,14 @@ ion-card {
 }
 
 .input-item {
-    --background: linear-gradient(130deg, #8ECAE6 10%, #219EBC 100% );
+    --background: transparent;
+    // --background: linear-gradient(130deg, #8ECAE6 10%, #219EBC 100% );
     margin-top: 10px;
-    box-shadow: 0px 4px 20px 0px #31460457;
+    // box-shadow: 0px 4px 20px 0px #31460457;
     border-radius: 10px;
   
     ion-label {
-      color: white !important;
+    //   color: white !important;
       text-shadow: 2px 2px 4px rgba(20, 31, 30, 0.325);
     }
 }

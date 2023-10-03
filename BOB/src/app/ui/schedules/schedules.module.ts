@@ -9,6 +9,7 @@ import { SchedulesPageRoutingModule } from './schedules-routing.module';
 
 import { SchedulesPage } from './schedules.page';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { FooterComponentModule } from '../splash/footer/footer.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     CommonModule,
     IonicModule,
     SchedulesPageRoutingModule,
-    FullCalendarModule
+    FullCalendarModule,
+    FooterComponentModule
   ],
   declarations: [SchedulesPage]
 })

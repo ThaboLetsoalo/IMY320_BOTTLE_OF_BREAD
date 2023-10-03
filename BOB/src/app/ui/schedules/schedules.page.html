@@ -1,10 +1,4 @@
 <ion-content>
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Schedule</ion-title>
-    </ion-toolbar>
-  </ion-header> 
-  
   <div class="schedule-outer-wrapper">
    <div class="schedule-header">
       <ion-grid>
@@ -36,7 +30,7 @@
           <ion-col size="2">
             <ion-item lines="none" class="transparent-item" style="width: fit-content;">
               <span class="header-item align-end-item">
-                <ion-select [(ngModel)]="selectedView" interface="popover">
+                <ion-select interface="popover">
                   <ion-select-option value="dayGridMonth">Month</ion-select-option>
                   <ion-select-option value="timeGridWeek">Week</ion-select-option>
                 </ion-select>
@@ -65,73 +59,9 @@
           [options]="calendarOptions"
         ></full-calendar>
       </div>
-      <div class="events-wrapper">
-        <h2>Upcoming Events</h2>
-        <div *ngIf="!showEventSlide" class="inner-events-wrapper">
-          <ion-card *ngFor="let event of events" class="event-cards">
-            <ion-card-content>
-              {{"Event "+event}}
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card *ngIf="events.length === 0" style="width: 100%;">
-            <ion-card-content>
-              No Upcoming Events.
-            </ion-card-content>
-          </ion-card>
-        </div>
-
-        <div [ngClass]="{'event-view': showEventSlide, 'hide-event-view': !showEventSlide}">
-          <ion-card>
-            <ion-toolbar>
-              <ion-item lines="none">
-                <ion-card-title>{{ selectedEvent.title }}</ion-card-title>
-              </ion-item>
-              <ion-buttons slot="end">
-                <ion-button (click)="closeEventSlide()">
-                  <ion-icon name="close"></ion-icon>
-                </ion-button>
-              </ion-buttons>
-            </ion-toolbar>
-            <ion-card-content>
-              <p>Start Time: {{ selectedEvent.start | date: 'MMM d, y, h:mm a' }}</p>
-              <p>End Time: {{ selectedEvent.end | date: 'MMM d, y, h:mm a' }}</p>
-            </ion-card-content>
-          </ion-card>
-        </div>
-      </div>
+    </div>
+    <div class="footer">
+      <app-footer></app-footer>
     </div>
   </div>
-  
-
-  <!-- <footer>
-    <div class="footer-content">
-      <h3>BOB</h3>
-      <p>BOB is a platform that aims to provide a seamless learning experience for students. 
-        It is a one-stop-shop for all your learning needs, including study materials, study groups, 
-        tutors, and support. BOB is your companion in your learning journey, empowering you to 
-        achieve your goals and stand out.</p>
-        <ul class="socials">
-          <li>
-            <a href="https://www.facebook.com/">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com/">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-        </ul>        
-    </div>
-    <div class="footer-bottom">
-      <p>© BOB 2023 | Designed by BOB Team</p>
-    </div>
-  </footer> -->
-
 </ion-content>

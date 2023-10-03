@@ -34,19 +34,10 @@ ion-fab-button {
 }
 
 .calendar-container{
- width: 70%;
-//  height: var(width);
+ width: 100%;
  float: left;
+ clear: left;
 }
-
-// ion-content {
-//   background-image: url('/assets/education_icon.png');
-//   background-size:auto;
-//   background-repeat: no-repeat;
-//   background-position: center; 
-//   background-color: #f0f0f0;
-//   --background: red;
-// }
 
 .events-wrapper {
   position: relative;
@@ -145,5 +136,10 @@ footer {
 .ion-text-center {
   text-align: center;
   font-size: xx-large;
+}
+
+.footer {
+  margin-top: 20px;
+  clear: left;
 }
 

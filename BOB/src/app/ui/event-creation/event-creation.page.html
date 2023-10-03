@@ -19,6 +19,13 @@
     </ion-row>
 
     <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-lg="8">
+        <ion-label>Description</ion-label>
+        <ion-input type="text" placeholder="Enter event title" [(ngModel)]="eventDescription" required></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
       <ion-col size="6" size-lg="4">
         <ion-label>Start Date</ion-label>
         <ion-input type="date" [(ngModel)]="eventStartDate" required></ion-input>

@@ -53,7 +53,7 @@ section .contentBx
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(250deg, #00bbff, #0055ff);
+  // background: linear-gradient(250deg, #00bbff, #0055ff);
 
 }
 
@@ -188,7 +188,7 @@ section .contentBx .formBx .sci li a ion-img
   {
     width: 100%;
     height: 100%;
-    background: linear-gradient(250deg, #00bbff, #0055ff);
+    // background: linear-gradient(250deg, #00bbff, #0055ff);
   }
 
   section .contentBx .formBx
@@ -200,5 +200,9 @@ section .contentBx .formBx .sci li a ion-img
 }
 
 .input-item, .auth-button {
-  margin-top: 10px;
+  margin-top: 20px;
+}
+
+.other-login-options {
+  margin-top: 20px;
 }
