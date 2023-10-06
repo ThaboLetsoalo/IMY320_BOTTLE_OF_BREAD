@@ -14,7 +14,7 @@
     "fix:node_modules": "cp -p fixes/interfaces.d.ts node_modules/@angular/fire/compat/firestore/interfaces.d.ts",
     "fix:node_moduless": "cp -p fixes/lite/interfaces.d.ts node_modules/rxfire/firestore/lite/interfaces.d.ts",
     "fix_windows:node_modules": "xcopy /y fixes\\interfaces.d.ts node_modules\\@angular\\fire\\compat\\firestore\\interfaces.d.ts",
-    "fix_window:node_modules": "xcopy /y fixes\\lite\\interfaces.d.ts node_modules/rxfire/firestore/lite/interfaces.d.ts"
+    "fix_window:node_modules": "xcopy /y fixes\\rxfire node_modules"
   },
   "private": true,
   "dependencies": {
