@@ -1,6 +1,6 @@
 import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { getDoc, getDocs } from 'firebase/firestore/lite';
+import { getDoc, getDocs, getCount } from 'firebase/firestore/lite';
 
 /**
  * @license
@@ -46,7 +46,7 @@ function snapToData(snapshot, options) {
 
 /**
  * @license
- * Copyright 2018 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,6 +77,12 @@ function collectionData(query, options) {
         return arr.map(function (snap) { return snapToData(snap, options); });
     }));
 }
+function collectionCountSnap(query) {
+    return from(getCount(query));
+}
+function collectionCount(query) {
+    return collectionCountSnap(query).pipe(map(function (snap) { return snap.data().count; }));
+}
 
 function fromRef(ref) {
     if (ref.type === 'document') {
@@ -87,5 +93,5 @@ function fromRef(ref) {
     }
 }
 
-export { collection, collectionData, doc, docData, fromRef, snapToData };
+export { collection, collectionCount, collectionCountSnap, collectionData, doc, docData, fromRef, snapToData };
 //# sourceMappingURL=index.esm.js.map

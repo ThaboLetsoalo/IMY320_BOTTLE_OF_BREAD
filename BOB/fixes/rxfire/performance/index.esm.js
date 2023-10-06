@@ -18,8 +18,8 @@ var getPerformance$ = function (app) { return from(import('firebase/performance'
 var trace$ = function (traceId) {
     if (typeof window !== 'undefined' && window.performance) {
         var entries = window.performance.getEntriesByName(traceId, 'measure') || [];
-        var startMarkName_1 = "_" + traceId + "Start[" + entries.length + "]";
-        var endMarkName_1 = "_" + traceId + "End[" + entries.length + "]";
+        var startMarkName_1 = "_".concat(traceId, "Start[").concat(entries.length, "]");
+        var endMarkName_1 = "_".concat(traceId, "End[").concat(entries.length, "]");
         return new Observable(function (emitter) {
             window.performance.mark(startMarkName_1);
             emitter.next();
@@ -27,7 +27,7 @@ var trace$ = function (traceId) {
                 unsubscribe: function () {
                     window.performance.mark(endMarkName_1);
                     window.performance.measure(traceId, startMarkName_1, endMarkName_1);
-                }
+                },
             };
         });
     }

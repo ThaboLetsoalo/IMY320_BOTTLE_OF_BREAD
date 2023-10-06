@@ -1,34 +1,61 @@
 import { getDownloadURL as getDownloadURL$1, getMetadata as getMetadata$1, uploadBytesResumable as uploadBytesResumable$1, uploadString as uploadString$1 } from 'firebase/storage';
 import { Observable, from } from 'rxjs';
-import { debounceTime, shareReplay, map } from 'rxjs/operators';
+import { shareReplay, map } from 'rxjs/operators';
 
 function fromTask(task) {
     return new Observable(function (subscriber) {
-        var progress = function (snap) { return subscriber.next(snap); };
-        var error = function (e) { return subscriber.error(e); };
-        var complete = function () { return subscriber.complete(); };
-        // emit the current state of the task
-        progress(task.snapshot);
-        // emit progression of the task
-        var unsubscribeFromOnStateChanged = task.on('state_changed', progress);
-        // use the promise form of task, to get the last success snapshot
-        task.then(function (snapshot) {
-            progress(snapshot);
-            setTimeout(function () { return complete(); }, 0);
-        }, function (e) {
-            progress(task.snapshot);
-            setTimeout(function () { return error(e); }, 0);
-        });
-        // the unsubscribe method returns by storage isn't typed in the
-        // way rxjs expects, Function vs () => void, so wrap it
-        return function unsubscribe() {
-            unsubscribeFromOnStateChanged();
+        var lastSnapshot = null;
+        var complete = false;
+        var hasError = false;
+        var error = null;
+        var emit = function (snapshot) {
+            lastSnapshot = snapshot;
+            schedule();
         };
-    }).pipe(
-    // since we're emitting first the current snapshot and then progression
-    // it's possible that we could double fire synchronously; namely when in
-    // a terminal state (success, error, canceled). Debounce to address.
-    debounceTime(0));
+        var id = null;
+        /**
+         * Schedules an async event to check and emit
+         * the most recent snapshot, and complete or error
+         * if necessary.
+         */
+        var schedule = function () {
+            if (!id) {
+                id = setTimeout(function () {
+                    id = null;
+                    if (lastSnapshot)
+                        subscriber.next(lastSnapshot);
+                    if (complete)
+                        subscriber.complete();
+                    if (hasError)
+                        subscriber.error(error);
+                });
+            }
+        };
+        subscriber.add(function () {
+            // If we have any emissions checks scheduled, cancel them.
+            if (id)
+                clearTimeout(id);
+        });
+        // Emit the initial snapshot
+        emit(task.snapshot);
+        // Take each update and schedule them to be emitted (see `emit`)
+        subscriber.add(task.on('state_changed', emit));
+        // task is a promise, so we can convert that to an observable,
+        // this is done for the ergonomics around making sure we don't
+        // try to push errors or completions through closed subscribers
+        subscriber.add(from(task).subscribe({
+            next: emit,
+            error: function (err) {
+                hasError = true;
+                error = err;
+                schedule();
+            },
+            complete: function () {
+                complete = true;
+                schedule();
+            },
+        }));
+    });
 }
 function getDownloadURL(ref) {
     return from(getDownloadURL$1(ref));
@@ -56,7 +83,7 @@ function uploadString(ref, data, format, metadata) {
 function percentage(task) {
     return fromTask(task).pipe(map(function (snapshot) { return ({
         progress: (snapshot.bytesTransferred / snapshot.totalBytes) * 100,
-        snapshot: snapshot
+        snapshot: snapshot,
     }); }));
 }
 

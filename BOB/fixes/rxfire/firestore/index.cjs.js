@@ -2,10 +2,50 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var tslib = require('tslib');
 var firestore = require('firebase/firestore');
 var rxjs = require('rxjs');
 var operators = require('rxjs/operators');
+
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+function __spreadArray(to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+}
+
+typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
+    var e = new Error(message);
+    return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+};
 
 /**
  * @license
@@ -39,7 +79,7 @@ function fromRef(ref, options) {
 
 /**
  * @license
- * Copyright 2018 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,29 +99,27 @@ function doc(ref) {
 /**
  * Returns a stream of a document, mapped to its data payload and optionally the document ID
  * @param query
+ * @param options
  */
 function docData(ref, options) {
     if (options === void 0) { options = {}; }
     return doc(ref).pipe(operators.map(function (snap) { return snapToData(snap, options); }));
 }
 function snapToData(snapshot, options) {
+    var _a;
     if (options === void 0) { options = {}; }
-    // TODO clean up the typings
-    var data = snapshot.data();
+    var data = snapshot.data(options);
     // match the behavior of the JS SDK when the snapshot doesn't exist
     // it's possible with data converters too that the user didn't return an object
-    if (!snapshot.exists() || typeof data !== 'object' || data === null) {
+    if (!snapshot.exists() || typeof data !== 'object' || data === null || !options.idField) {
         return data;
     }
-    if (options.idField) {
-        data[options.idField] = snapshot.id;
-    }
-    return data;
+    return __assign(__assign({}, data), (_a = {}, _a[options.idField] = snapshot.id, _a));
 }
 
 /**
  * @license
- * Copyright 2018 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -124,7 +162,7 @@ function sliceAndSplice(original, start, deleteCount) {
         args[_i - 3] = arguments[_i];
     }
     var returnArray = original.slice();
-    returnArray.splice.apply(returnArray, tslib.__spreadArray([start, deleteCount], args));
+    returnArray.splice.apply(returnArray, __spreadArray([start, deleteCount], args, false));
     return returnArray;
 }
 /**
@@ -206,7 +244,7 @@ var filterEmptyUnlessFirst = function () {
         var prior = _a[0], current = _a[1];
         return current.length > 0 || prior === undefined;
     }), operators.map(function (_a) {
-        _a[0]; var current = _a[1];
+        var current = _a[1];
         return current;
     }));
 };
@@ -248,7 +286,7 @@ function collectionChanges(query, options) {
                     oldIndex: currentIndex,
                     newIndex: currentIndex,
                     type: 'modified',
-                    doc: currentDocSnapshot
+                    doc: currentDocSnapshot,
                 });
             });
         }
@@ -278,11 +316,12 @@ function sortedChanges(query, options) {
  */
 function auditTrail(query, options) {
     if (options === void 0) { options = {}; }
-    return collectionChanges(query, options).pipe(operators.scan(function (current, action) { return tslib.__spreadArray(tslib.__spreadArray([], current), action); }, []));
+    return collectionChanges(query, options).pipe(operators.scan(function (current, action) { return __spreadArray(__spreadArray([], current, true), action, true); }, []));
 }
 /**
  * Returns a stream of documents mapped to their data payload, and optionally the document ID
  * @param query
+ * @param options
  */
 function collectionData(query, options) {
     if (options === void 0) { options = {}; }
@@ -290,10 +329,18 @@ function collectionData(query, options) {
         return arr.map(function (snap) { return snapToData(snap, options); });
     }));
 }
+function collectionCountSnap(query) {
+    return rxjs.from(firestore.getCountFromServer(query));
+}
+function collectionCount(query) {
+    return collectionCountSnap(query).pipe(operators.map(function (snap) { return snap.data().count; }));
+}
 
 exports.auditTrail = auditTrail;
 exports.collection = collection;
 exports.collectionChanges = collectionChanges;
+exports.collectionCount = collectionCount;
+exports.collectionCountSnap = collectionCountSnap;
 exports.collectionData = collectionData;
 exports.doc = doc;
 exports.docData = docData;

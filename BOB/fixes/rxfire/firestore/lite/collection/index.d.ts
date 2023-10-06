@@ -15,12 +15,34 @@
  * limitations under the License.
  */
 import { Observable } from 'rxjs';
-import { Query, QueryDocumentSnapshot, DocumentData } from '../interfaces';
+import { DocumentChangeType, DocumentChange, Query, QueryDocumentSnapshot, DocumentData } from '../interfaces';
+/**
+ * Return a stream of document changes on a query. These results are not in sort order but in
+ * order of occurence.
+ * @param query
+ */
+export declare function collectionChanges<T = DocumentData>(query: Query<T>, options?: {
+    events?: DocumentChangeType[];
+}): Observable<DocumentChange<T>[]>;
 /**
  * Return a stream of document snapshots on a query. These results are in sort order.
  * @param query
  */
 export declare function collection<T = DocumentData>(query: Query<T>): Observable<QueryDocumentSnapshot<T>[]>;
+/**
+ * Return a stream of document changes on a query. These results are in sort order.
+ * @param query
+ */
+export declare function sortedChanges<T = DocumentData>(query: Query<T>, options?: {
+    events?: DocumentChangeType[];
+}): Observable<DocumentChange<T>[]>;
+/**
+ * Create a stream of changes as they occur it time. This method is similar
+ * to docChanges() but it collects each event in an array over time.
+ */
+export declare function auditTrail<T = DocumentData>(query: Query<T>, options?: {
+    events?: DocumentChangeType[];
+}): Observable<DocumentChange<T>[]>;
 /**
  * Returns a stream of documents mapped to their data payload, and optionally the document ID
  * @param query

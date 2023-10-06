@@ -1,7 +1,6 @@
-import { Observable, merge, from, of } from 'rxjs';
+import { Observable, merge, of, from } from 'rxjs';
 import { delay, map, switchMap, scan, distinctUntilChanged, withLatestFrom, skipWhile } from 'rxjs/operators';
 import { onChildAdded, onChildRemoved, onChildChanged, onChildMoved, onValue, off, get as get$1 } from 'firebase/database';
-import { __assign, __spreadArray } from 'tslib';
 
 /**
  * @license
@@ -65,7 +64,7 @@ function fromRef(ref, event) {
         return {
             unsubscribe: function () {
                 off(ref, event, fn);
-            }
+            },
         };
     }).pipe(
     // Ensures subscribe on observable is async. This handles
@@ -73,6 +72,47 @@ function fromRef(ref, event) {
     // synchronously.
     delay(0));
 }
+
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+function __spreadArray(to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+}
+
+typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
+    var e = new Error(message);
+    return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+};
 
 /**
  * @license
@@ -101,7 +141,7 @@ function validateEventsArray(events) {
             ListenEvent.added,
             ListenEvent.removed,
             ListenEvent.changed,
-            ListenEvent.moved
+            ListenEvent.moved,
         ];
     }
     return events;
@@ -186,9 +226,6 @@ function list(query, options) {
     if (options === void 0) { options = {}; }
     var events = validateEventsArray(options.events);
     return get(query).pipe(switchMap(function (change) {
-        if (!change.snapshot.exists()) {
-            return of([]);
-        }
         var childEvent$ = [of(change)];
         events.forEach(function (event) {
             childEvent$.push(fromRef(query, event));
@@ -243,10 +280,10 @@ function buildView(current, change) {
                     var action = {
                         snapshot: snapshot,
                         event: ListenEvent.value,
-                        prevKey: prevKey_1
+                        prevKey: prevKey_1,
                     };
                     prevKey_1 = snapshot.key;
-                    current = __spreadArray(__spreadArray([], current), [action]);
+                    current = __spreadArray(__spreadArray([], current, true), [action], false);
                     return false;
                 });
             }
@@ -261,7 +298,7 @@ function buildView(current, change) {
                 }
             }
             else if (prevKey == null) {
-                return __spreadArray([change], current);
+                return __spreadArray([change], current, true);
             }
             else {
                 current = current.slice();
@@ -304,7 +341,7 @@ function buildView(current, change) {
  */
 function auditTrail(query, options) {
     if (options === void 0) { options = {}; }
-    var auditTrail$ = stateChanges(query, options).pipe(scan(function (current, changes) { return __spreadArray(__spreadArray([], current), [changes]); }, []));
+    var auditTrail$ = stateChanges(query, options).pipe(scan(function (current, changes) { return __spreadArray(__spreadArray([], current, true), [changes], false); }, []));
     return waitForLoaded(query, auditTrail$);
 }
 function loadedData(query) {

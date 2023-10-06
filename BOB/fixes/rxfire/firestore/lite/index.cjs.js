@@ -50,7 +50,7 @@ function snapToData(snapshot, options) {
 
 /**
  * @license
- * Copyright 2018 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,6 +81,12 @@ function collectionData(query, options) {
         return arr.map(function (snap) { return snapToData(snap, options); });
     }));
 }
+function collectionCountSnap(query) {
+    return rxjs.from(lite.getCount(query));
+}
+function collectionCount(query) {
+    return collectionCountSnap(query).pipe(operators.map(function (snap) { return snap.data().count; }));
+}
 
 function fromRef(ref) {
     if (ref.type === 'document') {
@@ -92,6 +98,8 @@ function fromRef(ref) {
 }
 
 exports.collection = collection;
+exports.collectionCount = collectionCount;
+exports.collectionCountSnap = collectionCountSnap;
 exports.collectionData = collectionData;
 exports.doc = doc;
 exports.docData = docData;
