@@ -1,58 +1,25 @@
-footer {
-  background-color: #6096b8;
-  color: #fff;
-  padding: 40px 0;
+.container {
+  // margin: 0 auto;
+  max-width: 600px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
-.footer-content {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
+.tab-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.footer-content h3 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.footer-content p {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.socials {
-  list-style: none;
-  padding: 10;
-  margin-top: 0;
-  // font-size: small;
-}
-
-.socials li {
-  display: inline-block;
-  margin-right: 10px;
-  font-size: large;
-  
-}
-
-.socials a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 20px;
-  padding: 10px;
-}
-
-.socials a:hover {
-  color: #030609;
-}
-
-
-.footer-bottom {
-  text-align: center;
-}
-
-.footer-bottom p {
-  font-size: 14px;
-  color: #fff;
+.tab {
+  position: relative;
+  padding: 0 20px 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  width: calc(50% - 10px); /* Two tabs per row */
+  /* You can adjust the width and add media queries for responsiveness */
 }
 
 .ion-text-center {
@@ -74,7 +41,7 @@ ion-content{
 }
 
 .container{
-  margin: 0 auto;
+  // margin: 0 auto;
   // width: 100%;
   max-width: 600px;
   padding: 0 20px;
@@ -110,11 +77,11 @@ ion-content{
 }
 
 .container .tab label:after{
-  content: '+';
+  // content: '+';
   position: absolute;
   right: 20px;
   font-size: 2em;
-  transition: transform 1s;
+  transition: transform 0.2s;
 }
 
 .container .tab:hover label::after{
@@ -152,7 +119,7 @@ ion-content{
   max-height: 0;
   padding: 0 20px;
   overflow: hidden;
-  transition: 1s;
+  transition: 0.2s;
 }
 
 .container .tab input:checked ~ .content{

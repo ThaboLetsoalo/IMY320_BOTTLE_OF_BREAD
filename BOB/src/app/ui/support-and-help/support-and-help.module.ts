@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { SupportAndHelpPageRoutingModule } from './support-and-help-routing.module';
 
 import { SupportAndHelpPage } from './support-and-help.page';
+import { FooterComponentModule } from '../splash/footer/footer.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SupportAndHelpPageRoutingModule
+    SupportAndHelpPageRoutingModule,
+    FooterComponentModule
   ],
   declarations: [SupportAndHelpPage]
 })

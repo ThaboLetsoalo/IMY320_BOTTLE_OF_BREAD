@@ -3,6 +3,14 @@
   width: 100%;
 }
 
+ion-chip {
+  pointer-events: none;
+}
+
+// ion-label{
+//   color: primary;
+// }
+
 .card {
   z-index: 1;
   overflow: hidden;
