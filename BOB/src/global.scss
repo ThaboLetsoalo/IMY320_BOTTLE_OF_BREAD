@@ -34,4 +34,8 @@ ion-content:not(.not-padding) {
     --padding-top: 50px;
     //--background: linear-gradient(135deg, #B0E0E6 10%, #006699 100%);
 }
-  
+
+.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
