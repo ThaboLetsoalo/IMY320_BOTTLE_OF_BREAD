@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tutor-alumni',
-  templateUrl: './tutor-alumni.page.html',
-  styleUrls: ['./tutor-alumni.page.scss'],
+  selector: 'app-booking-popup',
+  templateUrl: './booking-popup.page.html',
+  styleUrls: ['./booking-popup.page.scss'],
 })
-export class TutorAlumniPage implements OnInit {
+export class BookingPopupPage implements OnInit {
 
   constructor() { }
 
@@ -16,7 +16,6 @@ export class TutorAlumniPage implements OnInit {
 
   setOpen(isOpen: boolean) {
     this.isModalOpen = isOpen;
-    
   }
 
   tutorInfo = [
@@ -64,4 +63,5 @@ export class TutorAlumniPage implements OnInit {
     },
 
   ]
+
 }

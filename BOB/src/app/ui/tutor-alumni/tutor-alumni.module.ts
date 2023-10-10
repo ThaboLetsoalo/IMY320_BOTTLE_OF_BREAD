@@ -15,7 +15,7 @@ import { FooterComponentModule } from '../splash/footer/footer.module';
     FormsModule,
     IonicModule,
     TutorAlumniPageRoutingModule,
-    FooterComponentModule
+    FooterComponentModule,
   ],
   declarations: [TutorAlumniPage]
 })
