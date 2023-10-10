@@ -22,7 +22,15 @@ const routes: Routes = [
   {
     path: 'splash',
     loadChildren: () => import('./ui/splash/splash.module').then( m => m.SplashPageModule)
+  },  {
+    path: 'calendar-picker',
+    loadChildren: () => import('./ui/calendar-picker/calendar-picker.module').then( m => m.CalendarPickerPageModule)
   },
+  {
+    path: 'booking-popup',
+    loadChildren: () => import('./ui/booking-popup/booking-popup.module').then( m => m.BookingPopupPageModule)
+  },
+
 ];
 
 @NgModule({
