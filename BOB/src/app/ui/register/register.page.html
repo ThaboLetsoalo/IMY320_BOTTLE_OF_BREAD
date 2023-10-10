@@ -12,29 +12,26 @@
           <form  
           [formGroup]="registerForm"
           (submit)="register()">
-            <!-- <div class="input-field-container">
-              <ion-item class="input-field" lines="none">
-                <div>Student</div>
-                <div>Tutor</div>
-              </ion-item>
-            </div> -->
-
             <div class="input-field-container">
-              <ion-item class="input-field" lines="none">
-                <ion-label>Which are you:</ion-label>
-                <ion-radio-group value="student">
-                  <ion-item lines="none">
-                    <ion-label>Student</ion-label>
-                    <ion-radio slot="start" value="student"></ion-radio>
-                  </ion-item>
-                  <ion-item lines="none">
-                    <ion-label>Tutor</ion-label>
-                    <ion-radio slot="start" value="tutor"></ion-radio>
-                  </ion-item>
-                </ion-radio-group>
-              </ion-item>
+              <ion-label>Which are you</ion-label>
+              <ion-radio-group value="student">
+                <ion-item class="input-field" lines="none">
+                  <div class="member-status">
+                    <ion-item lines="none">
+                      <ion-label>Student</ion-label>
+                      <ion-radio slot="start" value="student"></ion-radio>
+                    </ion-item>
+                  </div>
+                  <div class="member-status">
+                    <ion-item lines="none">
+                      <ion-radio slot="start" value="tutor"></ion-radio>
+                      <ion-label>Tutor</ion-label>
+                    </ion-item>
+                  </div>
+                </ion-item>
+              </ion-radio-group>
             </div>
-            
+
             <div class="input-field-container">
               <ion-label>Email</ion-label>
               <ion-item class="input-field" lines="none">
