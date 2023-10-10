@@ -1,18 +1,22 @@
 <ion-content fullscreen="true">
   <div class="outer-container-wrapper">
     <div class="top-container">
-      <h1>Search for Solutions. Get Support.</h1>
-      <ion-searchbar placeholder="search"></ion-searchbar>
-      <div class="suggested-questions">
-        <div class="questions">
-          <ion-text>question here....</ion-text>
-        </div>
-      </div>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" size-xl="6">
+          <h1>Search for Solutions. Get Support.</h1>
+            <ion-searchbar placeholder="search"></ion-searchbar>
+            <div class="suggested-questions">
+              <div class="questions">
+                <ion-text>question here....</ion-text>
+              </div>
+            </div>
+        </ion-col>
+      </ion-row>
     </div>
 
     <div class="bottom-container">
       <ion-row class="ion-justify-content-center support-container">
-        <ion-col size="12" size-md="5" size-lg="3" class="support">
+        <ion-col size="12" size-md="5" size-lg="3" class="support" routerLink="/contact-us">
           <ion-icon name="person-outline"></ion-icon>
           <h1>Contact Support</h1>
           <ion-text>text here....</ion-text>
