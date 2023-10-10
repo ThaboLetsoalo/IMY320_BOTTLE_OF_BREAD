@@ -1,20 +1,18 @@
-
-ion-card {
-  height: 100px;
-  width: 100px;
+.material-card {
+  margin: 0px;
+  border-radius: var(--primary-border-radius);
 }
 
-.custom-row {
-  padding: 20px;
-
-  .input-field-container {
-    border: 2px solid lightblue;
-    border-radius: 8px;
-    // padding-left: 20px;
-    // padding-right: 20px;
+.filter-container {
+  padding: var(--container-padding);
+  .custom-row {
+    .input-field-container {
+      border: var(--primary-border-size) solid var(--primary-color-variant);
+      border-radius: var(--primary-border-radius);
+    }
   }
 }
 
 .study-material-container {
-  padding: 20px;
+  padding: var(--container-padding);
 }

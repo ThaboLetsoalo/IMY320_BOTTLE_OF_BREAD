@@ -8,6 +8,7 @@ import { StudyMaterialPageRoutingModule } from './study-material-routing.module'
 
 import { StudyMaterialPage } from './study-material.page';
 import { FooterComponentModule } from '../splash/footer/footer.module';
+import { StudyMaterialSkeletonComponent } from './study-material-skeleton/study-material-skeleton.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { FooterComponentModule } from '../splash/footer/footer.module';
     StudyMaterialPageRoutingModule,
     FooterComponentModule
   ],
-  declarations: [StudyMaterialPage]
+  declarations: [StudyMaterialPage, StudyMaterialSkeletonComponent]
 })
 export class StudyMaterialPageModule {}
