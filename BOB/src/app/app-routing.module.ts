@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'booking-popup',
     loadChildren: () => import('./ui/booking-popup/booking-popup.module').then( m => m.BookingPopupPageModule)
   },
+  {
+    path: 'contact-us',
+    loadChildren: () => import('./ui/contact-us/contact-us.module').then( m => m.ContactUsPageModule)
+  },
 
 ];
 

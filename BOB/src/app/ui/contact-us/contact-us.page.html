@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      BOB
+    </ion-title>
+    <ion-buttons slot="end"> 
+      <ion-button expand="full" fill="clear" routerLink="/home">
+        <ion-icon name="home"></ion-icon>
+      </ion-button> 
+      <ion-button expand="full" fill="clear" class="social-button">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+    
+      <ion-button expand="full" fill="clear" class="social-button">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+    
+
+      <ion-button expand="full" fill="clear" class="social-button">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+ <div class="outer-container">
+  <div class="inner-container">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" size-lg="6">
+          <div class="title-container">
+            <h1 class="title">Contact us</h1>
+          <h3 class="subtitle">Reach out and we'll get in touch within 24 hours.</h3>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6" size-lg="3">
+          <div class="input-field-container">
+            <ion-label>First name*</ion-label>
+            <ion-item class="input-field" lines="none">
+              <ion-input type="text" placeholder="First name"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+        <ion-col size="6" size-lg="3">
+          <div class="input-field-container">
+            <ion-label>Last name*</ion-label>
+            <ion-item class="input-field" lines="none">
+              <ion-input type="text" placeholder="Last name"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" size-lg="6">
+          <div class="input-field-container">
+            <ion-label>Email*</ion-label>
+            <ion-item class="input-field" lines="none">
+              <ion-input type="email" placeholder="Email address"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" size-lg="6">
+          <div class="input-field-container">
+            <ion-label>Message*</ion-label>
+            <ion-item class="input-field" lines="none">
+              <ion-textarea type="text" placeholder="Leave us a message..." rows="5"></ion-textarea>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" size-lg="6">
+          <div class="remember-me-input">
+            <ion-checkbox class="custom-checkbox"></ion-checkbox>
+            <ion-label class="r-label">You agree to our friendly <span class="privacy-policy-link">privacy policy</span>*</ion-label>
+          </div>           
+    
+          <div class="button-container">
+            <ion-button id="loginButton" expand="block" type="submit">Send message</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+ </div>
+</ion-content>
