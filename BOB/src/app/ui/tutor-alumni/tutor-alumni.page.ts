@@ -36,9 +36,10 @@ export class TutorAlumniPage implements OnInit {
     }
   }
 
-  openModal(selectedTutor: any) {
-    this.setOpen(true, this.selectedTutor);
+  openModal(tutor: any) {
+    this.setOpen(true, tutor);
   }
+  
 
 
   tutorInfo = [
@@ -50,8 +51,8 @@ export class TutorAlumniPage implements OnInit {
         I am a 3rd year medical student at the University of Cape Town.
         I have been tutoring for 3 years now and I love it.
         I am a very patient person and I am willing to go the extra mile to help my students.
-        I am looking forward to working with you.
-      `
+        I am looking forward to working with you.`,
+      img2: 'assets/icon/alumni1.jpg',
     },
     {
       name: 'Menzi Dabula',
@@ -61,8 +62,8 @@ export class TutorAlumniPage implements OnInit {
       I am a graduate student at the University of Pretoria with a Bachelor of Education. 
       I rarely struggle with my academics and I am willing to help others achieve the same. 
       I am a very patient person and I am willing to go the extra mile to help my students. 
-      I am looking forward to working with you.
-      `
+      I am looking forward to working with you.`,
+      img2: 'assets/icon/alumni2.jpg',
     },
     {
       name: 'Brandon James',
@@ -71,7 +72,8 @@ export class TutorAlumniPage implements OnInit {
       description: `A final student at University of Pretoria, busy with Bachelor of Science in Computer Science.
       Have been tutoring for 1 year, I am here to help you get the best results you can get.
       I am a very patient person and I am willing to go the extra mile to help my students. 
-      I am looking forward to working with you.`
+      I am looking forward to working with you.`,
+      img2: 'assets/icon/alumni3.jpg',
     },
     {
       name: 'David Kaula',
@@ -81,8 +83,8 @@ export class TutorAlumniPage implements OnInit {
         A final year student at University of Fort Hare, busy with Bachelor of Laws.
         Have been tutoring for 2 years, I love helping others, and it brings a smile to my face.
         I am a very patient person and I am willing to go the extra mile to help my students.
-        I am looking forward to working with you.
-      `
+        I am looking forward to working with you.`,
+      img2: 'assets/icon/alumni4.jpg',
     },
 
   ]

@@ -2,17 +2,20 @@
   <ion-toolbar>
     <ion-title>Book A Session</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="closeModal()">x</ion-button>
+      <ion-button (click)="closeModal()">X</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-img [src]="tutor.img"></ion-img>
-  <h2>{{ tutor.name }}</h2>
-  <div *ngFor="let subject of tutor.subjects">
-    <ion-chip color="primary">
-      <ion-label color="primary">{{ subject }}</ion-label>
-    </ion-chip>
-  </div>
+<ion-content class="custom-modal-content" *ngIf="!isLoading">
+  <ion-row>
+    <ion-col size="12">
+      <h2 class="tutor-name">{{ tutor.name }}</h2>
+      <div *ngFor="let subject of tutor.subjects" class="chips-row">
+        <ion-chip color="primary">
+          <ion-label color="primary">{{ subject }}</ion-label>
+        </ion-chip>
+      </div>
+    </ion-col>
+  </ion-row>
 </ion-content>
