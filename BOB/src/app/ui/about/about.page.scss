@@ -44,3 +44,26 @@ ion-row{
 ion-chip {
   pointer-events: none;
 }
+
+.outer-container {
+  .top-container {
+    margin-bottom: 40px;
+    padding: 40px;
+    text-align: center;
+    background: var(--background-color);
+    ion-searchbar {
+      text-align: start;
+    }
+    .suggested-questions {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      .questions {
+        padding: 10px;
+        border: var(--primary-border-size) solid var(--primary-color-variant);
+        width: fit-content;
+        border-radius: 5px;
+      }
+    }
+  }
+}

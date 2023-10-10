@@ -1,0 +1,46 @@
+.outer-container {
+    .inner-container {
+        padding: 20px;
+        .title-container {
+            text-align: center;
+            .title {
+                font-weight: bolder;
+            }
+        }
+
+        .input-field-container {
+            margin-top: 20px;
+            .input-field {
+                background-color: var(--input-field-color);
+                margin-top: 10px;
+                border-radius: 10px;
+                border: var(--primary-border-size) solid var(--primary-color-variant);
+                border-radius: var(--primary-border-radius);
+                .member-status {
+                  flex: 1;
+                  text-align: center;
+                  margin: 10px;
+                }
+            }
+        }
+
+        .remember-me-input {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            .custom-checkbox {
+                margin-right: 10px;
+            }
+
+            .privacy-policy-link {
+                text-decoration: underline;
+                color: var(--primary-color);
+            }
+        }
+
+        .button-container {
+
+        }
+    }
+}

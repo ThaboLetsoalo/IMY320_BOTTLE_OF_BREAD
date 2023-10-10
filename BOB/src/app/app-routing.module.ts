@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'book-tutor-modal',
     loadChildren: () => import('./ui/book-tutor-modal/book-tutor-modal.module').then( m => m.BookTutorModalPageModule)
   },
+  {
+    path: 'contact-us',
+    loadChildren: () => import('./ui/contact-us/contact-us.module').then( m => m.ContactUsPageModule)
+  },
 
   // {
   //   path: 'booking-popup',
