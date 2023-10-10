@@ -46,21 +46,21 @@ ion-content:not(.not-padding) {
     --background: transparent;
 }
 
-.custom-button {
-    --background: linear-gradient(135deg, #B0E0E6 10%, #006699 100%);
-    --color: #fff;
-    --box-shadow: 0px 4px 20px 0px #042d4657;
-    --font: 16px;
-    --border-radius: 50px;
-}
+// .custom-button {
+//     --background: linear-gradient(135deg, #B0E0E6 10%, #006699 100%);
+//     --color: #fff;
+//     --box-shadow: 0px 4px 20px 0px #042d4657;
+//     --font: 16px;
+//     --border-radius: 50px;
+// }
 
-.auth-button {
-    --background: linear-gradient(135deg, #B0E0E6 10%, #006699 100%);
-}
+// .auth-button {
+//     --background: linear-gradient(135deg, #B0E0E6 10%, #006699 100%);
+// }
 
-.other-login-options {
-    margin-top: 20px;
-}
+// .other-login-options {
+//     margin-top: 20px;
+// }
 
 ion-fab-button {
     --background: linear-gradient(135deg, #B0E0E6 10%, #006699 100%);

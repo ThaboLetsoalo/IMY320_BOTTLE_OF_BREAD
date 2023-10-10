@@ -1,16 +1,17 @@
 <ion-content [fullscreen]="true">
   <div class="filter-container">
     <ion-grid>
-      <h2>Find Study Material</h2>
+      <h2>Find Study Materials</h2>
       <ion-row class="custom-row">
         <ion-col size="12" size-lg="3">
-          <ion-label>Year</ion-label>
+          <ion-label>Academic Level</ion-label>
           <ion-item lines="none" class="input-field-container">
             <ion-select interface="popover" [(ngModel)]="selectedYear">
               <ion-select-option value="">All</ion-select-option>
-              <ion-select-option value="2022">2022</ion-select-option>
-              <ion-select-option value="2021">2021</ion-select-option>
-              <!-- Add more options as needed -->
+              <ion-select-option value="1st">1st year</ion-select-option>
+              <ion-select-option value="2nd">2nd year</ion-select-option>
+              <ion-select-option value="3rd">3rd year</ion-select-option>
+              <ion-select-option value="4th">4th year</ion-select-option>
             </ion-select>
           </ion-item>
           
@@ -49,9 +50,9 @@
 
   <div class="study-material-container">
     <ion-grid>
-      <h2>Study Materials</h2>
+      <h2>Past Papers</h2>
       <ion-row class="material-row">
-        <ion-col *ngFor="let material of [1,2,3,4,5,6,7,7,8]" size="12" size-sm="6" size-md="4" size-xl="3">
+        <ion-col *ngFor="let material of [1,2,3,4]" size="12" size-sm="6" size-md="4" size-xl="3">
           <ng-container>
             <!-- Display the loading skeleton while data is loading -->
             <app-study-material-skeleton></app-study-material-skeleton>
@@ -60,16 +61,66 @@
             <!-- Display the actual study material once data is available -->
             <ion-card class="material-card">
               <ion-card-content>
-                <!-- <h2>{{ material.title }}</h2>
-                <p>{{ material.description }}</p> -->
-                <!-- Add more study material details as needed -->
+               <!-- content here... -->
               </ion-card-content>
             </ion-card>
           </ng-template>
         </ion-col>
       </ion-row>
       
+      <h2>Tutorials</h2>
+      <ion-row class="material-row">
+        <ion-col *ngFor="let material of [1,2,3,4]" size="12" size-sm="6" size-md="4" size-xl="3">
+          <ng-container>
+            <!-- Display the loading skeleton while data is loading -->
+            <app-study-material-skeleton></app-study-material-skeleton>
+          </ng-container>
+          <ng-template #content>
+            <!-- Display the actual study material once data is available -->
+            <ion-card class="material-card">
+              <ion-card-content>
+               <!-- content here... -->
+              </ion-card-content>
+            </ion-card>
+          </ng-template>
+        </ion-col>
+      </ion-row>
 
+      <h2>Books</h2>
+      <ion-row class="material-row">
+        <ion-col *ngFor="let material of [1,2,3,4]" size="12" size-sm="6" size-md="4" size-xl="3">
+          <ng-container>
+            <!-- Display the loading skeleton while data is loading -->
+            <app-study-material-skeleton></app-study-material-skeleton>
+          </ng-container>
+          <ng-template #content>
+            <!-- Display the actual study material once data is available -->
+            <ion-card class="material-card">
+              <ion-card-content>
+               <!-- content here... -->
+              </ion-card-content>
+            </ion-card>
+          </ng-template>
+        </ion-col>
+      </ion-row>
+
+      <h2>Videos</h2>
+      <ion-row class="material-row">
+        <ion-col *ngFor="let material of [1,2,3,4]" size="12" size-sm="6" size-md="4" size-xl="3">
+          <ng-container>
+            <!-- Display the loading skeleton while data is loading -->
+            <app-study-material-skeleton></app-study-material-skeleton>
+          </ng-container>
+          <ng-template #content>
+            <!-- Display the actual study material once data is available -->
+            <ion-card class="material-card">
+              <ion-card-content>
+               <!-- content here... -->
+              </ion-card-content>
+            </ion-card>
+          </ng-template>
+        </ion-col>
+      </ion-row>
     </ion-grid>
   </div>
 
