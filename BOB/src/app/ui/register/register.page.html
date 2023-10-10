@@ -18,7 +18,7 @@
           [formGroup]="registerForm"
           (submit)="register()">
             <div class="input-field-container">
-              <ion-label>Which are you</ion-label>
+              <ion-label>Which are you*</ion-label>
               <ion-radio-group value="student" formControlName="status">
                 <ion-item class="input-field" lines="none">
                   <div class="member-status">
@@ -38,13 +38,13 @@
             </div>
 
             <div class="input-field-container">
-              <ion-label>Email</ion-label>
+              <ion-label>Email*</ion-label>
               <ion-item class="input-field" lines="none">
                 <ion-input type="email" placeholder="Enter your email"  formControlName="email" required></ion-input>
               </ion-item>
             </div>
             <div class="input-field-container">
-              <ion-label>Password</ion-label>
+              <ion-label>Password*</ion-label>
               <ion-item class="input-field" lines="none">
                 <ion-input type="password" placeholder="Enter your password"
                   name="password"
@@ -56,7 +56,7 @@
               </ion-item>
             </div>
             <div class="input-field-container">
-              <ion-label>Confirm Password</ion-label>
+              <ion-label>Confirm Password*</ion-label>
               <ion-item class="input-field" lines="none">
                 <ion-input type="password" placeholder="Confirm your password"
                   name="cPassword"

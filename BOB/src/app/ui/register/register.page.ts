@@ -49,7 +49,7 @@ export class RegisterPage {
       const password = this.registerForm?.get('password')?.value;
       await this.auth.register(email, password);
     } else {
-      this.errorMessage = "Missing inputs, please fill all the field";
+      this.errorMessage = "Missing inputs, please fill all the required(i.e *) fields";
       this.showErrorMessage = true;
     }
   }
