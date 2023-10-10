@@ -1,84 +1,97 @@
-<ion-content [fullscreen]="true" class="not-padding register-page">
-  
-  <section>
-    <div class="imgBx">
-      <ion-img src="assets/svg/register.png"></ion-img>
-    </div>
-    <div class="contentBx">
-      <div class="formBx">
-        <h2>Register</h2>
-        <form [formGroup]="registerForm" (ngSubmit)="register()" class="ion-padding">
-          <ion-item class="input-item">
-            <ion-label position="floating">Email</ion-label>
-            <ion-input 
-              type="email"
-              name="email"
-              formControlName="email"
-              required
-              [ngClass]="{'invalid-input': registerForm.get('email')?.invalid && registerForm.get('email')?.touched}"
-            ></ion-input>
-            <!-- <div class="error-message" *ngIf="registerForm.get('email')?.hasError('required') && registerForm.get('email')?.touched">
-              Email is required
+<ion-content [fullscreen]="true" class="outer-container">
+  <div class="auth-container">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md="6" size-lg="4" class="welcome-container">
+          <h1 class="welcome-title">Welcome Member</h1>
+          <p class="welcome-subtitle">Create new account</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="form-container">
+        <ion-col size="12" size-md="6" size-lg="4">
+          <div class="error-message-container" *ngIf="showErrorMessage">
+            <ion-item lines="none">
+             <ion-text class="error-message"> {{errorMessage}}</ion-text>
+            </ion-item>
+          </div>
+          <form  
+          [formGroup]="registerForm"
+          (submit)="register()">
+            <div class="input-field-container">
+              <ion-label>Which are you</ion-label>
+              <ion-radio-group value="student" formControlName="status">
+                <ion-item class="input-field" lines="none">
+                  <div class="member-status">
+                    <ion-item lines="none">
+                      <ion-label>Student</ion-label>
+                      <ion-radio slot="start" value="student"></ion-radio>
+                    </ion-item>
+                  </div>
+                  <div class="member-status">
+                    <ion-item lines="none">
+                      <ion-radio slot="start" value="tutor"></ion-radio>
+                      <ion-label>Tutor</ion-label>
+                    </ion-item>
+                  </div>
+                </ion-item>
+              </ion-radio-group>
             </div>
-            <div class="error-message" *ngIf="registerForm.get('email')?.hasError('email') && registerForm.get('email')?.touched">
-              Invalid email format
-            </div> -->
-          </ion-item>
-      
-          <ion-item class="input-item">
-            <ion-label position="floating">Password</ion-label>
-            <ion-input 
-              type="password"
-              name="password"
-              formControlName="password"
-              required
-              [ngClass]="{'invalid-input': registerForm.get('password')?.invalid && registerForm.get('password')?.touched}"
-            ></ion-input>
-            <!-- <div class="error-message" *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched">
-              Password is required
+
+            <div class="input-field-container">
+              <ion-label>Email</ion-label>
+              <ion-item class="input-field" lines="none">
+                <ion-input type="email" placeholder="Enter your email"  formControlName="email" required></ion-input>
+              </ion-item>
             </div>
-            <div class="error-message" *ngIf="registerForm.get('password')?.hasError('minlength') && registerForm.get('password')?.touched">
-              Password must be at least 8 characters long
+            <div class="input-field-container">
+              <ion-label>Password</ion-label>
+              <ion-item class="input-field" lines="none">
+                <ion-input type="password" placeholder="Enter your password"
+                  name="password"
+                  minlength="6"
+                  maxlength="25"
+                  formControlName="password"
+                  required
+                ></ion-input>
+              </ion-item>
             </div>
-            <div class="error-message" *ngIf="registerForm.get('password')?.hasError('maxlength') && registerForm.get('password')?.touched">
-              Password must be less than 25 characters
-            </div> -->
-          </ion-item>
-      
-          <ion-item class="input-item">
-            <ion-label position="floating">Confirm Password</ion-label>
-            <ion-input 
-              type="password"
-              name="password"
-              formControlName="cpassword"
-              required
-              [ngClass]="{'invalid-input': registerForm.get('cpassword')?.invalid && registerForm.get('cpassword')?.touched}"
-            ></ion-input>
-            <!-- <div class="error-message" *ngIf="registerForm.get('cpassword')?.hasError('required') && registerForm.get('cpassword')?.touched">
-              Confirm Password is required
+            <div class="input-field-container">
+              <ion-label>Confirm Password</ion-label>
+              <ion-item class="input-field" lines="none">
+                <ion-input type="password" placeholder="Confirm your password"
+                  name="cPassword"
+                  minlength="6"
+                  maxlength="25"
+                  formControlName="cpassword"
+                  required
+                ></ion-input>
+              </ion-item>
             </div>
-            <div class="error-message" *ngIf="registerForm.get('cpassword')?.hasError('minlength') && registerForm.get('cpassword')?.touched">
-              Confirm Password must be at least 8 characters long
+            <div class="remember-me-input">
+              <ion-checkbox class="custom-checkbox"></ion-checkbox>
+              <ion-label class="r-label">Remember me</ion-label>
+            </div>           
+
+            <div class="button-container">
+              <ion-button id="loginButton" expand="block" type="submit">Register</ion-button>
+              <div class="division-section">
+                <div class="line"></div>
+                <div class="or">OR</div>
+                <div class="line"></div>
+              </div>
+              <ion-button class="loginButton" expand="block" class="white-button">
+                <ion-icon name="logo-google" style="padding-right:5%;"></ion-icon>
+                <ion-text>Continue with Google</ion-text>
+              </ion-button>
             </div>
-            <div class="error-message" *ngIf="registerForm.get('cpassword')?.hasError('maxlength') && registerForm.get('cpassword')?.touched">
-              Confirm Password must be less than 25 characters
-            </div> -->
-          </ion-item>
-      
-          <ion-button expand="block" class="auth-button" type="submit">
-            Register
-          </ion-button>
-        </form>
-        <div class="other-login-options">
-          <h3>Sign up with social media</h3>
-          <ul class="sci">
-            <li><a routerLink="/home/dashboard"><ion-img src="assets/icon/facebook.png"></ion-img></a></li>
-            <li><a routerLink="/home/dashboard"><ion-img src="assets/icon/twitter.png"></ion-img></a></li>
-            <li><a routerLink="/home/dashboard"><ion-img src="assets/icon/instagram.png"></ion-img></a></li>
-            <li><a routerLink="/home/dashboard"><ion-img src="assets/icon/google.png"></ion-img></a></li>
-          </ul>
-        </div>
-      </div>    
-    </div>
-  </section>
+          </form>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" size-md="6" size-lg="4" class="bottom-message-container">
+          <ion-text>Already have an account? <span class="register-link" routerLink="/login">Sign in</span></ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

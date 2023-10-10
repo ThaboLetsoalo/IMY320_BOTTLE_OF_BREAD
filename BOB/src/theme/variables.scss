@@ -234,3 +234,37 @@
     --ion-card-background: #1e1e1e;
   }
 }
+
+//THEME VARIABLES
+:root {
+  // Theme Colors
+  --primary-color: #006699;
+  --primary-color-variant: #B0E0E6;
+  --secondary-color: #32db64;
+  --error-color: red;
+  --background-color: lightcyan;
+  --icon-color: lightblue;
+
+  //Text Color
+  --black-text: black;
+  --white-text: white;
+
+  //Background-color
+  --white-background-color: white;
+  --dark-background-color: black;
+
+  // Typography
+  --font-family: 'Roboto', sans-serif;
+  --font-size: 16px;
+
+  // Spacing
+  --padding: 16px;
+  --margin: 16px;
+
+  --container-padding: 20px;
+  --container-margin: 20px;
+
+  //border-sizing
+  --primary-border-size: 2px;
+  --primary-border-radius: 8px;
+}

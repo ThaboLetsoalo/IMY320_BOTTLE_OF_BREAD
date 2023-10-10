@@ -42,7 +42,7 @@ export class StudyMaterialPage implements OnInit {
     
   categories: any[] = [];
   selectedCategory: any;
-  studyMaterials: any[] = [];
+  // studyMaterials: any[] = [];
 
   name: string | undefined;
   description: string | undefined;
@@ -73,5 +73,33 @@ export class StudyMaterialPage implements OnInit {
   }
   openSearch(){
     this.navCtrl.navigateForward('/search');
+  }
+  selectedType: string = '';
+  selectedYear: string = '';
+  selectedSubject: string = '' // Initialize with an empty string
+  studyMaterials: any[] = [
+    // Replace this with your actual study material data
+    {
+      title: 'Material 1',
+      description: 'Description for Material 1',
+      year: '2022',
+    },
+    {
+      title: 'Material 2',
+      description: 'Description for Material 2',
+      year: '2021',
+    },
+    // Add more study materials as needed
+  ];
+
+  get filteredMaterials(): any[] {
+    // Filter the study materials based on the selected year and other filters
+    return this.studyMaterials.filter((material) => {
+      if (this.selectedYear !== '' && material.year !== this.selectedYear) {
+        return false;
+      }
+      // Add additional filtering conditions here if needed
+      return true;
+    });
   }
 }

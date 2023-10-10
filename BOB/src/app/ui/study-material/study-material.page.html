@@ -1,75 +1,128 @@
 <ion-content [fullscreen]="true">
-  <ion-segment [(ngModel)]="selectedTab">
-    <ion-segment-button value="notes">
-      <ion-label>Notes</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="exam-papers">
-      <ion-label>Exam Papers</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="tutorial">
-      <ion-label>Tutorial</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-
-  <!-- Tab 1 Content: Notes -->
-  <div *ngIf="selectedTab === 'notes'">
-    <br>
-    <div class="container">
-      <div class="tab" *ngFor="let noteModule of noteModules; let i = index">
-        <input type="radio" name="acc" [id]="'acc' + i">
-        <label [for]="'acc' + i">
-          <h2>0{{ i + 1 }}</h2>
-          <h3>{{ noteModule.name }}</h3>
-        </label>
-        <div class="content">
-          <p>{{ noteModule.description }}</p>
-          <p>Members: {{ noteModule.members }}</p>
-        </div>
-      </div>
-    </div>
-    <br>
+  <div class="filter-container">
+    <ion-grid>
+      <h2>Find Study Materials</h2>
+      <ion-row class="custom-row">
+        <ion-col size="12" size-lg="3">
+          <ion-label>Academic Level</ion-label>
+          <ion-item lines="none" class="input-field-container">
+            <ion-select interface="popover" [(ngModel)]="selectedYear">
+              <ion-select-option value="">All</ion-select-option>
+              <ion-select-option value="1st">1st year</ion-select-option>
+              <ion-select-option value="2nd">2nd year</ion-select-option>
+              <ion-select-option value="3rd">3rd year</ion-select-option>
+              <ion-select-option value="4th">4th year</ion-select-option>
+            </ion-select>
+          </ion-item>
+          
+        </ion-col>
+        <ion-col size="12" size-lg="3">
+          <ion-label>Module</ion-label>
+          <ion-item lines="none" class="input-field-container">
+            <ion-select interface="popover" [(ngModel)]="selectedSubject">
+              <ion-select-option value="">All</ion-select-option>
+              <ion-select-option value="Math">Math</ion-select-option>
+              <ion-select-option value="Science">Science</ion-select-option>
+              <!-- Add more options as needed -->
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12" size-lg="3">
+          <ion-label>Type</ion-label>
+          <ion-item lines="none" class="input-field-container">
+            <ion-select interface="popover" [(ngModel)]="selectedType">
+              <ion-select-option value="">All</ion-select-option>
+              <ion-select-option value="Book">Book</ion-select-option>
+              <ion-select-option value="Video">Video</ion-select-option>
+              <!-- Add more options as needed -->
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <!-- Add more filter options here -->
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" size-lg="3">
+          <ion-button expand="block">Find</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 
-  <!-- Tab 2 Content: Exam Papers -->
-  <div *ngIf="selectedTab === 'exam-papers'">
-    <br>
-    <div class="container">
-      <div class="tab" *ngFor="let examModule of examModules; let i = index">
-        <input type="radio" name="acc" [id]="'acc' + i">
-        <label [for]="'acc' + i">
-          <h2>0{{ i + 1 }}</h2>
-          <h3>{{ examModule.name }}</h3>
-        </label>
-        <div class="content">
-          <p>{{ examModule.description }}</p>
-          <p>Members: {{ examModule.members }}</p>
-        </div>
-      </div>
-    </div>
-    <br>
+  <div class="study-material-container">
+    <ion-grid>
+      <h2>Past Papers</h2>
+      <ion-row class="material-row">
+        <ion-col *ngFor="let material of [1,2,3,4]" size="12" size-sm="6" size-md="4" size-xl="3">
+          <ng-container>
+            <!-- Display the loading skeleton while data is loading -->
+            <app-study-material-skeleton></app-study-material-skeleton>
+          </ng-container>
+          <ng-template #content>
+            <!-- Display the actual study material once data is available -->
+            <ion-card class="material-card">
+              <ion-card-content>
+               <!-- content here... -->
+              </ion-card-content>
+            </ion-card>
+          </ng-template>
+        </ion-col>
+      </ion-row>
+      
+      <h2>Tutorials</h2>
+      <ion-row class="material-row">
+        <ion-col *ngFor="let material of [1,2,3,4]" size="12" size-sm="6" size-md="4" size-xl="3">
+          <ng-container>
+            <!-- Display the loading skeleton while data is loading -->
+            <app-study-material-skeleton></app-study-material-skeleton>
+          </ng-container>
+          <ng-template #content>
+            <!-- Display the actual study material once data is available -->
+            <ion-card class="material-card">
+              <ion-card-content>
+               <!-- content here... -->
+              </ion-card-content>
+            </ion-card>
+          </ng-template>
+        </ion-col>
+      </ion-row>
+
+      <h2>Books</h2>
+      <ion-row class="material-row">
+        <ion-col *ngFor="let material of [1,2,3,4]" size="12" size-sm="6" size-md="4" size-xl="3">
+          <ng-container>
+            <!-- Display the loading skeleton while data is loading -->
+            <app-study-material-skeleton></app-study-material-skeleton>
+          </ng-container>
+          <ng-template #content>
+            <!-- Display the actual study material once data is available -->
+            <ion-card class="material-card">
+              <ion-card-content>
+               <!-- content here... -->
+              </ion-card-content>
+            </ion-card>
+          </ng-template>
+        </ion-col>
+      </ion-row>
+
+      <h2>Videos</h2>
+      <ion-row class="material-row">
+        <ion-col *ngFor="let material of [1,2,3,4]" size="12" size-sm="6" size-md="4" size-xl="3">
+          <ng-container>
+            <!-- Display the loading skeleton while data is loading -->
+            <app-study-material-skeleton></app-study-material-skeleton>
+          </ng-container>
+          <ng-template #content>
+            <!-- Display the actual study material once data is available -->
+            <ion-card class="material-card">
+              <ion-card-content>
+               <!-- content here... -->
+              </ion-card-content>
+            </ion-card>
+          </ng-template>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 
-  <!-- Tab 3 Content: tutorial -->
-  <div *ngIf="selectedTab === 'tutorial'">
-    <br>
-    <div class="container">
-      <div class="tab" *ngFor="let tutorialModule of tutorialModules; let i = index">
-        <input type="radio" name="acc" [id]="'acc' + i">
-        <label [for]="'acc' + i">
-          <h2>0{{ i + 1 }}</h2>
-          <h3>{{ tutorialModule.name }}</h3>
-        </label>
-        <div class="content">
-          <p>{{ tutorialModule.description }}</p>
-          <p>Members: {{ tutorialModule.members }}</p>
-        </div>
-      </div>
-    </div>
-    <br>
-  </div>
-
-  <!-- <div class="footer">
-    <app-footer></app-footer>
-  </div> -->
-
+  <app-footer></app-footer>
 </ion-content>
