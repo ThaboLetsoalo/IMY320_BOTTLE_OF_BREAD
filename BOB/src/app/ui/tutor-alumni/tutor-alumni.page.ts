@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { BookTutorModalPage } from '../book-tutor-modal/book-tutor-modal.page';
+
 
 @Component({
   selector: 'app-tutor-alumni',
@@ -7,17 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TutorAlumniPage implements OnInit {
 
-  constructor() { }
 
   ngOnInit() {
   }
 
   isModalOpen = false;
+  selectedTutor: any;
 
-  setOpen(isOpen: boolean) {
+
+  constructor(private modalController: ModalController) {}
+
+  async setOpen(isOpen: boolean, tutor: any) {
     this.isModalOpen = isOpen;
-    
+    if (isOpen) {
+      this.selectedTutor = tutor;
+      const modal = await this.modalController.create({
+        component: BookTutorModalPage, 
+        componentProps: {
+          tutor: tutor, 
+        },
+      });
+      await modal.present();
+    } else {
+      this.selectedTutor = null;
+    }
   }
+
+  openModal(selectedTutor: any) {
+    this.setOpen(true, this.selectedTutor);
+  }
+
 
   tutorInfo = [
     {
@@ -32,7 +54,7 @@ export class TutorAlumniPage implements OnInit {
       `
     },
     {
-      name: 'Sipho Mkhize',
+      name: 'Menzi Dabula',
       img : 'assets/svg/alumni2.jpg',
       subjects: ['English', 'Mathematics', 'Swati'],
       description: `

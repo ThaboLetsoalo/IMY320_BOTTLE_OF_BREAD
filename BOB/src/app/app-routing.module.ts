@@ -22,18 +22,23 @@ const routes: Routes = [
   {
     path: 'splash',
     loadChildren: () => import('./ui/splash/splash.module').then( m => m.SplashPageModule)
-  },  {
-    path: 'calendar-picker',
-    loadChildren: () => import('./ui/calendar-picker/calendar-picker.module').then( m => m.CalendarPickerPageModule)
   },
   {
-    path: 'booking-popup',
-    loadChildren: () => import('./ui/booking-popup/booking-popup.module').then( m => m.BookingPopupPageModule)
+    path: 'calendar-picker',
+    loadChildren: () => import('./ui/calendar-picker/calendar-picker.module').then( m => m.CalendarPickerPageModule)
+  },  {
+    path: 'book-tutor-modal',
+    loadChildren: () => import('./ui/book-tutor-modal/book-tutor-modal.module').then( m => m.BookTutorModalPageModule)
   },
   {
     path: 'contact-us',
     loadChildren: () => import('./ui/contact-us/contact-us.module').then( m => m.ContactUsPageModule)
   },
+
+  // {
+  //   path: 'booking-popup',
+  //   loadChildren: () => import('./ui/booking-popup/booking-popup.module').then( m => m.BookingPopupPageModule)
+  // },
 
 ];
 
