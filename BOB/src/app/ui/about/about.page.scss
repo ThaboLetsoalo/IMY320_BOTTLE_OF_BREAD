@@ -12,14 +12,6 @@
     color: white;
   }
 
-  ion-chip {
-    pointer-events: none;
-  }
-  
-  ion-label{
-    color: #030609;
-  }
-
   &::before {
     content: "";
     position: absolute;
