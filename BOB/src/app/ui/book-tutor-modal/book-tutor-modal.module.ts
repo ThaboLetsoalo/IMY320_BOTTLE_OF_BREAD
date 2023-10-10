@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BookingPopupPageRoutingModule } from './booking-popup-routing.module';
+import { BookTutorModalPageRoutingModule } from './book-tutor-modal-routing.module';
 
-import { BookingPopupPage } from './booking-popup.page';
+import { BookTutorModalPage } from './book-tutor-modal.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BookingPopupPageRoutingModule
+    BookTutorModalPageRoutingModule
   ],
-  declarations: [BookingPopupPage]
+  declarations: [BookTutorModalPage]
 })
-export class BookingPopupPageModule {}
+export class BookTutorModalPageModule {}

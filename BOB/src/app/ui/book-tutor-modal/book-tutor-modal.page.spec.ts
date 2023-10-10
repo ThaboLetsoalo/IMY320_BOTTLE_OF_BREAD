@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BookingPopupPage } from './booking-popup.page';
+import { BookTutorModalPage } from './book-tutor-modal.page';
 
-describe('BookingPopupPage', () => {
-  let component: BookingPopupPage;
-  let fixture: ComponentFixture<BookingPopupPage>;
+describe('BookTutorModalPage', () => {
+  let component: BookTutorModalPage;
+  let fixture: ComponentFixture<BookTutorModalPage>;
 
   beforeEach(async(() => {
-    fixture = TestBed.createComponent(BookingPopupPage);
+    fixture = TestBed.createComponent(BookTutorModalPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

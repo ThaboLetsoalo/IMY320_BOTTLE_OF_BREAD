@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Book A Session</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">x</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-img [src]="tutor.img"></ion-img>
+  <h2>{{ tutor.name }}</h2>
+  <div *ngFor="let subject of tutor.subjects">
+    <ion-chip color="primary">
+      <ion-label color="primary">{{ subject }}</ion-label>
+    </ion-chip>
+  </div>
+</ion-content>
