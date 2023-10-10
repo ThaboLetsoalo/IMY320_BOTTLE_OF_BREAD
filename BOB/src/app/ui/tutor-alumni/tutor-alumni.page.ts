@@ -54,7 +54,7 @@ export class TutorAlumniPage implements OnInit {
       `
     },
     {
-      name: 'Sipho Mkhize',
+      name: 'Menzi Dabula',
       img : 'assets/svg/alumni2.jpg',
       subjects: ['English', 'Mathematics', 'Swati'],
       description: `
