@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { StudyGroupsPageRoutingModule } from './study-groups-routing.module';
 
 import { StudyGroupsPage } from './study-groups.page';
+import { FooterComponentModule } from '../splash/footer/footer.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    StudyGroupsPageRoutingModule
+    StudyGroupsPageRoutingModule,
+    FooterComponentModule
   ],
   declarations: [StudyGroupsPage]
 })

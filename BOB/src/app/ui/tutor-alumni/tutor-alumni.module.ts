@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { TutorAlumniPageRoutingModule } from './tutor-alumni-routing.module';
 
 import { TutorAlumniPage } from './tutor-alumni.page';
+import { FooterComponentModule } from '../splash/footer/footer.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TutorAlumniPageRoutingModule
+    TutorAlumniPageRoutingModule,
+    FooterComponentModule
   ],
   declarations: [TutorAlumniPage]
 })

@@ -3,20 +3,20 @@
     <ion-row>
       <ion-col size="12" size-md="6" size-lg="3">
         <ion-card class="ion-padding">
-          <ion-img src="assets/svg/alumni1.jpg"></ion-img>
+          <ion-img src="assets/svg/alumni1.jpg" loading="lazy"></ion-img>
           <ion-card-header>
             <ion-card-title>Angela Mathebula</ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <div>
               <ion-chip color="primary">
-                <ion-label>Biology</ion-label>
+                <ion-label color="primary">Biology</ion-label>
               </ion-chip>
               <ion-chip color="primary">
-                <ion-label>Anatomy</ion-label>
+                <ion-label color="primary">Anatomy</ion-label>
               </ion-chip>
               <ion-chip color="primary">
-                <ion-label>Mathematics</ion-label>
+                <ion-label color="primary">Mathematics</ion-label>
               </ion-chip>
             </div>
             <br>
@@ -37,7 +37,7 @@
   
       <ion-col size="12" size-md="6" size-lg="3">
         <ion-card class="ion-padding">
-          <ion-img src="assets/svg/alumni2.jpg"></ion-img>
+          <ion-img src="assets/svg/alumni2.jpg" loading="lazy"></ion-img>
           <ion-card-header>
             <ion-card-title>Menzi Dabula</ion-card-title>
           </ion-card-header>
@@ -45,13 +45,13 @@
             <!-- add chips for -->
             <div>
               <ion-chip color="primary">
-                <ion-label>English</ion-label>
+                <ion-label color="primary">English</ion-label>
               </ion-chip>
               <ion-chip color="primary">
-                <ion-label>Swati</ion-label>
+                <ion-label color="primary">Swati</ion-label>
               </ion-chip>
               <ion-chip color="primary">
-                <ion-label>Mathematics</ion-label>
+                <ion-label color="primary">Mathematics</ion-label>
               </ion-chip>
             </div>
             <br>
@@ -72,20 +72,20 @@
   
       <ion-col size="12" size-md="6" size-lg="3">
         <ion-card class="ion-padding">
-          <ion-img src="assets/svg/alumni3.jpg"></ion-img>
+          <ion-img src="assets/svg/alumni3.jpg" loading="lazy"></ion-img>
           <ion-card-header>
             <ion-card-title>Brandon James</ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <div>
               <ion-chip color="primary">
-                <ion-label>Computer Literacy</ion-label>
+                <ion-label color="primary">Computer Literacy</ion-label>
               </ion-chip>
               <ion-chip color="primary">
-                <ion-label>Programming</ion-label>
+                <ion-label color="primary">Programming</ion-label>
               </ion-chip>
               <ion-chip color="primary">
-                <ion-label>Mathematics</ion-label>
+                <ion-label color="primary">Mathematics</ion-label>
               </ion-chip>
             </div>
 
@@ -114,13 +114,13 @@
           <ion-card-content>
             <div>
               <ion-chip color="primary">
-                <ion-label>Law</ion-label>
+                <ion-label color="primary">Law</ion-label>
               </ion-chip>
               <ion-chip color="primary">
-                <ion-label>English</ion-label>
+                <ion-label color="primary">English</ion-label>
               </ion-chip>
               <ion-chip color="primary">
-                <ion-label>Mathematics</ion-label>
+                <ion-label color="primary">Mathematics</ion-label>
               </ion-chip>
             </div>
 
@@ -142,34 +142,8 @@
     </ion-row>
   </ion-grid>
 
-  <footer>
-    <div class="footer-content">
-      <h3>BOB</h3>
-      <p>BOB is a platform that aims to provide a seamless learning experience for students. 
-        It is a one-stop-shop for all your learning needs, including study materials, study groups, 
-        tutors, and support. BOB is your companion in your learning journey, empowering you to 
-        achieve your goals and stand out.</p>
-        <ul class="socials">
-          <li>
-            <a href="https://www.facebook.com/">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com/">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-        </ul>        
-    </div>
-    <div class="footer-bottom">
-      <p>© BOB 2023 | Designed by BOB Team</p>
-    </div>
-  </footer>
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
   
 </ion-content>
