@@ -26,6 +26,19 @@
     
     .form-container {
         margin-top: 20px;
+        .error-message-container {
+          border: var(--primary-border-size) solid var(--error-color);
+          border-radius: var(--primary-border-radius);
+          padding: 10px;
+
+          .error-message {
+            width: fit-content;
+            color: var(--error-color);
+            font-weight: bolder;
+            margin: auto;
+          }
+        }
+
         .input-field-container {
             margin-top: 20px;
             .input-field {

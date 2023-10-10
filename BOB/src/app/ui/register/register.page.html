@@ -9,12 +9,17 @@
       </ion-row>
       <ion-row class="form-container">
         <ion-col size="12" size-md="6" size-lg="4">
+          <div class="error-message-container" *ngIf="showErrorMessage">
+            <ion-item lines="none">
+             <ion-text class="error-message"> {{errorMessage}}</ion-text>
+            </ion-item>
+          </div>
           <form  
           [formGroup]="registerForm"
           (submit)="register()">
             <div class="input-field-container">
               <ion-label>Which are you</ion-label>
-              <ion-radio-group value="student">
+              <ion-radio-group value="student" formControlName="status">
                 <ion-item class="input-field" lines="none">
                   <div class="member-status">
                     <ion-item lines="none">
