@@ -14,6 +14,7 @@ import {FormControl, ReactiveFormsModule} from '@angular/forms';
 // import {NgFor} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatSelectModule,
     MatFormFieldModule,
     FormsModule,
+    MatChipsModule,
     // NgFor,
     // FormControl,
   ],

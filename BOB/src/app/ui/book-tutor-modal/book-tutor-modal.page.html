@@ -39,6 +39,19 @@
         </mat-select>
       </mat-form-field>
 
+      <ion-card class="available-times">
+        <ion-card-header>
+          <ion-card-title>Available Times</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-chip *ngFor="let time of chosenTimes" >
+            {{ time }}
+          </ion-chip>
+        </ion-card-content>
+      </ion-card>
     </div>
+  </div>
+  <div class="flex-item">
+    <ion-button (click)="bookSession()" >Book Session</ion-button>
   </div>
 </ion-content>
