@@ -5,6 +5,8 @@
 
 .filter-container {
   padding: var(--container-padding);
+  background: var(--background-color);
+  padding: 40px;
   .custom-row {
     .input-field-container {
       border: var(--primary-border-size) solid var(--primary-color-variant);
