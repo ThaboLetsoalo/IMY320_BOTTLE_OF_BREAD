@@ -277,7 +277,7 @@ $app-theme: mat.define-light-theme((
   --primary-color-variant: #B0E0E6;
   --secondary-color: #32db64;
   --error-color: red;
-  --background-color: lightcyan;
+  --background-color: #0382c1;
   --icon-color: lightblue;
 
   //Text Color
@@ -285,7 +285,7 @@ $app-theme: mat.define-light-theme((
   --white-text: white;
 
   //Background-color
-  --white-background-color: white;
+  --white-background-color: rgb(0, 0, 0);
   --dark-background-color: black;
 
   // Typography

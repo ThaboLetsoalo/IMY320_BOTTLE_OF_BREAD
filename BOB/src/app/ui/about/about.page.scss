@@ -35,6 +35,11 @@
   background-size: cover;
 }
 
+.container-fluid {
+  background-position: center;
+  background-size: cover;
+}
+
 ion-row{
   display: flex;
   justify-content: center;
@@ -70,18 +75,4 @@ ion-chip {
       }
     }
   }
-}
-.content-header {
-  // width: 100%;
-  // border-radius: 5px;
-  // background: var(--background-color);
-}
-.card-container {
-  padding: var(--container-padding);
-  margin-right: var(--container-padding);
-  margin-left: var(--container-padding);
-  border: var(--primary-border-size) solid var(--primary-color-variant);
-  border-radius: 5px;
-  background: var(--background-color);
-  color: white;
 }
