@@ -2,6 +2,7 @@
   padding: 40px;
   text-align: center;
   background: var(--background-color);
+  color: white;
   ion-searchbar {
     text-align: start;
   }
@@ -14,6 +15,7 @@
       border: var(--primary-border-size) solid var(--primary-color-variant);
       width: fit-content;
       border-radius: 5px;
+      margin-right: 10px;
     }
   }
 }
@@ -29,6 +31,7 @@
       margin-left: var(--container-padding);
       border: var(--primary-border-size) solid var(--primary-color-variant);
       border-radius: 5px;
+      cursor: pointer;
 
       ion-icon {
         color: var(--icon-color);

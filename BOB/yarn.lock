@@ -362,7 +362,7 @@
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-16.2.5.tgz#2c7854c37e9b8483d8ca4d192a238145c9d71770"
   integrity sha512-lYNRN4+iavDuAs86lRHuiTUxtVtsarCZPeoG6K1TEvrXrvmIbTtAbvONNMMnteO9ltCTduyREF9/sefE2Qw/Rg==
 
-"@angular/material@16.2.8":
+"@angular/material@^16.2.8":
   version "16.2.8"
   resolved "https://registry.yarnpkg.com/@angular/material/-/material-16.2.8.tgz#f971fc03522c4c3422affe5f283f991350b076b4"
   integrity sha512-0nheFMJ2K+X460T1JVa49orCu1P9hg9bP50izZxPwL3lrMUr3scgvKZ5MWcKQBQz/wePAhsgm1quNhTpUZiMHw==

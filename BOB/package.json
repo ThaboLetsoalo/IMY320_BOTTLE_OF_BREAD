@@ -13,7 +13,8 @@
     "generate-pages": "bash generate-pages.sh",
     "fix:node_modules": "cp -p fixes/interfaces.d.ts node_modules/@angular/fire/compat/firestore/interfaces.d.ts",
     "fix_windows:node_modules": "xcopy /y fixes\\interfaces.d.ts node_modules\\@angular\\fire\\compat\\firestore\\interfaces.d.ts",
-    "fix_window:rxfire": "xcopy /y fixes\\rxfire node_modules"
+    "windows:remove:rxfire": "rmdir /s /q node_modules/rxfire",
+    "windows:add:rxfire": "xcopy /y fixes\\rxfire node_modules"
   },
   "private": true,
   "dependencies": {
@@ -24,7 +25,7 @@
     "@angular/core": "^16.0.0",
     "@angular/fire": "^7.6.1",
     "@angular/forms": "^16.0.0",
-    "@angular/material": "16.2.8",
+    "@angular/material": "^16.2.8",
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
