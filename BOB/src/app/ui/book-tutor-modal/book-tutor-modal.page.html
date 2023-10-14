@@ -7,15 +7,38 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content class="custom-modal-content" *ngIf="!isLoading">
-  <ion-row>
-    <ion-col size="12">
-      <h2 class="tutor-name">{{ tutor.name }}</h2>
-      <div *ngFor="let subject of tutor.subjects" class="chips-row">
-        <ion-chip color="primary">
-          <ion-label color="primary">{{ subject }}</ion-label>
-        </ion-chip>
-      </div>
-    </ion-col>
-  </ion-row>
+  <div class="flex-container">
+    <div class="flex-item calendar">
+      <ion-item>
+        <ion-card class="demo-inline-calendar-card">
+          <mat-calendar [minDate]="minDate" [maxDate]="maxDate" [selected]="selected"></mat-calendar>
+        </ion-card>
+      </ion-item>
+      
+    </div>
+
+    <div class="flex-item subject">
+      
+      <mat-form-field >
+        <mat-label>Choose Subject</mat-label>
+        <mat-select [(ngModel)]="selectedSubject"> 
+          <mat-option *ngFor="let subject of tutor.subjects" [value]="subject">
+            {{ subject }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> 
+      
+      <mat-form-field >
+        <mat-label>Choose Duration</mat-label>
+        <mat-select [(ngModel)]="selectedDuration"> 
+          <mat-option *ngFor="let duration of durations" [value]="duration">
+            {{ duration }} hr (s)
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+  </div>
 </ion-content>

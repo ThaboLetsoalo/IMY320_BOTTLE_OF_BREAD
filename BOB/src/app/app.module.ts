@@ -16,11 +16,27 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getDatabase,provideDatabase } from '@angular/fire/database';
 import { getStorage,provideStorage } from '@angular/fire/storage';
 import { getRemoteConfig,provideRemoteConfig } from '@angular/fire/remote-config';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCardModule } from '@angular/material/card';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule, 
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    NoopAnimationsModule,
+    // FormControl,
+    MatFormFieldModule,
+    // ReactiveFormsModule,
+    // NgFor,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     FormsModule, 
@@ -46,5 +62,6 @@ import { getRemoteConfig,provideRemoteConfig } from '@angular/fire/remote-config
     }),],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AngularFirestore],
   bootstrap: [AppComponent],
+  
 })
 export class AppModule {}

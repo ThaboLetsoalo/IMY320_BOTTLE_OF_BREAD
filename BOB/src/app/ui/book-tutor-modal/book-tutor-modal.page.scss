@@ -3,3 +3,37 @@
     flex-wrap: wrap;
     gap: 5px; 
   }
+
+  .demo-inline-calendar-card {
+    width: 400px;
+
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: column; 
+  }
+  
+  .flex-item {
+    flex: 1;
+    padding: 10px; 
+    min-width: 0; 
+  }
+  
+  @media (min-width: 768px) {
+    .flex-container {
+      flex-direction: row; 
+    }
+  
+    .calendar {
+      flex: 1; 
+    }
+  
+    .subject {
+      flex: 1; 
+    }
+  }
+  
+mat-form-field {
+  width: 100%;
+}
