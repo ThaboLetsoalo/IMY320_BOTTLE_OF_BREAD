@@ -5,8 +5,9 @@
   }
 
   .demo-inline-calendar-card {
-    width: 400px;
-
+    width: 100%;
+    height: 100%;
+    margin: auto 0;
   }
 
   .flex-container {
@@ -40,4 +41,5 @@ mat-form-field {
 
 .available-times{
   width: 100%;
+  margin: auto 0;
 }

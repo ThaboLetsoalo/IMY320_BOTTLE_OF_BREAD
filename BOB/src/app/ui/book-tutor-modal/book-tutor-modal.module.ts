@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule} from '@angular/forms';
-import {NgFor} from '@angular/common';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -10,8 +9,8 @@ import { BookTutorModalPageRoutingModule } from './book-tutor-modal-routing.modu
 import { BookTutorModalPage } from './book-tutor-modal.page';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
-import {FormControl, ReactiveFormsModule} from '@angular/forms';
-// import {NgFor} from '@angular/common';
+import { MatNativeDateModule } from '@angular/material/core';
+import { ReactiveFormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatChipsModule} from '@angular/material/chips';
@@ -21,6 +20,7 @@ import {MatChipsModule} from '@angular/material/chips';
     CommonModule,
     FormsModule,
     IonicModule,
+    MatNativeDateModule,
     BookTutorModalPageRoutingModule,
     MatDatepickerModule,
     MatCardModule,
@@ -29,8 +29,6 @@ import {MatChipsModule} from '@angular/material/chips';
     MatFormFieldModule,
     FormsModule,
     MatChipsModule,
-    // NgFor,
-    // FormControl,
   ],
   declarations: [BookTutorModalPage]
 })

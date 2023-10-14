@@ -13,14 +13,12 @@
     <div class="flex-item calendar">
       <ion-item>
         <ion-card class="demo-inline-calendar-card">
-          <mat-calendar [minDate]="minDate" [maxDate]="maxDate" [selected]="selected"></mat-calendar>
+          <mat-calendar [minDate]="minDate" [maxDate]="maxDate" [(selected)]="selected" (selectedChange)="loadAvailableTimes()"></mat-calendar>
         </ion-card>
-      </ion-item>
-      
+      </ion-item>      
     </div>
 
     <div class="flex-item subject">
-      
       <mat-form-field >
         <mat-label>Choose Subject</mat-label>
         <mat-select [(ngModel)]="selectedSubject"> 
@@ -43,12 +41,15 @@
         <ion-card-header>
           <ion-card-title>Available Times</ion-card-title>
         </ion-card-header>
-        <ion-card-content>
-          <ion-chip *ngFor="let time of chosenTimes" >
-            {{ time }}
-          </ion-chip>
+        <ion-card-content *ngIf="!loadAvailable">
+          <mat-chip-grid>
+            <mat-chip-option *ngFor="let time of chosenTimes; let i = index" [value]="time" [selected]="i === 0">
+              {{ time }}
+            </mat-chip-option>            
+          </mat-chip-grid>
         </ion-card-content>
       </ion-card>
+      
     </div>
   </div>
   <div class="flex-item">

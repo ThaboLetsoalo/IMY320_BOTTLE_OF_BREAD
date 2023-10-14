@@ -1,0 +1,19 @@
+.custom-loader-class {
+    --background: transparent;
+    --backdrop-background-color: rgba(0, 0, 0, 0.5);
+    --backdrop-opacity: 1;
+    --spinner-color: transparent;
+    --spinner: none;
+  }
+  
+  .custom-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .custom-loader img {
+    width: 100px; // Adjust the size as needed
+    height: 100px;
+  }

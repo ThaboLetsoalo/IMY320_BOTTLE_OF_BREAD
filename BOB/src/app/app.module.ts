@@ -22,7 +22,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,10 +33,8 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
     MatNativeDateModule,
     MatSelectModule,
     NoopAnimationsModule,
-    // FormControl,
+    MatChipsModule,
     MatFormFieldModule,
-    // ReactiveFormsModule,
-    // NgFor,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     FormsModule, 
