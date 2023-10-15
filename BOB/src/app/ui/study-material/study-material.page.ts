@@ -83,14 +83,14 @@ export class StudyMaterialPage implements OnInit {
       subject : 'Computer Science',
     },
     {
-      author: 'Mary Hitlist',
+      author: 'Rosemary \'Hitlist\' Ndlovu',
       title: 'Business Studies or Economics?',
       question: 'How do insurance companies make money? Can someone explain it to me?',
       img: 'assets/svg/question.png',
       subject : 'Business Studies',
     },
     {
-      author: 'Kee Peele',
+      author: 'Barack Odama',
       title: 'Countries which were involved in World War 2?',
       question: 'I am having trouble remembering which countries were involved in World War 2. Can someone explain it to me?',
       img: 'assets/svg/question.png',
