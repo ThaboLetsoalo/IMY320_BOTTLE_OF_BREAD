@@ -15,7 +15,7 @@ export class SplashPage implements OnInit {
   constructor(private router: Router) { }
 
   navigateToDashboard() {
-    this.router.navigate(['/home/study-material']);
+    this.router.navigate(['/home/study-material/']);
   }
 
 }
