@@ -45,6 +45,10 @@ const routes: Routes = [
         path: 'event-creation',
         loadChildren: () => import('../event-creation/event-creation.module').then( m => m.EventCreationPageModule)
       },
+      {
+        path: 'profile',
+        loadChildren: () => import('../profile/profile.module').then( m => m.ProfilePageModule)
+      }
     ]
   }
 ];

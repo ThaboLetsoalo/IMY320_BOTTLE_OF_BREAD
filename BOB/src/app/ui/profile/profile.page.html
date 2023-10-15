@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>MyProfile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="outer-container">
+  <div class="inner-container">
+    <ion-grid *ngIf="showProfile">
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" size-lg="6">
+          <div class="avatar-container">
+            <div class="image-container">
+              <ion-avatar class="ion-justify-content-center">
+                <ion-img [src]="profile.profileURL"></ion-img>
+              </ion-avatar>
+              <ion-fab class="select-image-icon">
+                <ion-fab-button (click)="selectFile()">
+                  <ion-icon name="image-outline"></ion-icon>
+                </ion-fab-button>
+              </ion-fab>
+            </div>
+            <input type="file" id="GroupProfileImgInput" accept="image/*" (change)="onFileSelected($event)" style="display: none">
+          </div>          
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" size-lg="6">
+          <div class="input-field-container">
+            <ion-label>Username</ion-label>
+            <ion-item class="input-field" lines="none">
+              <ion-input type="email" (ionInput)="isChange()" [(ngModel)]="profile.displayName" placeholder="Email address"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6" size-lg="3">
+          <div class="input-field-container">
+            <ion-label>First name</ion-label>
+            <ion-item class="input-field" lines="none">
+              <ion-input type="text" (ionInput)="isChange()" [(ngModel)]="profile.name" placeholder="First name"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+        <ion-col size="6" size-lg="3">
+          <div class="input-field-container">
+            <ion-label>Last name</ion-label>
+            <ion-item class="input-field" lines="none">
+              <ion-input type="text" (ionInput)="isChange()" [(ngModel)]="profile.lastName" placeholder="Last name"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" size-lg="6">
+          <div class="input-field-container">
+            <ion-label>Email</ion-label>
+            <ion-item class="input-field" lines="none">
+              <ion-input type="email" (ionInput)="isChange()" [disabled]="true" [(ngModel)]="profile.email" placeholder="Email address"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" size-lg="6">
+          <div class="button-container">
+            <ion-button id="loginButton" [disabled]="!valuesChanged" expand="block" (click)="edit()">Save</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+ </div>
+</ion-content>

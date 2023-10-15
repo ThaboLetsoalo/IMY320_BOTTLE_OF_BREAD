@@ -44,7 +44,7 @@
   
   .login__title {
     text-align: center;
-    font-size: var(--h1-font-size);
+    // font-size: var(--h1-font-size);
     margin-bottom: 1.25rem;
   }
   
@@ -148,7 +148,7 @@
   }
   
   .login__register a {
-    color: var(--white-color);
+    // color: var(--white-color);
     font-weight: 500;
   }
   
@@ -188,7 +188,6 @@
   .centered-toggle-group {
     display: flex;
     justify-content: center;
-    background-color: aqua;
   }
   
   .mat-button-toggle {
@@ -204,5 +203,22 @@
     background-color: var(--ion-color-dark-shade);
     color: var(--ion-color-light);
   }
+
+  .error-item {
+    --background: var( --ion-color-danger);
+    color: white;
+    .error-message {
+      width: fit-content;
+      margin: auto;
+    }
+  }
+
+  .login-input-container {
+    ::ng-deep .mat-button-toggle-checked {
+      background-color: var(--background-color);
+      // color: white;
+    }
+  }
+  
   
   

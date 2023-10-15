@@ -1,5 +1,10 @@
  <div class="login">
 	<img src="assets/svg/login.png" alt="image" class="login__bg">
+	<div class="error-message-container" *ngIf="showErrorMessage">
+		<ion-item lines="none" class="error-item">
+		 <ion-text class="error-message"> {{errorMessage}}</ion-text>
+		</ion-item>
+	</div>
 
 	<form [formGroup]="loginForm" (submit)="login()" class="login__form" [ngClass]="getCurrentMode() === 'dark' ? 'dark-mode' : 'light-mode'">
 	   <h1 class="login__title">Login</h1>

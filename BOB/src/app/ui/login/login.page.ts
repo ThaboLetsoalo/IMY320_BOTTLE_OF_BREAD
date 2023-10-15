@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder,  Validators } from '@angular/forms';
+import { FormBuilder,  FormGroup,  Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -9,21 +9,25 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
+  errorMessage = "";
+  showErrorMessage = false;
+  loginForm: FormGroup;
 
-  loginForm = this.formBuilder.group({
-    email: ['',[Validators.email]],
-    password: ['',[Validators.minLength(8), Validators.maxLength(25)]]
-  })
-
-  constructor(private router: Router, private formBuilder: FormBuilder,private auth: AuthService) {}
+  constructor(private router: Router, private formBuilder: FormBuilder,private auth: AuthService) {
+    this. loginForm = this.formBuilder.group({
+      email: ['',[Validators.email]],
+      password: ['',[Validators.minLength(8), Validators.maxLength(25)]]
+    })
+  }
 
   login() {
-    const email = this.loginForm?.get('email')?.value;
-    const password = this.loginForm?.get('password')?.value;
-    if(email != null && password != null) {
+    if(this.loginForm.valid) {
+      const email = this.loginForm?.get('email')?.value;
+      const password = this.loginForm?.get('password')?.value;
       this.auth.login(email, password);
     } else {
-      console.log("missing fields")
+      this.errorMessage = "Missing inputs, please fill all the fields";
+      this.showErrorMessage = true;
     }
   }
 

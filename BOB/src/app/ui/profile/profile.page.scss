@@ -1,0 +1,46 @@
+.outer-container {
+    .inner-container {
+        padding: 20px;
+       
+        .input-field-container {
+            margin-top: 20px;
+            .input-field {
+                background-color: var(--input-field-color);
+                margin-top: 10px;
+                border-radius: 10px;
+                border: var(--primary-border-size) solid var(--primary-color-variant);
+                border-radius: var(--primary-border-radius);
+                .member-status {
+                  flex: 1;
+                  text-align: center;
+                  margin: 10px;
+                }
+            }
+        }
+    }
+}
+
+.avatar-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    ion-avatar {
+        height: 200px;
+        width: 200px;
+    }
+  }
+  
+  .image-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .select-image-icon {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    font-size: 2rem;
+    color: #007bff;
+    cursor: pointer;
+  }
+  

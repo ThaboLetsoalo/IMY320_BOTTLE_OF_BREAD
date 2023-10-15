@@ -49,6 +49,10 @@ const routes: Routes = [
   {
     path: 'view-material',
     loadChildren: () => import('./ui/view-material/view-material.module').then( m => m.ViewMaterialPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./ui/profile/profile.module').then( m => m.ProfilePageModule)
   }
 
 

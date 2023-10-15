@@ -21,7 +21,7 @@
         <ion-button routerLink="/login" routerLinkActive="active">Login</ion-button>
       </ion-buttons>
       <ion-buttons *ngIf="showProfile" slot="end">
-        <ion-chip>
+        <ion-chip routerLink="/home/profile" routerLinkActive="active">
           {{profile.displayName}}
           <ion-avatar>
             <ion-img [src]="profile.profileURL"></ion-img>
@@ -49,23 +49,23 @@
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <!-- 
+      
       <ion-buttons slot="end" *ngIf="!showProfile">
         <ion-button routerLink="/register" routerLinkActive="active">Register</ion-button>
         <ion-button routerLink="/login" routerLinkActive="active">Login</ion-button>
       </ion-buttons>
-      <ion-buttons slot="end" *ngIf="showProfile">
-        <ion-chip>
-          {{"John"}}
-          <ion-avatar class="user-avatar">
-            <ion-img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"></ion-img>
+      <ion-buttons *ngIf="showProfile" slot="end">
+        <ion-chip routerLink="/home/profile" routerLinkActive="active">
+          {{profile.displayName}}
+          <ion-avatar>
+            <ion-img [src]="profile.profileURL"></ion-img>
           </ion-avatar>
         </ion-chip>
         <ion-button (click)="signOut()">
           <ion-icon name="exit-outline"></ion-icon>
         </ion-button>
       </ion-buttons>
-       -->
+      
     </ion-toolbar>
   </ion-header>
 
