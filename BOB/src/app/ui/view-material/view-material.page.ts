@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { set } from '@angular/fire/database';
 import { ModalController, LoadingController } from '@ionic/angular';
 
 @Component({
@@ -20,16 +21,20 @@ export class ViewMaterialPage implements OnInit {
   async ngOnInit() {
     const loading = await this.loadingController.create({
       message: 'Loading discussion..',
-      duration: 2000, 
+      duration: 4000, 
       spinner: 'bubbles',
     });
 
     await loading.present();
 
     setTimeout(() => {
+      loading.message = 'Discussion loaded';
+    }, 3000);
+
+    setTimeout(() => {
       loading.dismiss();
       this.isLoading = false; 
-    }, 2000);
+    }, 4000);
   }
   
   closeModal() {
@@ -57,16 +62,20 @@ export class ViewMaterialPage implements OnInit {
   {
     const loading = await this.loadingController.create({
       message: 'Submitting answer...',
-      duration: 2000, 
+      duration: 4000, 
       spinner: 'bubbles',
     });
 
     await loading.present();
 
     setTimeout(() => {
+      loading.message = 'Answer submitted';
+    }, 3000);
+
+    setTimeout(() => {
       loading.dismiss();
       this.closeModal();
-    }, 2000);
+    }, 4000);
   }
 
 }

@@ -18,33 +18,41 @@ export class AddMaterialPage implements OnInit {
 
   async ngOnInit() {
     const loading = await this.loadingController.create({
-      message: 'Loading modal..',
-      duration: 2000, 
+      message: 'Loading Discussion Modal..',
+      duration: 4000, 
       spinner: 'bubbles',
     });
 
     await loading.present();
 
     setTimeout(() => {
+      loading.message = 'Discussion Modal loaded';
+    }, 3000);
+
+    setTimeout(() => {
       loading.dismiss();
       this.isLoading = false; 
-    }, 2000);
+    }, 4000);
   }
 
   async addingMaterial()
   {
     const loading = await this.loadingController.create({
-      message: 'Submitting answer...',
-      duration: 2000, 
+      message: 'Adding Discussion..',
+      duration: 4000, 
       spinner: 'bubbles',
     });
 
     await loading.present();
 
     setTimeout(() => {
+      loading.message = 'Discussion added';
+    }, 3000);
+
+    setTimeout(() => {
       loading.dismiss();
       this.closeModal();
-    }, 2000);
+    }, 4000);
   }
 
   closeModal() {
