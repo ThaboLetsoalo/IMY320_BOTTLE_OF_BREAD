@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { StudyMaterialService } from './study-material.service';
 import { NavController } from '@ionic/angular'; // Import NavController
 import { ModalController, LoadingController } from '@ionic/angular';
+import { ViewMaterialPage } from '../view-material/view-material.page';
+import { AddMaterialPage } from '../add-material/add-material.page';
 
 @Component({
   selector: 'app-study-material',
@@ -36,6 +38,7 @@ export class StudyMaterialPage implements OnInit {
       loading.dismiss();
     }, 4000);
   }
+  
 
   educationDiscussion = 
   [
@@ -83,7 +86,7 @@ export class StudyMaterialPage implements OnInit {
       subject : 'Computer Science',
     },
     {
-      author: 'Rosemary \'Hitlist\' Ndlovu',
+      author: 'Rosemary Hitlist Ndlovu',
       title: 'Business Studies or Economics?',
       question: 'How do insurance companies make money? Can someone explain it to me?',
       img: 'assets/svg/question.png',
@@ -115,5 +118,46 @@ export class StudyMaterialPage implements OnInit {
 
   selectedSubject = 'Select Subject';
   selectedGrade = 'Select Grade';
+  selectedMaterial: any;
+
+  openModal(material: any) {
+    this.setOpen(true, material);
+  }
+
+  async setOpen(isOpen: boolean, material: any) {
+    this.isModalOpen = isOpen;
+    if (isOpen) {
+      this.selectedMaterial = material;
+      const modal = await this.modalController.create({
+        component: ViewMaterialPage, 
+        componentProps: {
+          material: material, 
+        },
+      });
+      await modal.present();
+    } else {
+      this.selectedMaterial = null;
+    }
+  }
+
+  addMaterial()
+  {
+    this.OpenAddmaterial(true);
+  }
+
+  async OpenAddmaterial(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+    if (isOpen) {
+      const modal = await this.modalController.create({
+        component: AddMaterialPage, 
+        componentProps: {
+          material: null, 
+        },
+      });
+      await modal.present();
+    } else {
+      this.selectedMaterial = null;
+    }
+  }
   
 }
