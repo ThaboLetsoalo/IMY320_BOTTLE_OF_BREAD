@@ -25,19 +25,24 @@ export class StudyMaterialPage implements OnInit {
   {}
 
   
-  async search() { 
+  async search() {
     const loading = await this.loadingController.create({
       message: 'Searching For A Discussion',
-      duration: 3000, 
+      duration: 4000,
       spinner: 'bubbles',
     });
-
+  
     await loading.present();
-    loading.message = 'Discussions loading';
+  
+    setTimeout(() => {
+      loading.message = 'Discussions results found';
+    }, 3000);
+  
     setTimeout(() => {
       loading.dismiss();
     }, 4000);
   }
+  
   
 
   educationDiscussion = 

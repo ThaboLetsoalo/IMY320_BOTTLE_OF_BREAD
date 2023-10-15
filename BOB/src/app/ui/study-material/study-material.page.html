@@ -122,38 +122,40 @@
       <div class="hero-text">
         <h1>Find a Discussion</h1>
         <p style="text-align: center;">Find a discussion that might help you understand something you don't understand</p>
-        <ion-grid style="margin-bottom: 3px;">
+        <ion-grid >
           <ion-row class="align-items-center">
             <ion-col size="12" size-md="6" size-lg="6">
-                <mat-form-field >
-                  <mat-label>Choose Subject</mat-label>
-                  <mat-select [(ngModel)]="selectedSubject"> 
-                    <mat-option *ngFor="let subject of subjectList" [value]="subject">
-                      {{ subject }}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field> 
+              <mat-form-field>
+                <mat-label>Choose Subject</mat-label>
+                <mat-select [(ngModel)]="selectedSubject">
+                  <mat-option *ngFor="let subject of subjectList" [value]="subject">
+                    {{ subject }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
             </ion-col>
             <ion-col size="12" size-md="6" size-lg="6">
-              <mat-form-field >
+              <mat-form-field>
                 <mat-label>Choose Level</mat-label>
-                <mat-select [(ngModel)]="selectedGrade"> 
+                <mat-select [(ngModel)]="selectedGrade">
                   <mat-option *ngFor="let level of gradeList" [value]="level">
                     {{ level }}
                   </mat-option>
                 </mat-select>
-              </mat-form-field>             
-            </ion-col> 
+              </mat-form-field>
+            </ion-col>
           </ion-row>
           <ion-row class="align-items-center">
             <ion-col size="12" size-md="6" size-lg="6">
-              <ion-searchbar placeholder="Search for a discussion"></ion-searchbar>
+              <ion-searchbar placeholder="Search for a discussion" class="custom-searchbar"></ion-searchbar>
             </ion-col>
             <ion-col size="12" size-md="6" size-lg="6">
-              <ion-button color="primary" class="button-full-width" (click)="search()">Search</ion-button>
+              <ion-button color="primary" class="button-full-width" (click)="search()" style="height: 41px; margin-top: 5px;">Search</ion-button>
             </ion-col>
           </ion-row>
+          
         </ion-grid>
+        
       </div>
     </section>
   </ion-header>

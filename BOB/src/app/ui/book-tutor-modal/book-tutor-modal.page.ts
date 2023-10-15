@@ -35,7 +35,7 @@ export class BookTutorModalPage implements OnInit {
     this.loadAvailable = true;
     const loadAvailable = await this.loadingController.create({
       message: 'Looking For available times...',
-      duration: 2000,
+      duration: 4000,
       spinner: 'bubbles', 
       translucent: true,
       cssClass: 'custom-loader-class',
@@ -45,10 +45,14 @@ export class BookTutorModalPage implements OnInit {
     await loadAvailable.present();
 
     setTimeout(() => {
+      loadAvailable.message = 'Available times found';
+    }, 3000);
+
+    setTimeout(() => {
       loadAvailable.dismiss();
       this.loadAvailable = false;
       this.chosenTimes = this.chooseSixTimes();
-    }, 2000);
+    }, 4000);
   }
 
   chooseSixTimes() {
@@ -71,12 +75,16 @@ export class BookTutorModalPage implements OnInit {
   async ngOnInit() {
     
     const loading = await this.loadingController.create({
-      message: 'BOB...',
-      duration: 2000, 
+      message: 'Loading Booking Modal..',
+      duration: 4000, 
       spinner: 'bubbles',
     });
 
     await loading.present();
+
+    setTimeout(() => {
+      loading.message = 'Booking Modal loaded';
+    }, 3000);
 
     setTimeout(() => {
       loading.dismiss();
@@ -89,7 +97,7 @@ export class BookTutorModalPage implements OnInit {
       this.durations = [0.5, 1, 1.5, 2];
       this.selectedTime = this.chosenTimes[0];
 
-    }, 2000);
+    }, 4000);
   }
 
   closeModal() {
@@ -105,19 +113,22 @@ export class BookTutorModalPage implements OnInit {
   async presentLoading() {
     const loading = await this.loadingController.create({
       message: 'Booking Session - Subject: ' + this.selectedSubject + ' - Duration: ' + this.selectedDuration + ' - Date: ' + this.selected,
-      duration: 2000, 
+      duration: 4000, 
       spinner: 'bubbles',
     });
 
     await loading.present();
 
-    loading.message = 'Session Booked!';
+    setTimeout(() => {
+      loading.message = 'Session booked';
+    }, 3000);
+    
     setTimeout(() => {
       //show that session is booked at 1.8 seconds
       
       loading.dismiss();
       this.modalController.dismiss();
-    }, 2000);
+    }, 4000);
   }
 
 }
