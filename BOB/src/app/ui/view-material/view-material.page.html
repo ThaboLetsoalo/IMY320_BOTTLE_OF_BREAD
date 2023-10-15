@@ -11,16 +11,16 @@
 <ion-content class="custom-modal-content" *ngIf="!isLoading">
   <div class="flex-container">
     <div class="flex-item calendar">
-      <ion-item>
-        <ion-card class="demo-inline-calendar-card" *ngFor="let subject of material">
+        <ion-card class="demo-inline-calendar-card" >
           <ion-card-header>
-            <ion-card-title>{{ subject.subject }}</ion-card-title>
+            <ion-card-title>
+              <img src= '{{ material.img }}' style="width: 100%; height: 100%; object-fit: contain;">
+            </ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <ion-card-subtitle>{{ subject.question }}</ion-card-subtitle>
+            <ion-card-subtitle>{{ material.question }}</ion-card-subtitle>
           </ion-card-content>
         </ion-card>
-      </ion-item>  
       <br>
       <ion-card class="demo-inline-calendar-card">
         <ion-card-header>
@@ -37,7 +37,7 @@
     </div>
 
     <div class="flex-item subject">
-      <ion-card class="demo-inline-calendar-card" *ngFor="let subject of defaultAnswers">
+      <ion-card class="demo-inline-calendar-card" *ngFor="let subject of defaultAnswers" style="margin-bottom: 10px;">
         <ion-card-header>
           <ion-card-title>{{ subject.author }}</ion-card-title>
         </ion-card-header>
@@ -47,7 +47,5 @@
       </ion-card>     
     </div>
   </div>
-  <!-- <div class="flex-item">
-    <ion-button (click)="bookSession()" >Book Session</ion-button>
-  </div> -->
+ 
 </ion-content>

@@ -161,28 +161,28 @@
 
   <ion-grid class="ion-text-center">
     <ion-row>
-      <ion-col size="12" size-md="6" size-lg="3" *ngFor="let tutor of filterEducationDiscussion">
+      <ion-col size="12" size-md="6" size-lg="3" *ngFor="let material of filterEducationDiscussion">
         <ion-card class="ion-padding">
-          <ion-img src= '{{ tutor.img }}'></ion-img>
+          <ion-img src= '{{ material.img }}'></ion-img>
           <ion-card-header>
-            <ion-card-title>{{ tutor.author }}</ion-card-title>
+            <ion-card-title>{{ material.author }}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <div style="display: flex; flex-wrap: wrap; justify-content: center;">
                 <ion-chip color="primary">
-                  <ion-label color="primary">{{ tutor.subject }}</ion-label>
+                  <ion-label color="primary">{{ material.subject }}</ion-label>
                 </ion-chip>  
             </div>
             <br>
             <div class="question-title">
-              {{ tutor.title }}
+              {{ material.title }}
             </div>
             <div>
-              {{ tutor.question }}
+              {{ material.question }}
             </div>
             <br>
             <div>
-              <ion-button color="primary" (click)="openModal(tutor)">READ MORE</ion-button>               
+              <ion-button color="primary" (click)="openModal(material)">READ MORE</ion-button>               
             </div>
           </ion-card-content>
         </ion-card>

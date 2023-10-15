@@ -10,6 +10,7 @@ export class ViewMaterialPage implements OnInit {
 
   @Input() material: any;
   isLoading: boolean = true; 
+  // console.log(this.material);
 
   constructor(
     private modalController: ModalController,
@@ -17,7 +18,7 @@ export class ViewMaterialPage implements OnInit {
   ) { }
 
   async ngOnInit() {
-    
+    console.log('dsgdsjh' + this.material.subject);
     const loading = await this.loadingController.create({
       message: 'Loading discussion..',
       duration: 2000, 
