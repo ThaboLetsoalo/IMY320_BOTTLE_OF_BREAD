@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudyMaterialService } from './study-material.service';
 import { NavController } from '@ionic/angular'; // Import NavController
+import { ModalController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-study-material',
@@ -11,12 +12,30 @@ import { NavController } from '@ionic/angular'; // Import NavController
 })
 export class StudyMaterialPage implements OnInit {
 
+  isModalOpen = false;
+  selectedDiscussion: any;
   
-  constructor(private studyMaterialService: StudyMaterialService, private navCtrl: NavController) { }
+  constructor(private studyMaterialService: StudyMaterialService, private navCtrl: NavController,
+    private modalController: ModalController, private loadingController: LoadingController,) { }
  
 
   ngOnInit() 
   {}
+
+  
+  async search() { 
+    const loading = await this.loadingController.create({
+      message: 'Searching For A Discussion',
+      duration: 3000, 
+      spinner: 'bubbles',
+    });
+
+    await loading.present();
+    loading.message = 'Discussions loading';
+    setTimeout(() => {
+      loading.dismiss();
+    }, 4000);
+  }
 
   educationDiscussion = 
   [
@@ -64,14 +83,14 @@ export class StudyMaterialPage implements OnInit {
       subject : 'Computer Science',
     },
     {
-      author: 'Mary Hitlist',
+      author: 'Rosemary \'Hitlist\' Ndlovu',
       title: 'Business Studies or Economics?',
       question: 'How do insurance companies make money? Can someone explain it to me?',
       img: 'assets/svg/question.png',
       subject : 'Business Studies',
     },
     {
-      author: 'Kee Peele',
+      author: 'Barack Odama',
       title: 'Countries which were involved in World War 2?',
       question: 'I am having trouble remembering which countries were involved in World War 2. Can someone explain it to me?',
       img: 'assets/svg/question.png',
