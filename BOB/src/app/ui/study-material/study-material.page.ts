@@ -86,7 +86,7 @@ export class StudyMaterialPage implements OnInit {
       subject : 'Computer Science',
     },
     {
-      author: 'Rosemary \'Hitlist\' Ndlovu',
+      author: 'Rosemary Hitlist Ndlovu',
       title: 'Business Studies or Economics?',
       question: 'How do insurance companies make money? Can someone explain it to me?',
       img: 'assets/svg/question.png',
