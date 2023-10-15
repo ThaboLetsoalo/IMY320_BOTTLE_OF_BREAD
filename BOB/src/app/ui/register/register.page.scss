@@ -64,7 +64,7 @@
     align-items: center;
     border: 2px solid white;
     padding-inline: 1.25rem;
-    border-radius: 4rem;
+    border-radius: 5px; //4rem;
   }
   
   .login__input, 
@@ -174,13 +174,24 @@
     }
   }
 
-  .centered-toggle-group {
-    width: fit-content;
-    margin: auto;
-  }
+  // .centered-toggle-group {
+  //   width: fit-content;
+  //   margin: auto;
+  // }
   
   // .mat-button-toggle {
   //   padding: 8px 16px;
   //   width: 100px;
   // }
+
+  .centered-toggle-group {
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+  }
+  
+  .mat-button-toggle {
+    width: 50%;
+  }
+  
   
