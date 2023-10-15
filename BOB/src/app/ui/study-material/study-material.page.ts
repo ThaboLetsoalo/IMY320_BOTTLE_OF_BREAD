@@ -35,47 +35,49 @@ export class StudyMaterialPage implements OnInit {
       subject : 'Physics',
     },
     {
-      author : 'John Doe',
-      title : 'How is integration by parts used?',
-      question : 'I am having trouble understanding how to use integration by parts. Can someone explain it to me?',
-      img: 'assets/svg/question.png', 
-      subject : 'Mathematics',
-    },
-    {
-      author : 'Jane Doe',
-      title : 'What is the difference between a vector and a scalar?',
-      question : 'I am having trouble understanding the difference between a vector and a scalar. Can someone explain it to me?',
-      img: 'assets/svg/question.png', 
-      subject : 'Physics',
-    },
-    {
-      author : 'John Doe',
-      title : 'How is integration by parts used?',
-      question : 'I am having trouble understanding how to use integration by parts. Can someone explain it to me?',
-      img: 'assets/svg/question.png', 
-      subject : 'Mathematics',
-    },
-    {
-      author : 'Jane Doe',
-      title : 'What is the difference between a vector and a scalar?',
-      question : 'I am having trouble understanding the difference between a vector and a scalar. Can someone explain it to me?',
-      img: 'assets/svg/question.png', 
-      subject : 'Physics',
-    },
-    {
-      author : 'John Doe',
-      title : 'How is integration by parts used?',
-      question : 'I am having trouble understanding how to use integration by parts. Can someone explain it to me?',
-      img: 'assets/svg/question.png', 
-      subject : 'Mathematics',
-    },
-    {
-      author : 'Jane Doe',
-      title : 'What is the difference between a vector and a scalar?',
-      question : 'I am having trouble understanding the difference between a vector and a scalar. Can someone explain it to me?',
+      author : 'Mazwi Mthembu',
+      title : 'How do I balance chemical equations?',
+      question : 'I am having trouble balancing chemical equations. Can someone explain it to me?',
       img: 'assets/svg/question.png',
-      subject : 'Physics',
+      subject : 'Chemistry',
     },
+    {
+      author: 'Dineo Molefe',
+      title: 'What is the difference between mitosis and meiosis?',
+      question: 'I am having trouble understanding the difference between mitosis and meiosis. Can someone explain it to me?',
+      img: 'assets/svg/question.png',
+      subject : 'Biology',
+
+    },
+    {
+      author: 'Jack Sparrow',
+      title: 'How do I write a good essay?',
+      question: 'I am having trouble writing good essays. Can someone explain it to me?',
+      img: 'assets/svg/question.png',
+      subject : 'English',
+    },
+    {
+      author: 'Amber Heard',
+      title: 'Which programming language for a website?',
+      question: 'I am having trouble deciding which programming language to learn. Can someone explain it to me?',
+      img: 'assets/svg/question.png',
+      subject : 'Computer Science',
+    },
+    {
+      author: 'Mary Hitlist',
+      title: 'Business Studies or Economics?',
+      question: 'How do insurance companies make money? Can someone explain it to me?',
+      img: 'assets/svg/question.png',
+      subject : 'Business Studies',
+    },
+    {
+      author: 'Kee Peele',
+      title: 'Countries which were involved in World War 2?',
+      question: 'I am having trouble remembering which countries were involved in World War 2. Can someone explain it to me?',
+      img: 'assets/svg/question.png',
+      subject : 'History',
+    },
+
   ];
 
   filterEducationDiscussion = this.educationDiscussion;
