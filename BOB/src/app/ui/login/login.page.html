@@ -1,7 +1,7 @@
  <div class="login">
 	<img src="assets/svg/login.png" alt="image" class="login__bg">
 
-	<form [formGroup]="loginForm" (submit)="login()" class="login__form">
+	<form [formGroup]="loginForm" (submit)="login()" class="login__form" [ngClass]="getCurrentMode() === 'dark' ? 'dark-mode' : 'light-mode'">
 	   <h1 class="login__title">Login</h1>
 
 	   <div class="login__inputs">
@@ -23,7 +23,7 @@
 	   </div>
 
 	   <div class="forgot">
-		  <a routerLink="/study-material" style="color: white;">Forgot Password?</a>
+		  <a routerLink="/study-material">Forgot Password?</a>
 	   </div>
 	   <br>
 

@@ -26,4 +26,8 @@ export class LoginPage {
       console.log("missing fields")
     }
   }
+
+  getCurrentMode() {
+    return document.documentElement.getAttribute('data-theme');
+  }
 }

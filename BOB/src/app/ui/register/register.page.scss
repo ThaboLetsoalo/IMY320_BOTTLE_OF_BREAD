@@ -62,9 +62,10 @@
     grid-template-columns: 1fr max-content;
     column-gap: .75rem;
     align-items: center;
-    border: 2px solid white;
+    // border: 2px solid white;
     padding-inline: 1.25rem;
     border-radius: 5px; //4rem;
+    border: 1px solid #ccc;
   }
   
   .login__input, 
@@ -192,6 +193,16 @@
   
   .mat-button-toggle {
     width: 50%;
+  }
+
+  .light-mode {
+    background-color: var(--ion-color-light);
+    color: var(--ion-color-dark);
+  }
+    
+  .dark-mode {
+    background-color: var(--ion-color-dark-shade);
+    color: var(--ion-color-light);
   }
   
   

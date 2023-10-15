@@ -59,5 +59,9 @@ export class RegisterPage {
   setCurrentStep(step: number) {
     this.currentStep = step;
   }
+
+  getCurrentMode() {
+    return document.documentElement.getAttribute('data-theme');
+  }
 }
 

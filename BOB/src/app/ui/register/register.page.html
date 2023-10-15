@@ -8,7 +8,7 @@
 
   
 
-	<form [formGroup]="registerForm" (submit)="register()" class="login__form">
+	<form [formGroup]="registerForm" (submit)="register()" class="login__form" [ngClass]="getCurrentMode() === 'dark' ? 'dark-mode' : 'light-mode'">
 	   <h1 class="login__title">Register</h1>
 
 	   <div class="login__inputs">

@@ -62,7 +62,8 @@
     grid-template-columns: 1fr max-content;
     column-gap: .75rem;
     align-items: center;
-    border: 2px solid white;
+    // border: 2px solid white;
+    border: 1px solid #ccc;
     padding-inline: 1.25rem;
     border-radius: 5px; // 4rem;
   }
@@ -173,3 +174,13 @@
       margin-bottom: 2rem;
     }
   }
+
+.light-mode {
+  background-color: var(--ion-color-light);
+  color: var(--ion-color-dark);
+}
+  
+.dark-mode {
+  background-color: var(--ion-color-dark-shade);
+  color: var(--ion-color-light);
+}
