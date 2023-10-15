@@ -1,12 +1,12 @@
 .demo-inline-calendar-card {
   width: 100%;
-  // margin: 0 auto;
+  margin: 0px;
   // border-radius: 10px;
   // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .demo-inline-calendar-card ion-card-content {
-  padding: 20px;
+  // padding: 20px;
 }
 
 .demo-inline-calendar-card ion-card-subtitle {
@@ -14,16 +14,16 @@
   flex-direction: column;
 }
 
-.demo-inline-calendar-card ion-label {
+ion-label {
   margin-bottom: 10px;
 }
 
-.demo-inline-calendar-card ion-textarea {
-  width: 100%;
-  // padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+// .demo-inline-calendar-card ion-textarea {
+//   width: 100%;
+//   // padding: 10px;
+//   border: 1px solid #ccc;
+//   border-radius: 5px;
+// }
 
 .demo-inline-calendar-card input[type="file"] {
   margin-top: 10px;
@@ -32,4 +32,12 @@
 .demo-inline-calendar-card ion-button {
   margin-top: 10px;
   width: 100%;
+}
+
+.input-field-container {
+  margin-bottom: 20px;
+  .input-field {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
 }

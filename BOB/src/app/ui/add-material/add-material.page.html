@@ -10,28 +10,36 @@
 
 <ion-content class="custom-modal-content not-padding" *ngIf="!isLoading">
   <div class="flex-container">
-   <ion-card class="demo-inline-calendar-card" >
+   <ion-card class="demo-inline-calendar-card">
      <ion-card-content>
        <ion-card-subtitle>
-          <ion-label>
-            Title of the question
-            <ion-textarea placeholder="Type title of the question" ></ion-textarea>
-          </ion-label>
-          <br>
-          <ion-label>
-            Question
-            <ion-textarea placeholder="Type your question here" ></ion-textarea>
-          </ion-label>
-          <ion-label>
-            Subject
-            <ion-textarea placeholder="Type subject here" ></ion-textarea>
-          </ion-label>
-          <br>
-          <ion-label>
-            Upload a picture
-          <input type="file">
-          </ion-label>
-          <br>
+          <div class="input-field-container">
+            <ion-label>
+              Title of the question
+            </ion-label>
+            <ion-item lines="none" class="input-field">
+              <ion-textarea rows="1" placeholder="Type title of the question"></ion-textarea>
+            </ion-item>
+          </div>
+          
+          <div class="input-field-container">
+            <ion-label>Question</ion-label>
+            <ion-item lines="none" class="input-field">
+              <ion-textarea rows="1" placeholder="Type your question here"></ion-textarea>
+            </ion-item>
+          </div>
+
+          <div class="input-field-container">
+            <ion-label>Subject</ion-label>
+            <ion-item lines="none" class="input-field">
+              <ion-textarea rows="1" placeholder="Type subject here"></ion-textarea>
+            </ion-item>
+          </div>
+
+          <div class="input-field-container">
+            <ion-label>Upload a picture</ion-label>
+            <input type="file">
+          </div>
           <ion-button (click)="addingMaterial()">Submit</ion-button>
        </ion-card-subtitle>
      </ion-card-content>
