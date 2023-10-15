@@ -6,45 +6,83 @@
   ion-searchbar {
     text-align: start;
   }
-  .suggested-questions {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    .questions {
-      padding: 10px;
-      border: var(--primary-border-size) solid var(--primary-color-variant);
-      width: fit-content;
-      border-radius: 5px;
-      margin-right: 10px;
-    }
+  // .suggested-questions {
+  //   padding: 20px;
+  //   display: flex;
+  //   justify-content: center;
+  //   .questions {
+  //     padding: 10px;
+  //     width: fit-content;
+  //     margin-right: 10px;
+  //   }
+  // }
+}
+
+// .bottom-container {
+//   padding: var(--container-padding);
+//   .support-container {
+//     padding: var(--container-padding);
+//     .support {
+//       text-align: center;
+//       padding: var(--container-padding);
+//       margin-right: var(--container-padding);
+//       margin-left: var(--container-padding);
+//       border: var(--primary-border-size) solid var(--primary-color-variant);
+//       border-radius: 5px;
+//       cursor: pointer;
+
+//       ion-icon {
+//         color: var(--icon-color);
+//         font-size: 50px;
+//       }
+//     }
+//   }
+
+  
+// }
+
+.fqa-container {
+  text-align: center;
+  padding: var(--container-padding);
+  .questions-container {
+    padding: var(--container-padding);
   }
 }
 
-.bottom-container {
-  padding: var(--container-padding);
-  .support-container {
-    padding: var(--container-padding);
-    .support {
-      text-align: center;
-      padding: var(--container-padding);
-      margin-right: var(--container-padding);
-      margin-left: var(--container-padding);
-      border: var(--primary-border-size) solid var(--primary-color-variant);
-      border-radius: 5px;
-      cursor: pointer;
+ion-card {
+  height: 100%; 
+  width: 100%;
 
-      ion-icon {
-        color: var(--icon-color);
-        font-size: 50px;
-      }
-    }
+  card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
   }
 
-  .fqa-container {
-    text-align: center;
-    padding: var(--container-padding);
-    .questions-container {
-      padding: var(--container-padding);
+  card-subtitle {
+    font-size: 16px;
+    color: #fff;
+  }
+
+  card-content {
+    font-size: 14px;
+    color: #fff;
+  }
+}
+
+.suggested-questions {
+  .questions-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: column;
+
+    @media (min-width: 576px) {
+      flex-direction: row;
+    }
+
+    .questions {
+      flex: 1;
     }
   }
 }

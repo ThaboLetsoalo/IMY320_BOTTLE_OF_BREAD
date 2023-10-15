@@ -24,10 +24,6 @@ const routes: Routes = [
     loadChildren: () => import('./ui/splash/splash.module').then( m => m.SplashPageModule)
   },
   {
-    path: 'calendar-picker',
-    loadChildren: () => import('./ui/calendar-picker/calendar-picker.module').then( m => m.CalendarPickerPageModule)
-  },
-  {
     path: 'book-tutor-modal',
     loadChildren: () => import('./ui/book-tutor-modal/book-tutor-modal.module').then( m => m.BookTutorModalPageModule)
   },
@@ -39,6 +35,10 @@ const routes: Routes = [
     path: 'customloader',
     loadChildren: () => import('./ui/customloader/customloader.module').then( m => m.CustomloaderPageModule)
   },
+  {
+    path: 'about-us',
+    loadChildren: () => import('./ui/about/about.module').then( m => m.AboutPageModule)
+  }
 
 ];
 
