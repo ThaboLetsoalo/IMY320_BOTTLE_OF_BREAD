@@ -1,101 +1,3 @@
-<!-- <ion-content [fullscreen]="true" class="outer-container">
-  <div class="auth-container">
-    <ion-grid>
-      <ion-row>
-        <ion-col size="12" size-md="6" size-lg="4" class="welcome-container">
-          <h1 class="welcome-title">Welcome Member</h1>
-          <p class="welcome-subtitle">Create new account</p>
-        </ion-col>
-      </ion-row>
-      <ion-row class="form-container">
-        <ion-col size="12" size-md="6" size-lg="4">
-          <div class="error-message-container" *ngIf="showErrorMessage">
-            <ion-item lines="none">
-             <ion-text class="error-message"> {{errorMessage}}</ion-text>
-            </ion-item>
-          </div>
-          <form  
-          [formGroup]="registerForm"
-          (submit)="register()">
-            <div class="input-field-container">
-              <ion-label>Which are you*</ion-label>
-              <ion-radio-group value="student" formControlName="status">
-                <ion-item class="input-field" lines="none">
-                  <div class="member-status">
-                    <ion-item lines="none">
-                      <ion-label>Student</ion-label>
-                      <ion-radio slot="start" value="student"></ion-radio>
-                    </ion-item>
-                  </div>
-                  <div class="member-status">
-                    <ion-item lines="none">
-                      <ion-radio slot="start" value="tutor"></ion-radio>
-                      <ion-label>Tutor</ion-label>
-                    </ion-item>
-                  </div>
-                </ion-item>
-              </ion-radio-group>
-            </div>
-
-            <div class="input-field-container">
-              <ion-label>Email*</ion-label>
-              <ion-item class="input-field" lines="none">
-                <ion-input type="email" placeholder="Enter your email"  formControlName="email" required></ion-input>
-              </ion-item>
-            </div>
-            <div class="input-field-container">
-              <ion-label>Password*</ion-label>
-              <ion-item class="input-field" lines="none">
-                <ion-input type="password" placeholder="Enter your password"
-                  name="password"
-                  minlength="6"
-                  maxlength="25"
-                  formControlName="password"
-                  required
-                ></ion-input>
-              </ion-item>
-            </div>
-            <div class="input-field-container">
-              <ion-label>Confirm Password*</ion-label>
-              <ion-item class="input-field" lines="none">
-                <ion-input type="password" placeholder="Confirm your password"
-                  name="cPassword"
-                  minlength="6"
-                  maxlength="25"
-                  formControlName="cpassword"
-                  required
-                ></ion-input>
-              </ion-item>
-            </div>
-            <div class="remember-me-input">
-              <ion-checkbox class="custom-checkbox"></ion-checkbox>
-              <ion-label class="r-label">Remember me</ion-label>
-            </div>           
-
-            <div class="button-container">
-              <ion-button id="loginButton" expand="block" type="submit">Register</ion-button>
-              <div class="division-section">
-                <div class="line"></div>
-                <div class="or">OR</div>
-                <div class="line"></div>
-              </div>
-              <ion-button class="loginButton" expand="block" class="white-button">
-                <ion-icon name="logo-google" style="padding-right:5%;"></ion-icon>
-                <ion-text>Continue with Google</ion-text>
-              </ion-button>
-            </div>
-          </form>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="12" size-md="6" size-lg="4" class="bottom-message-container">
-          <ion-text>Already have an account? <span class="register-link" routerLink="/login">Sign in</span></ion-text>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-</ion-content> -->
-
 <div class="login">
 	<img src="assets/svg/login.png" alt="image" class="login__bg">
   <div class="error-message-container" *ngIf="showErrorMessage">
@@ -106,31 +8,43 @@
 
   
 
-	<form [formGroup]="registerForm" (submit)="register()" class="login__form">
+	<form [formGroup]="registerForm" (submit)="register()" class="login__form" [ngClass]="getCurrentMode() === 'dark' ? 'dark-mode' : 'light-mode'">
 	   <h1 class="login__title">Register</h1>
 
 	   <div class="login__inputs">
 
-      <mat-button-toggle-group formControlName="status" value="student" class="centered-toggle-group">
-        <mat-button-toggle value="student">Student</mat-button-toggle>
-        <mat-button-toggle value="tutor">Tutor</mat-button-toggle>
-      </mat-button-toggle-group>
-
-		  <div class="login__box">
-			 <input type="email" placeholder="Enter your email" formControlName="email" required class="login__input">
-			 <i class="ri-mail-fill"></i>
-		  </div>
-
-		  <div class="login__box">
-			 <input type="password" placeholder="Enter your password" name="password" minlength="6" maxlength="25" formControlName="password" required class="login__input">
-			 <i class="ri-lock-2-fill"></i>
-		  </div>
-
-      <div class="login__box">
-        <input type="password" placeholder="Confirm your password" name="cPassword" minlength="6" maxlength="25" formControlName="cpassword" required class="login__input">
-        <i class="ri-lock-2-fill"></i>
+      <div class="login-input-container">
+        <mat-label for="status">Choose your role*</mat-label>
+        <mat-button-toggle-group id="status" formControlName="status" value="student" class="centered-toggle-group">
+          <mat-button-toggle value="student">Student</mat-button-toggle>
+          <mat-button-toggle value="tutor">Tutor</mat-button-toggle>
+        </mat-button-toggle-group>
       </div>
-      
+
+		  <div class="login-input-container">
+        <ion-label>Email*</ion-label>
+        <div class="login__box">
+          <input type="email" placeholder="Enter your email" formControlName="email" required class="login__input"/>
+          <i class="ri-mail-fill"></i>
+         </div>
+      </div>
+
+      <div class="login-input-container">
+        <ion-label>Password*</ion-label>
+        <div class="login__box">
+          <input type="password" placeholder="Enter your password" name="password" minlength="8" maxlength="25" formControlName="password" required class="login__input"/>
+          <i class="ri-lock-2-fill"></i>
+         </div>   
+      </div>
+		  
+      <div class="login-input-container">
+        <ion-label>Confirm Password*</ion-label>
+        <div class="login__box">
+          <input type="password" placeholder="Confirm your password" name="cPassword" minlength="8" maxlength="25" formControlName="cpassword" required class="login__input"/>
+          <i class="ri-lock-2-fill"></i>
+        </div>
+      </div>
+     
 	   </div>
 
 	  <ion-button id="loginButton" expand="block" type="submit">Register</ion-button>

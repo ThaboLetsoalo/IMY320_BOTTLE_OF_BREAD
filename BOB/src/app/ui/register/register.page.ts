@@ -22,7 +22,7 @@ export class RegisterPage {
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(25)]],
       cpassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(25)]],
       status: ['', [Validators.required]]
-    }, { validator: this.passwordMatchValidator() });
+    }, { validator: this.passwordMatchValidator });
   }
 
   passwordMatchValidator(): ValidatorFn {
@@ -50,7 +50,7 @@ export class RegisterPage {
       const password = this.registerForm?.get('password')?.value;
       await this.auth.register(email, password);
     } else {
-      console.log('email', this.registerForm?.get('email')?.value + ' password', this.registerForm?.get('password')?.value) + ' cpassword', this.registerForm?.get('cpassword')?.value;
+      console.log('email', this.registerForm?.get('email')?.value + ' password', this.registerForm?.get('password')?.value + ' cpassword', this.registerForm?.get('cpassword')?.value, 'status '+this.registerForm.get('status')?.value);
       this.errorMessage = "Missing inputs, please fill all the fields";
       this.showErrorMessage = true;
     }
@@ -58,6 +58,10 @@ export class RegisterPage {
 
   setCurrentStep(step: number) {
     this.currentStep = step;
+  }
+
+  getCurrentMode() {
+    return document.documentElement.getAttribute('data-theme');
   }
 }
 

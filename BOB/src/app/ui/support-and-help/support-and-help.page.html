@@ -9,65 +9,41 @@
               <div *ngFor="let question of suggestedQuestions; let i = index" class="questions">
                 <ion-button (click)="navigateToQuestion(i)"> {{ question }}</ion-button>
               </div>
-            </div>            
+            </div>    
         </ion-col>
       </ion-row>
     </div>
 
     <div class="bottom-container">  
-      <!--
-      <ion-row>
-        <ion-col size="12" size-lg="5">
-          <ion-card class="support-card" routerLink="/contact-us">
-            <ion-card-content>
-              <ion-icon name="person-outline"></ion-icon>
-              <ion-card-title>Contact Support</ion-card-title>
-              <ion-card-subtitle>Submit a request, chat or call support</ion-card-subtitle>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        
-         <ion-col size="12" size-lg="5">
-          <ion-card class="support-card">
-            <ion-card-content>
-              <ion-icon name="logo-buffer"></ion-icon>
-              <ion-card-title>My Support Requests</ion-card-title>
-              <ion-card-subtitle>View the submit request you have made</ion-card-subtitle>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>       -->
       <div class="fqa-container">
         <div class="questions-container">
-          <ion-row class="tab-row">
-            <ion-row>
-              <ion-col size="12" size-lg="6" class="question-container1" id="question-container1">
-                <ion-card routerLink="/contact-us">
-                  <ion-card-header>
-                    <ion-card-title>
+          <ion-row>
+            <ion-col size="12" size-lg="6" class="question-container1" id="question-container1">
+              <ion-card routerLink="/contact-us">
+                <ion-card-header>
+                  <ion-card-title>
 
-                    </ion-card-title>
-                    <ion-card-subtitle style="font-size: large;">Contact Us</ion-card-subtitle>
-                  </ion-card-header>
-                  <ion-card-content>
-                    Click here to reach out to us, in case you have any queries or need answers to your questions..
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-            
-              <ion-col size="12" size-lg="6" class="question-container2">
-                <ion-card routerLink="/about-us">
-                  <ion-card-header>
-                    <ion-card-title></ion-card-title>
-                    <ion-card-subtitle style="font-size: large;">Know More About Us</ion-card-subtitle>
-                  </ion-card-header>
-            
-                  <ion-card-content>
-                    Click here to know more about us, from our mission to our vision and our values.
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-            </ion-row>
+                  </ion-card-title>
+                  <ion-card-subtitle style="font-size: large;">Contact Us</ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                  Click here to reach out to us, in case you have any queries or need answers to your questions..
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          
+            <ion-col size="12" size-lg="6" class="question-container2">
+              <ion-card routerLink="/about-us">
+                <ion-card-header>
+                  <ion-card-title></ion-card-title>
+                  <ion-card-subtitle style="font-size: large;">Know More About Us</ion-card-subtitle>
+                </ion-card-header>
+          
+                <ion-card-content>
+                  Click here to know more about us, from our mission to our vision and our values.
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
           </ion-row>
         </div>
       </div>

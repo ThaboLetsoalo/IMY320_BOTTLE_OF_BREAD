@@ -1,118 +1,3 @@
-// :root {
-//   --main-color:red;
-//   --primary-color: blue;
-// }
-
-// .outer-container {
-//   .auth-container {
-//     height: 100%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     padding: 20px;
-
-//     .welcome-container {
-//         text-align: center;
-//         margin-top: 20px;
-//         .welcome-title {
-//             font-size: x-large;
-//             font-weight: bolder;
-//             color: var(--main-color);
-//         }
-
-//         .welcome-subtitle {
-//             color: var(--primary-color);
-//         }
-//     }
-    
-//     .form-container {
-//         margin-top: 20px;
-//         .error-message-container {
-//           border: var(--primary-border-size) solid var(--error-color);
-//           border-radius: var(--primary-border-radius);
-//           padding: 10px;
-
-//           .error-message {
-//             width: fit-content;
-//             color: var(--error-color);
-//             font-weight: bolder;
-//             margin: auto;
-//           }
-//         }
-
-//         .input-field-container {
-//             margin-top: 20px;
-//             .input-field {
-//                 background-color: var(--input-field-color);
-//                 margin-top: 10px;
-//                 border-radius: 10px;
-//                 border: var(--primary-border-size) solid var(--primary-color-variant);
-//                 border-radius: var(--primary-border-radius);
-//                 .member-status {
-//                   flex: 1;
-//                   text-align: center;
-//                   margin: 10px;
-//                 }
-//             }
-//         }
-    
-//         .remember-me-input {
-//             margin-top: 20px;
-//             margin-bottom: 20px;
-//             display: flex;
-//             align-items: center;
-//             .custom-checkbox::part(.checkbox-checked) {
-//                 background-color: var(--main-color);
-//                 border-color: var(--main-color);
-//             }
-
-//             .r-label {
-//                 margin-left: 10px;
-//             }
-//         }
-    
-//         .button-container {
-//             margin-top: 40px;
-//         }
-//     }
-
-//     .bottom-message-container {
-//         margin-top: 20px;
-//         text-align: center;
-//     }
-
-//     .register-link, .forgot-password {
-//         color: var(--primary-color);
-//         font-weight: bold;
-//     }
-
-//     .division-section {
-//         display: flex;
-//         align-items: center;
-//         margin: 20px 0;
-
-//         .line {
-//             flex: 1;
-//             height: 1px;
-//             background-color: #ccc;
-//             margin: 0 10px;
-//         }
-            
-//         .or {
-//             font-weight: bold;
-//             font-size: 16px;
-//             padding: 0 10px;
-//             color: var(--primary-color)
-//         }
-//     }
-//   }
-// }
-
-// ion-row {
-//   display: flex;
-//   justify-content: center;
-// }
-
 .division-section {
     display: flex;
     align-items: center;
@@ -177,9 +62,10 @@
     grid-template-columns: 1fr max-content;
     column-gap: .75rem;
     align-items: center;
-    border: 2px solid white;
+    // border: 2px solid white;
     padding-inline: 1.25rem;
-    border-radius: 4rem;
+    border-radius: 5px; //4rem;
+    border: 1px solid #ccc;
   }
   
   .login__input, 
@@ -289,13 +175,34 @@
     }
   }
 
-  .centered-toggle-group {
-    width: fit-content;
-    margin: auto;
-  }
+  // .centered-toggle-group {
+  //   width: fit-content;
+  //   margin: auto;
+  // }
   
   // .mat-button-toggle {
   //   padding: 8px 16px;
   //   width: 100px;
   // }
+
+  .centered-toggle-group {
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+  }
+  
+  .mat-button-toggle {
+    width: 50%;
+  }
+
+  .light-mode {
+    background-color: var(--ion-color-light);
+    color: var(--ion-color-dark);
+  }
+    
+  .dark-mode {
+    background-color: var(--ion-color-dark-shade);
+    color: var(--ion-color-light);
+  }
+  
   
