@@ -1,13 +1,53 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>viewMaterial</ion-title>
+    <ion-title>View Discussion</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">X</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">viewMaterial</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+<ion-content class="custom-modal-content" *ngIf="!isLoading">
+  <div class="flex-container">
+    <div class="flex-item calendar">
+      <ion-item>
+        <ion-card class="demo-inline-calendar-card" *ngFor="let subject of material">
+          <ion-card-header>
+            <ion-card-title>{{ subject.subject }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-card-subtitle>{{ subject.question }}</ion-card-subtitle>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>  
+      <br>
+      <ion-card class="demo-inline-calendar-card">
+        <ion-card-header>
+          <ion-card-title>Your response</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-card-subtitle>
+            <ion-textarea placeholder="Type your response here"></ion-textarea>
+            <br>
+            <ion-button (click)="submitAnswer()">Submit</ion-button>
+          </ion-card-subtitle>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div class="flex-item subject">
+      <ion-card class="demo-inline-calendar-card" *ngFor="let subject of defaultAnswers">
+        <ion-card-header>
+          <ion-card-title>{{ subject.author }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-card-subtitle>{{ subject.answer }}</ion-card-subtitle>
+        </ion-card-content>
+      </ion-card>     
+    </div>
+  </div>
+  <!-- <div class="flex-item">
+    <ion-button (click)="bookSession()" >Book Session</ion-button>
+  </div> -->
 </ion-content>
