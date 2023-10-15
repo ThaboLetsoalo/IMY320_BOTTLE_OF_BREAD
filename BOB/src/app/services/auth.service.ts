@@ -44,7 +44,7 @@ export class AuthService {
   async login(regEmail: string, regPassword: string) {
     try {
       await signInWithEmailAndPassword(this.authObject, regEmail, regPassword);
-      this.Nav.navigateRoot('/home');
+      this.Nav.navigateRoot('/study-material');
   
       // Display a success toast message
       const toast = await this.toastController.create({
@@ -112,7 +112,7 @@ export class AuthService {
   async continueWithGoogle() {
     const googleAuthProvider = new GoogleAuthProvider();
     const userCredentials = await signInWithPopup(this.authObject, googleAuthProvider);
-    this.Nav.navigateRoot('/home')
+    this.Nav.navigateRoot('/study-material')
     return userCredentials;
   }
 

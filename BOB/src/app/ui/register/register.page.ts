@@ -49,8 +49,8 @@ export class RegisterPage {
       const email = this.registerForm?.get('email')?.value;
       const password = this.registerForm?.get('password')?.value;
       await this.auth.register(email, password);
-      this.router.navigate(['/study-material']);
     } else {
+      console.log('email', this.registerForm?.get('email')?.value + ' password', this.registerForm?.get('password')?.value) + ' cpassword', this.registerForm?.get('cpassword')?.value;
       this.errorMessage = "Missing inputs, please fill all the fields";
       this.showErrorMessage = true;
     }
