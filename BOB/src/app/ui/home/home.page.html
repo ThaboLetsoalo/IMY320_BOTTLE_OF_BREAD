@@ -1,6 +1,10 @@
 <ion-header class="ion-hide-lg-down">
     <ion-toolbar>
-      <ion-title slot="start">BOB</ion-title>
+      <ion-title slot="start">
+        <a routerLink="/home/study-material" routerLinkActive="active" style="color: white; text-decoration: none;">
+          BOB
+        </a>
+      </ion-title>
   
       <ion-buttons slot="start" class="center-items">
         <!-- <ion-button routerLink="/home/dashboard" routerLinkActive="active">Home</ion-button> -->
@@ -16,7 +20,7 @@
         <ion-button routerLink="/register" routerLinkActive="active">Register</ion-button>
         <ion-button routerLink="/login" routerLinkActive="active">Login</ion-button>
       </ion-buttons>
-      <ion-buttons *ngIf="showProfile" slot="end">
+      <!-- <ion-buttons *ngIf="showProfile" slot="end">
         <ion-chip>
           {{profile.displayName}}
           <ion-avatar>
@@ -26,7 +30,8 @@
         <ion-button (click)="signOut()">
           <ion-icon name="exit-outline"></ion-icon>
         </ion-button>
-      </ion-buttons>
+      </ion-buttons> -->
+      <!-- sorry -->
     </ion-toolbar>
   </ion-header>
   
@@ -34,7 +39,7 @@
   
   <!-- small screen view -->
   
-  <ion-header class="ion-hide-lg-up">
+  <!-- <ion-header class="ion-hide-lg-up">
     <ion-toolbar>
       <ion-title class="ion-text-center">BOB</ion-title>
       <ion-buttons slot="start">
@@ -57,7 +62,9 @@
         </ion-button>
       </ion-buttons>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
+
+  <!-- sorry again -->
   
   
   <ion-menu contentId="main-content" [swipeGesture]="true" class="ion-hide-lg-up" #menu>
@@ -69,11 +76,11 @@
     <ion-content>
       <ion-list>
         <ion-list>
-          <ion-item routerLink="/home/dashboard" routerLinkActive="active">
+          <!-- <ion-item routerLink="/home/dashboard" routerLinkActive="active">
             <ion-icon slot="start" name="home"></ion-icon>
             <ion-label>Home</ion-label>
             <ion-icon slot="end" name="chevron-forward"></ion-icon>
-          </ion-item>
+          </ion-item> -->
           <ion-item routerLink="/home/study-material" routerLinkActive="active">
             <ion-icon slot="start" name="book"></ion-icon>
             <ion-label>Study material</ion-label>
