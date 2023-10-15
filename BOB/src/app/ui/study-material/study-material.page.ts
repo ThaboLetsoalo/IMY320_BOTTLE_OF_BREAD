@@ -11,95 +11,85 @@ import { NavController } from '@ionic/angular'; // Import NavController
 })
 export class StudyMaterialPage implements OnInit {
 
-  selectedTab: string = 'notes'; // Define selectedTab property
-    // Define properties for noteModules, examModules, and tutorialModules
-    noteModules: any[] = [
-      { name: 'COS 301', description: 'All notes for Software Engineering' },
-      { name: 'COS 333', description: 'Description for Note Module 2' },
-      { name: 'IMY 320', description: 'Description for Note Module 3' },  
-      { name: 'Mathematics Gr 12', description: 'Notes for everything in Mathematics' },
-      { name: 'COS 333', description: 'Description for Note Module 2' },
-      { name: 'IMY 320', description: 'Description for Note Module 3' },
-    ];
-    
-    examModules: any[] = [
-      { name: 'COS 301', description: 'Description for Note Module 1' },
-      { name: 'COS 333', description: 'Description for Note Module 2' },
-      { name: 'IMY 320', description: 'Description for Note Module 3' },
-      { name: 'COS 301', description: 'Description for Note Module 1' },
-      { name: 'COS 333', description: 'Description for Note Module 2' },
-      { name: 'IMY 320', description: 'Description for Note Module 3' },
-    ];
-    
-    tutorialModules: any[] = [
-      { name: 'COS 301', description: 'Description for Note Module 1' },
-      { name: 'COS 333', description: 'Description for Note Module 2' },
-      { name: 'IMY 320', description: 'Description for Note Module 3' },
-      { name: 'COS 301', description: 'Description for Note Module 1' },
-      { name: 'COS 333', description: 'Description for Note Module 2' },
-      { name: 'IMY 320', description: 'Description for Note Module 3' },
-    ];
-    
-  categories: any[] = [];
-  selectedCategory: any;
-  // studyMaterials: any[] = [];
-
-  name: string | undefined;
-  description: string | undefined;
-  // Add any other properties as needed
-
   
+  constructor(private studyMaterialService: StudyMaterialService, private navCtrl: NavController) { }
+ 
 
-  constructor(private studyMaterialService: StudyMaterialService,
-              private navCtrl: NavController // Inject NavController
-    ) {}
+  ngOnInit() 
+  {}
 
-  ngOnInit() {
-    this.fetchCategories();
-  }
-
-  fetchCategories() {
-    this.studyMaterialService.getCategories().subscribe((data) => {
-      this.categories = data;
-    });
-  }
-
-  openCategory(categoryId: number) {
-    this.studyMaterialService.getStudyMaterialsByCategory(categoryId).subscribe((data: any) => {
-      // Update the selected category and study materials with the fetched data
-      this.selectedCategory = this.categories.find((category) => category.id === categoryId);
-      this.studyMaterials = data;
-    });
-  }
-  openSearch(){
-    this.navCtrl.navigateForward('/search');
-  }
-  selectedType: string = '';
-  selectedYear: string = '';
-  selectedSubject: string = '' // Initialize with an empty string
-  studyMaterials: any[] = [
-    // Replace this with your actual study material data
+  educationDiscussion = 
+  [
     {
-      title: 'Material 1',
-      description: 'Description for Material 1',
-      year: '2022',
+      author : 'John Doe',
+      title : 'How is integration by parts used?',
+      question : 'I am having trouble understanding how to use integration by parts. Can someone explain it to me?',
+      img: 'assets/svg/question.png', 
+      subject : 'Mathematics',
     },
     {
-      title: 'Material 2',
-      description: 'Description for Material 2',
-      year: '2021',
+      author : 'Jane Doe',
+      title : 'What is the difference between a vector and a scalar?',
+      question : 'I am having trouble understanding the difference between a vector and a scalar. Can someone explain it to me?',
+      img: 'assets/svg/question.png', 
+      subject : 'Physics',
     },
-    // Add more study materials as needed
+    {
+      author : 'John Doe',
+      title : 'How is integration by parts used?',
+      question : 'I am having trouble understanding how to use integration by parts. Can someone explain it to me?',
+      img: 'assets/svg/question.png', 
+      subject : 'Mathematics',
+    },
+    {
+      author : 'Jane Doe',
+      title : 'What is the difference between a vector and a scalar?',
+      question : 'I am having trouble understanding the difference between a vector and a scalar. Can someone explain it to me?',
+      img: 'assets/svg/question.png', 
+      subject : 'Physics',
+    },
+    {
+      author : 'John Doe',
+      title : 'How is integration by parts used?',
+      question : 'I am having trouble understanding how to use integration by parts. Can someone explain it to me?',
+      img: 'assets/svg/question.png', 
+      subject : 'Mathematics',
+    },
+    {
+      author : 'Jane Doe',
+      title : 'What is the difference between a vector and a scalar?',
+      question : 'I am having trouble understanding the difference between a vector and a scalar. Can someone explain it to me?',
+      img: 'assets/svg/question.png', 
+      subject : 'Physics',
+    },
+    {
+      author : 'John Doe',
+      title : 'How is integration by parts used?',
+      question : 'I am having trouble understanding how to use integration by parts. Can someone explain it to me?',
+      img: 'assets/svg/question.png', 
+      subject : 'Mathematics',
+    },
+    {
+      author : 'Jane Doe',
+      title : 'What is the difference between a vector and a scalar?',
+      question : 'I am having trouble understanding the difference between a vector and a scalar. Can someone explain it to me?',
+      img: 'assets/svg/question.png',
+      subject : 'Physics',
+    },
   ];
 
-  get filteredMaterials(): any[] {
-    // Filter the study materials based on the selected year and other filters
-    return this.studyMaterials.filter((material) => {
-      if (this.selectedYear !== '' && material.year !== this.selectedYear) {
-        return false;
-      }
-      // Add additional filtering conditions here if needed
-      return true;
-    });
+  filterEducationDiscussion = this.educationDiscussion;
+
+  filterBySubject(subject: string) {
+    this.filterEducationDiscussion = this.educationDiscussion.filter(discussion => discussion.subject === subject);
   }
+
+  subjectList = [
+    'Mathematics', 'Physics', 'Chemistry', 'Biology', 'English', 'History', 'Geography', 'Economics', 'Business Studies', 'Accounting', 'Computer Science'
+  ];
+
+  gradeList = [
+    'Grade 8', 'Grade 9', 'Grade 10', 'Grade 11', 'Grade 12', '1st Year', '2nd Year', '3rd Year', '4th Year'
+  ];
+  
 }

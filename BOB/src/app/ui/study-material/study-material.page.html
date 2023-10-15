@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<!-- <ion-content [fullscreen]="true">
   <div class="filter-container">
     <ion-grid>
       <h2>Find Study Materials</h2>
@@ -23,7 +23,6 @@
               <ion-select-option value="">All</ion-select-option>
               <ion-select-option value="Math">Math</ion-select-option>
               <ion-select-option value="Science">Science</ion-select-option>
-              <!-- Add more options as needed -->
             </ion-select>
           </ion-item>
         </ion-col>
@@ -34,11 +33,9 @@
               <ion-select-option value="">All</ion-select-option>
               <ion-select-option value="Book">Book</ion-select-option>
               <ion-select-option value="Video">Video</ion-select-option>
-              <!-- Add more options as needed -->
             </ion-select>
           </ion-item>
         </ion-col>
-        <!-- Add more filter options here -->
       </ion-row>
       <ion-row>
         <ion-col size="12" size-lg="3">
@@ -54,14 +51,11 @@
       <ion-row class="material-row">
         <ion-col *ngFor="let material of [1,2,3,4]" size="12" size-sm="6" size-md="4" size-xl="3">
           <ng-container>
-            <!-- Display the loading skeleton while data is loading -->
             <app-study-material-skeleton></app-study-material-skeleton>
           </ng-container>
           <ng-template #content>
-            <!-- Display the actual study material once data is available -->
             <ion-card class="material-card">
               <ion-card-content>
-               <!-- content here... -->
               </ion-card-content>
             </ion-card>
           </ng-template>
@@ -72,14 +66,11 @@
       <ion-row class="material-row">
         <ion-col *ngFor="let material of [1,2,3,4]" size="12" size-sm="6" size-md="4" size-xl="3">
           <ng-container>
-            <!-- Display the loading skeleton while data is loading -->
             <app-study-material-skeleton></app-study-material-skeleton>
           </ng-container>
           <ng-template #content>
-            <!-- Display the actual study material once data is available -->
             <ion-card class="material-card">
               <ion-card-content>
-               <!-- content here... -->
               </ion-card-content>
             </ion-card>
           </ng-template>
@@ -90,14 +81,11 @@
       <ion-row class="material-row">
         <ion-col *ngFor="let material of [1,2,3,4]" size="12" size-sm="6" size-md="4" size-xl="3">
           <ng-container>
-            <!-- Display the loading skeleton while data is loading -->
             <app-study-material-skeleton></app-study-material-skeleton>
           </ng-container>
           <ng-template #content>
-            <!-- Display the actual study material once data is available -->
             <ion-card class="material-card">
               <ion-card-content>
-               <!-- content here... -->
               </ion-card-content>
             </ion-card>
           </ng-template>
@@ -108,14 +96,11 @@
       <ion-row class="material-row">
         <ion-col *ngFor="let material of [1,2,3,4]" size="12" size-sm="6" size-md="4" size-xl="3">
           <ng-container>
-            <!-- Display the loading skeleton while data is loading -->
             <app-study-material-skeleton></app-study-material-skeleton>
           </ng-container>
           <ng-template #content>
-            <!-- Display the actual study material once data is available -->
             <ion-card class="material-card">
               <ion-card-content>
-               <!-- content here... -->
               </ion-card-content>
             </ion-card>
           </ng-template>
@@ -125,4 +110,62 @@
   </div>
 
   <app-footer></app-footer>
+</ion-content> -->
+<ion-content [fullscreen]="true">
+  
+  <ion-header>
+    <section class="hero">
+      <div class="hero-img">
+        <img src="assets/svg/tutor.png" alt="Hero Image">
+      </div>
+  
+      <div class="hero-text">
+        <h1>Find a Tutor</h1>
+        <p>Find a tutor that will help you with your studies.</p>
+        <ion-card class="ion-padding">
+          <ion-item lines="none" class="input-field-container">
+            <ion-select interface="popover">
+              <ion-select-option value="">All</ion-select-option>
+              <ion-select-option value="Math">Math</ion-select-option>
+              <ion-select-option value="Science">Science</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-card>
+      </div>
+    </section>
+  </ion-header>
+
+
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="3" *ngFor="let tutor of filterEducationDiscussion">
+        <ion-card class="ion-padding">
+          <ion-img src= '{{ tutor.img }}'></ion-img>
+          <ion-card-header>
+            <ion-card-title>{{ tutor.author }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+                <ion-chip color="primary">
+                  <ion-label color="primary">{{ tutor.subject }}</ion-label>
+                </ion-chip>  
+            </div>
+            <br>
+            <div class="question-title">
+              {{ tutor.title }}
+            </div>
+            <div>
+              {{ tutor.question }}
+            </div>
+            <br>
+            <div>
+              <!-- <ion-button color="primary" (click)="openModal(tutor)">READ MORE</ion-button>                -->
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+ 
 </ion-content>
