@@ -44,7 +44,7 @@ export class AuthService {
   async login(regEmail: string, regPassword: string) {
     try {
       await signInWithEmailAndPassword(this.authObject, regEmail, regPassword);
-      this.Nav.navigateRoot('/study-material');
+      this.Nav.navigateRoot('/home/study-material');
   
       // Display a success toast message
       const toast = await this.toastController.create({
@@ -122,5 +122,6 @@ export class AuthService {
 
   async logout() {
    await signOut(this.authObject);
+   this.Nav.navigateRoot("/login");
   }
 }
