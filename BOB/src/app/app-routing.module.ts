@@ -42,7 +42,15 @@ const routes: Routes = [
   {
     path: 'study-material',
     loadChildren: () => import('./ui/study-material/study-material.module').then( m => m.StudyMaterialPageModule)
+  },  {
+    path: 'add-material',
+    loadChildren: () => import('./ui/add-material/add-material.module').then( m => m.AddMaterialPageModule)
+  },
+  {
+    path: 'view-material',
+    loadChildren: () => import('./ui/view-material/view-material.module').then( m => m.ViewMaterialPageModule)
   }
+
 
 ];
 
