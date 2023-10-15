@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudyMaterialService } from './study-material.service';
 import { NavController } from '@ionic/angular'; // Import NavController
+import { ModalController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-study-material',
@@ -11,12 +12,30 @@ import { NavController } from '@ionic/angular'; // Import NavController
 })
 export class StudyMaterialPage implements OnInit {
 
+  isModalOpen = false;
+  selectedDiscussion: any;
   
-  constructor(private studyMaterialService: StudyMaterialService, private navCtrl: NavController) { }
+  constructor(private studyMaterialService: StudyMaterialService, private navCtrl: NavController,
+    private modalController: ModalController, private loadingController: LoadingController,) { }
  
 
   ngOnInit() 
   {}
+
+  
+  async search() { 
+    const loading = await this.loadingController.create({
+      message: 'Searching For A Discussion',
+      duration: 3000, 
+      spinner: 'bubbles',
+    });
+
+    await loading.present();
+    loading.message = 'Discussions loading';
+    setTimeout(() => {
+      loading.dismiss();
+    }, 4000);
+  }
 
   educationDiscussion = 
   [
