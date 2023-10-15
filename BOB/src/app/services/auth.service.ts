@@ -11,12 +11,15 @@ import {
 import { signOut } from '@firebase/auth';
 import { AlertController, NavController, ToastController } from '@ionic/angular';
 import { ProfileService } from './profile.service';
+import { Observable } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   constructor(
+    private afAuth: AngularFireAuth,
     private readonly authObject: Auth,
     private Nav: NavController,
     private alertController: AlertController, 
@@ -32,54 +35,34 @@ export class AuthService {
     return (auth.currentUser?.uid);
   }
 
-  // async login(regEmail: string, regPassword: string) {
-  //   try {
-  //     await signInWithEmailAndPassword(this.authObject, regEmail, regPassword);
-  //     this.Nav.navigateRoot('/home'); 
-  //   } catch (error) {
-  //     console.error('Firebase error:', error);
-  //   }
-  // }
+  getUser(){
+    return this.afAuth.authState;
+  }
 
   async login(regEmail: string, regPassword: string) {
     try {
       await signInWithEmailAndPassword(this.authObject, regEmail, regPassword);
-      this.Nav.navigateRoot('/home/study-material');
-  
-      // Display a success toast message
+      
       const toast = await this.toastController.create({
         message: 'Login successful!',
-        duration: 2000, // Duration in milliseconds
-        position: 'top', // Position can be 'top', 'bottom', 'middle'
-        color: 'success', // Use a color to style the toast
+        duration: 2000, 
+        position: 'top',
+        color: 'success',
       });
       await toast.present();
+      this.Nav.navigateRoot('/home/study-material');
     } catch (error) {
       console.error('Firebase error:', error);
   
-      // Display an error toast message
       const toast = await this.toastController.create({
         message: 'Login failed. Please check your credentials and try again.',
-        duration: 5000, // Duration in milliseconds
-        position: 'top', // Position can be 'top', 'bottom', 'middle'
-        color: 'danger', // Use a color to style the toast
+        duration: 5000,
+        position: 'top',
+        color: 'danger',
       });
       await toast.present();
     }
   }
-  
-
-  // async register(regEmail: string, regPassword: string) {
-  //   try {
-  //     await createUserWithEmailAndPassword(this.authObject, regEmail, regPassword);
-  //     const currentUserId = await this.getCurrentUserId();
-  //     if(currentUserId) {
-  //       this.profileService.createUserProfile(regEmail, currentUserId)
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
 
   async register(regEmail: string, regPassword: string) {
     try {
@@ -114,10 +97,6 @@ export class AuthService {
     const userCredentials = await signInWithPopup(this.authObject, googleAuthProvider);
     this.Nav.navigateRoot('/study-material')
     return userCredentials;
-  }
-
-  async LogoutConfirmed() {
-    return await signOut(this.authObject);
   }
 
   async logout() {

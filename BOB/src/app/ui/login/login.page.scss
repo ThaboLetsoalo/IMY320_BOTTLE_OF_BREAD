@@ -44,7 +44,7 @@
   
   .login__title {
     text-align: center;
-    font-size: var(--h1-font-size);
+    // font-size: var(--h1-font-size);
     margin-bottom: 1.25rem;
   }
   
@@ -148,7 +148,7 @@
   }
   
   .login__register a {
-    color: var(--white-color);
+    // color: var(--white-color);
     font-weight: 500;
   }
   
@@ -183,4 +183,13 @@
 .dark-mode {
   background-color: var(--ion-color-dark-shade);
   color: var(--ion-color-light);
+}
+
+.error-item {
+  --background: var( --ion-color-danger);
+  color: white;
+  .error-message {
+    width: fit-content;
+    margin: auto;
+  }
 }

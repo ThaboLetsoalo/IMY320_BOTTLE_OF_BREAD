@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 
 export class RegisterPage {
-  registerForm: FormGroup; // Define FormGroup
+  registerForm: FormGroup;
   currentStep = 2;
   errorMessage = "";
   showErrorMessage = false;
@@ -45,12 +45,10 @@ export class RegisterPage {
 
   async register() {
     if (this.registerForm.valid) {
-      console.log('haiii');
       const email = this.registerForm?.get('email')?.value;
       const password = this.registerForm?.get('password')?.value;
       await this.auth.register(email, password);
     } else {
-      console.log('email', this.registerForm?.get('email')?.value + ' password', this.registerForm?.get('password')?.value + ' cpassword', this.registerForm?.get('cpassword')?.value, 'status '+this.registerForm.get('status')?.value);
       this.errorMessage = "Missing inputs, please fill all the fields";
       this.showErrorMessage = true;
     }
