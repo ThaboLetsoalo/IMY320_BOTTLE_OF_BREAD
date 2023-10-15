@@ -9,6 +9,8 @@ import { StudyMaterialPageRoutingModule } from './study-material-routing.module'
 import { StudyMaterialPage } from './study-material.page';
 import { FooterComponentModule } from '../splash/footer/footer.module';
 import { StudyMaterialSkeletonComponent } from './study-material-skeleton/study-material-skeleton.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   imports: [
@@ -16,7 +18,9 @@ import { StudyMaterialSkeletonComponent } from './study-material-skeleton/study-
     FormsModule,
     IonicModule,
     StudyMaterialPageRoutingModule,
-    FooterComponentModule
+    FooterComponentModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   declarations: [StudyMaterialPage, StudyMaterialSkeletonComponent]
 })

@@ -85,11 +85,14 @@ export class StudyMaterialPage implements OnInit {
   }
 
   subjectList = [
-    'Mathematics', 'Physics', 'Chemistry', 'Biology', 'English', 'History', 'Geography', 'Economics', 'Business Studies', 'Accounting', 'Computer Science'
+    'Select Subject','Mathematics', 'Physics', 'Chemistry', 'Biology', 'English', 'History', 'Geography', 'Economics', 'Business Studies', 'Accounting', 'Computer Science'
   ];
 
   gradeList = [
-    'Grade 8', 'Grade 9', 'Grade 10', 'Grade 11', 'Grade 12', '1st Year', '2nd Year', '3rd Year', '4th Year'
+    'Select Grade','Grade 8', 'Grade 9', 'Grade 10', 'Grade 11', 'Grade 12', '1st Year', '2nd Year', '3rd Year', '4th Year'
   ];
+
+  selectedSubject = 'Select Subject';
+  selectedGrade = 'Select Grade';
   
 }
