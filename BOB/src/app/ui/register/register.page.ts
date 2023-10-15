@@ -21,7 +21,7 @@ export class RegisterPage {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(25)]],
       cpassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(25)]],
-      // status: ['', [Validators.required]]
+      status: ['', [Validators.required]]
     }, { validator: this.passwordMatchValidator() });
   }
 

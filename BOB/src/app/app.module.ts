@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { IonicModule, IonicRouteStrategy, } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +24,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatChipsModule} from '@angular/material/chips';
+import { MatTabsModule } from '@angular/material/tabs';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,9 +33,12 @@ import {MatChipsModule} from '@angular/material/chips';
     BrowserModule, 
     MatCardModule,
     MatDatepickerModule,
+    CommonModule,
     MatNativeDateModule,
     MatSelectModule,
     NoopAnimationsModule,
+    MatButtonToggleModule,
+    MatTabsModule,
     MatChipsModule,
     MatFormFieldModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -60,6 +66,7 @@ import {MatChipsModule} from '@angular/material/chips';
     }),],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AngularFirestore],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
   
 })
 export class AppModule {}

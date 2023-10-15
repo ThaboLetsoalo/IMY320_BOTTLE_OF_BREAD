@@ -103,10 +103,19 @@
      <ion-text class="error-message"> {{errorMessage}}</ion-text>
     </ion-item>
   </div>
+
+  
+
 	<form [formGroup]="registerForm" (submit)="register()" class="login__form">
 	   <h1 class="login__title">Register</h1>
 
 	   <div class="login__inputs">
+
+      <mat-button-toggle-group formControlName="status" value="student" class="centered-toggle-group">
+        <mat-button-toggle value="student">Student</mat-button-toggle>
+        <mat-button-toggle value="tutor">Tutor</mat-button-toggle>
+      </mat-button-toggle-group>
+
 		  <div class="login__box">
 			 <input type="email" placeholder="Enter your email" formControlName="email" required class="login__input">
 			 <i class="ri-mail-fill"></i>
