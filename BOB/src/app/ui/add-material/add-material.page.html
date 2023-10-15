@@ -1,13 +1,41 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>addMaterial</ion-title>
+    <ion-title>Start A Discussion</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">X</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">addMaterial</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+<ion-content class="custom-modal-content" *ngIf="!isLoading">
+  <div class="flex-container">
+   <ion-card class="demo-inline-calendar-card" >
+     <ion-card-content>
+       <ion-card-subtitle>
+          <ion-label>
+            Title of the question
+            <ion-textarea placeholder="Type title of the question" ></ion-textarea>
+          </ion-label>
+          <br>
+          <ion-label>
+            Question
+            <ion-textarea placeholder="Type your question here" ></ion-textarea>
+          </ion-label>
+          <ion-label>
+            Subject
+            <ion-textarea placeholder="Type subject here" ></ion-textarea>
+          </ion-label>
+          <br>
+          <ion-label>
+            Upload a picture
+          <input type="file">
+          </ion-label>
+          <br>
+          <ion-button (click)="addingMaterial()">Submit</ion-button>
+       </ion-card-subtitle>
+     </ion-card-content>
+    </ion-card>   
+  </div>
+ 
 </ion-content>

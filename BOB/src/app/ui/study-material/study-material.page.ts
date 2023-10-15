@@ -3,6 +3,7 @@ import { StudyMaterialService } from './study-material.service';
 import { NavController } from '@ionic/angular'; // Import NavController
 import { ModalController, LoadingController } from '@ionic/angular';
 import { ViewMaterialPage } from '../view-material/view-material.page';
+import { AddMaterialPage } from '../add-material/add-material.page';
 
 @Component({
   selector: 'app-study-material',
@@ -131,6 +132,26 @@ export class StudyMaterialPage implements OnInit {
         component: ViewMaterialPage, 
         componentProps: {
           material: material, 
+        },
+      });
+      await modal.present();
+    } else {
+      this.selectedMaterial = null;
+    }
+  }
+
+  addMaterial()
+  {
+    this.OpenAddmaterial(true);
+  }
+
+  async OpenAddmaterial(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+    if (isOpen) {
+      const modal = await this.modalController.create({
+        component: AddMaterialPage, 
+        componentProps: {
+          material: null, 
         },
       });
       await modal.present();

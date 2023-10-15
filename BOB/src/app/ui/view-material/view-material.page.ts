@@ -18,7 +18,6 @@ export class ViewMaterialPage implements OnInit {
   ) { }
 
   async ngOnInit() {
-    console.log('dsgdsjh' + this.material.subject);
     const loading = await this.loadingController.create({
       message: 'Loading discussion..',
       duration: 2000, 
