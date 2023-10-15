@@ -21,7 +21,7 @@ export class RegisterPage {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(25)]],
       cpassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(25)]],
-      status: ['', [Validators.required]]
+      // status: ['', [Validators.required]]
     }, { validator: this.passwordMatchValidator() });
   }
 
@@ -45,11 +45,13 @@ export class RegisterPage {
 
   async register() {
     if (this.registerForm.valid) {
+      console.log('haiii');
       const email = this.registerForm?.get('email')?.value;
       const password = this.registerForm?.get('password')?.value;
       await this.auth.register(email, password);
+      this.router.navigate(['/study-material']);
     } else {
-      this.errorMessage = "Missing inputs, please fill all the required(i.e *) fields";
+      this.errorMessage = "Missing inputs, please fill all the fields";
       this.showErrorMessage = true;
     }
   }

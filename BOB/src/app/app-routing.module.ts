@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: 'about-us',
     loadChildren: () => import('./ui/about/about.module').then( m => m.AboutPageModule)
+  },
+  {
+    path: 'study-material',
+    loadChildren: () => import('./ui/study-material/study-material.module').then( m => m.StudyMaterialPageModule)
   }
 
 ];

@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true" class="outer-container">
+<!-- <ion-content [fullscreen]="true" class="outer-container">
   <div class="auth-container">
     <ion-grid>
       <ion-row>
@@ -94,4 +94,52 @@
       </ion-row>
     </ion-grid>
   </div>
-</ion-content>
+</ion-content> -->
+
+<div class="login">
+	<img src="assets/svg/login.png" alt="image" class="login__bg">
+  <div class="error-message-container" *ngIf="showErrorMessage">
+    <ion-item lines="none">
+     <ion-text class="error-message"> {{errorMessage}}</ion-text>
+    </ion-item>
+  </div>
+	<form [formGroup]="registerForm" (submit)="register()" class="login__form">
+	   <h1 class="login__title">Register</h1>
+
+	   <div class="login__inputs">
+		  <div class="login__box">
+			 <input type="email" placeholder="Enter your email" formControlName="email" required class="login__input">
+			 <i class="ri-mail-fill"></i>
+		  </div>
+
+		  <div class="login__box">
+			 <input type="password" placeholder="Enter your password" name="password" minlength="6" maxlength="25" formControlName="password" required class="login__input">
+			 <i class="ri-lock-2-fill"></i>
+		  </div>
+
+      <div class="login__box">
+        <input type="password" placeholder="Confirm your password" name="cPassword" minlength="6" maxlength="25" formControlName="cpassword" required class="login__input">
+        <i class="ri-lock-2-fill"></i>
+      </div>
+      
+	   </div>
+
+	  <ion-button id="loginButton" expand="block" type="submit">Register</ion-button>
+
+	   <div class="button-container">
+		<div class="division-section">
+		  <div class="line"></div>
+		  <div class="or">OR</div>
+		  <div class="line"></div>
+		</div>
+		<ion-button class="loginButton" expand="block" class="white-button" routerLink="/study-material">
+		  <ion-icon name="logo-google" style="padding-right:5%;"></ion-icon>
+		  <ion-text>Continue with Google</ion-text>
+		</ion-button>
+	  </div>
+	  <br>
+	   <div class="login__register">
+		  Already have an account? <a routerLink="/login">Login</a>
+	   </div>
+	</form>
+ </div>
